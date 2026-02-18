@@ -190,11 +190,91 @@
       .grid{padding: 0 18px 22px}
       .navlinks{display:none}
     }
+    html{ scroll-behavior:smooth; }
+
+.bg-noise{
+  position:fixed; inset:0; pointer-events:none; opacity:.08; mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");
+}
+
+.hero{ position:relative; }
+.hero:before{
+  content:""; position:absolute; inset:-1px; pointer-events:none;
+  background: radial-gradient(800px 400px at 15% 0%, rgba(52,211,153,.18), transparent 60%),
+              radial-gradient(700px 380px at 90% 10%, rgba(96,165,250,.16), transparent 60%);
+  opacity:.85;
+}
+
+.card{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.cardVisual{
+  height:86px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,0.10);
+  background:
+    radial-gradient(140px 80px at 15% 30%, rgba(255,255,255,0.12), transparent 60%),
+    linear-gradient(135deg, rgba(52,211,153,0.20), rgba(96,165,250,0.16));
+  position:relative;
+  overflow:hidden;
+}
+
+.cardVisual:after{
+  content:"";
+  position:absolute; inset:-40px;
+  background: radial-gradient(circle at 30% 40%, rgba(255,255,255,0.12), transparent 55%);
+  transform: rotate(8deg);
+}
+
+.badge{
+  position:absolute; left:12px; top:12px;
+  display:inline-flex; align-items:center; gap:8px;
+  padding:6px 10px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,0.14);
+  background: rgba(0,0,0,0.20);
+  color: rgba(255,255,255,0.86);
+  font-size:12px;
+  backdrop-filter: blur(6px);
+}
+
+.badge .emoji{
+  width:22px; height:22px; border-radius:8px;
+  display:inline-flex; align-items:center; justify-content:center;
+  background: rgba(255,255,255,0.10);
+  border:1px solid rgba(255,255,255,0.10);
+}
+
+.cardMeta{
+  display:flex; align-items:center; justify-content:space-between; gap:10px;
+}
+
+.pill{
+  display:inline-flex; align-items:center;
+  padding:6px 10px; border-radius:999px;
+  border:1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.03);
+  color: var(--muted);
+  font-size:12px;
+}
+
+.sectionTitle{
+  display:flex; align-items:flex-end; justify-content:space-between; gap:12px;
+  margin-bottom:10px;
+}
+
+.sectionTitle h2{ margin:0; }
+.sectionTitle .tiny{ max-width:60ch; }
+
   </style>
 </head>
 
 <body>
-  <div class="wrap">
+  <div class="bg-noise"></div>
+   <div class="wrap">
     <div class="nav">
       <div class="brand">
         <div class="dot"></div>
@@ -202,7 +282,7 @@
       </div>
       <div class="navlinks">
         <a href="#tools">Tools</a>
-        <a href="#why">Why</a>
+        <a href="#how">How it works</a>
         <a href="#contact">Contact</a>
       </div>
       <a class="btn" href="#tools">Explore</a>
@@ -227,54 +307,91 @@
         </p>
       </div>
 
-      <div id="tools" class="grid">
-  <!-- LIVE APP -->
+   <!-- TOOLS -->
+<div id="tools" class="grid">
+
+  <!-- LIVE -->
   <div class="card">
-    <div class="tag"><span class="icon">📊</span> Live now</div>
+    <div class="cardVisual">
+      <div class="badge"><span class="emoji">📊</span> Live now</div>
+    </div>
+
+    <div class="cardMeta">
+      <div class="pill">Money • tracking • clarity</div>
+      <div class="pill">5 min setup</div>
+    </div>
+
     <h3>MultiStream Tracking System</h3>
     <p>
-      A structured system for tracking multiple income streams, expenses,
-      performance, and financial clarity — built for focused operators.
+      See your streams, totals, and momentum in one calm dashboard.
+      Built to reduce chaos and keep your finances predictable.
     </p>
+
     <div class="actions">
-      <a class="btn primary" href="https://freelance-command-os.vercel.app/" target="_blank" rel="noopener">
-        Open App
-      </a>
+      <a class="btn primary" href="PASTE_YOUR_APP_LINK_HERE" target="_blank" rel="noopener">Open App</a>
+      <a class="btn" href="#how">How it works</a>
     </div>
   </div>
 
   <!-- IN DEVELOPMENT -->
   <div class="card">
-    <div class="tag"><span class="icon">🧠</span> In development</div>
+    <div class="cardVisual" style="background: radial-gradient(140px 80px at 15% 30%, rgba(255,255,255,0.12), transparent 60%),
+      linear-gradient(135deg, rgba(96,165,250,0.22), rgba(167,139,250,0.16));">
+      <div class="badge"><span class="emoji">🧠</span> In development</div>
+    </div>
+
+    <div class="cardMeta">
+      <div class="pill">Focus • routines • follow-through</div>
+      <div class="pill">Coming soon</div>
+    </div>
+
     <h3>ADHD Focus System</h3>
     <p>
-      A calm structure for managing focus, routines, and execution without burnout.
-      Currently in development.
+      A gentle structure to plan your day, protect attention, and finish what matters—without burnout.
     </p>
+
     <div class="actions">
       <span class="btn" style="opacity:.6; cursor:not-allowed;">Coming Soon</span>
     </div>
   </div>
 
   <div class="card">
-    <div class="tag"><span class="icon">🌿</span> In development</div>
+    <div class="cardVisual" style="background: radial-gradient(140px 80px at 15% 30%, rgba(255,255,255,0.12), transparent 60%),
+      linear-gradient(135deg, rgba(52,211,153,0.18), rgba(34,197,94,0.14));">
+      <div class="badge"><span class="emoji">🌿</span> In development</div>
+    </div>
+
+    <div class="cardMeta">
+      <div class="pill">Calm • clarity • thought reset</div>
+      <div class="pill">Coming soon</div>
+    </div>
+
     <h3>CBT Thought Reset Tool</h3>
     <p>
-      A guided framework for restructuring thought patterns and reducing mental overload.
-      Currently in development.
+      Turn spirals into clear steps with a guided thought reset flow that helps you feel steady again.
     </p>
+
     <div class="actions">
       <span class="btn" style="opacity:.6; cursor:not-allowed;">Coming Soon</span>
     </div>
   </div>
 
   <div class="card">
-    <div class="tag"><span class="icon">🥫</span> In development</div>
+    <div class="cardVisual" style="background: radial-gradient(140px 80px at 15% 30%, rgba(255,255,255,0.12), transparent 60%),
+      linear-gradient(135deg, rgba(251,191,36,0.18), rgba(96,165,250,0.14));">
+      <div class="badge"><span class="emoji">🥫</span> In development</div>
+    </div>
+
+    <div class="cardMeta">
+      <div class="pill">Community • planning • flow</div>
+      <div class="pill">Coming soon</div>
+    </div>
+
     <h3>Food Pantry System</h3>
     <p>
-      A practical planning and organization system for community distribution workflows.
-      Currently in development.
+      A practical workflow for inventory, distribution days, and community needs—kept simple and calm.
     </p>
+
     <div class="actions">
       <span class="btn" style="opacity:.6; cursor:not-allowed;">Coming Soon</span>
     </div>
@@ -282,8 +399,8 @@
 
 </div>
 
-    <div id="why" class="section">
-      <h2>How it works</h2>
+    <div id="how" class="section">
+    <h2>How it works</h2>
       <div class="bullets">
         <div class="bullet">
           <strong>Pick one area</strong>
