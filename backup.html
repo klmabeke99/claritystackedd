@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="ClarityStacked — calm, done-for-you transformational tools: simple systems you can use immediately." />
+  <title>ClarityStacked — Calm, Transformational Tools</title>
+
+  <style>
+    :root{
+      --bg:#0b1224;
+      --bg2:#0f172a;
+      --panel:rgba(255,255,255,0.06);
+      --panel2:rgba(255,255,255,0.04);
+      --border:rgba(255,255,255,0.10);
+      --text:rgba(255,255,255,0.92);
+      --muted:rgba(255,255,255,0.70);
+      --accent:#34d399;
+      --accent2:#60a5fa;
+      --shadow: 0 16px 50px rgba(0,0,0,0.35);
+      --radius:18px;
+      --radius2:14px;
+      --max:1100px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(1200px 600px at 20% 0%, rgba(52,211,153,0.18), transparent 55%),
+                  radial-gradient(900px 500px at 90% 10%, rgba(96,165,250,0.18), transparent 50%),
+                  linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+      color:var(--text);
+      line-height:1.45;
+    }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:22px}
+    .nav{
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      padding:12px 0;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:700; letter-spacing:0.2px;
+    }
+    .dot{
+      width:12px; height:12px; border-radius:999px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 0 0 6px rgba(255,255,255,0.03);
+    }
+    .navlinks{display:flex; gap:14px; color:var(--muted); font-size:14px}
+    .navlinks a:hover{color:var(--text)}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:8px;
+      padding:12px 14px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,0.04);
+      color:var(--text);
+      cursor:pointer;
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      user-select:none;
+      font-weight:600;
+      font-size:14px;
+      white-space:nowrap;
+    }
+    .btn:hover{transform:translateY(-1px); background:rgba(255,255,255,0.06)}
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(52,211,153,0.22), rgba(96,165,250,0.18));
+      border-color: rgba(255,255,255,0.18);
+    }
+    .hero{
+      margin-top:18px;
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .heroInner{padding:34px 22px}
+    .kicker{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:7px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.03);
+      color:var(--muted);
+      font-size:13px;
+    }
+    .kicker .pulse{
+      width:8px; height:8px; border-radius:999px; background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(52,211,153,0.10);
+    }
+    h1{
+      margin:14px 0 10px;
+      font-size: clamp(28px, 4.2vw, 46px);
+      line-height:1.05;
+      letter-spacing:-0.6px;
+    }
+    .lead{
+      margin: 0 0 18px;
+      color:var(--muted);
+      font-size: clamp(15px, 2vw, 18px);
+      max-width: 60ch;
+    }
+    .ctaRow{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap:14px;
+      margin-top:16px;
+      padding: 0 22px 26px;
+    }
+    .card{
+      grid-column: span 6;
+      border:1px solid var(--border);
+      border-radius:var(--radius2);
+      background: rgba(255,255,255,0.04);
+      padding:16px;
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      position:relative;
+      overflow:hidden;
+      min-height: 165px;
+    }
+    .card:hover{
+      transform: translateY(-2px);
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(255,255,255,0.16);
+    }
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-size:12px;
+      color:var(--muted);
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.03);
+    }
+    .tag .icon{
+      width:18px; height:18px; border-radius:7px;
+      display:inline-flex; align-items:center; justify-content:center;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      font-size:12px;
+    }
+    .card h3{margin:10px 0 6px; font-size:18px}
+    .card p{margin:0 0 12px; color:var(--muted); font-size:14px; max-width:55ch}
+    .card .actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:auto}
+    .subtle{color:var(--muted); font-size:13px;}
+    .section{
+      margin-top:18px;
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      background: rgba(255,255,255,0.03);
+      padding: 18px 18px;
+    }
+    .section h2{margin:0 0 10px; font-size:18px}
+    .bullets{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap:10px;
+      margin-top:10px;
+    }
+    .bullet{
+      grid-column: span 4;
+      border:1px solid rgba(255,255,255,0.10);
+      border-radius:14px;
+      background: rgba(255,255,255,0.03);
+      padding:12px;
+    }
+    .bullet strong{display:block; margin-bottom:5px}
+    footer{
+      padding:22px 0 40px;
+      color:var(--muted);
+      font-size:13px;
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .tiny{color:rgba(255,255,255,0.55)}
+    @media (max-width: 900px){
+      .card{grid-column: span 12}
+      .bullet{grid-column: span 12}
+      .heroInner{padding:26px 18px}
+      .grid{padding: 0 18px 22px}
+      .navlinks{display:none}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="nav">
+      <div class="brand">
+        <div class="dot"></div>
+        <div>ClarityStacked</div>
+      </div>
+      <div class="navlinks">
+        <a href="#tools">Tools</a>
+        <a href="#why">Why</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a class="btn" href="#tools">Explore</a>
+    </div>
+
+    <div class="hero">
+      <div class="heroInner">
+        <div class="kicker"><span class="pulse"></span> Calm systems for real-life change</div>
+        <h1>Done-for-you tools that help you feel steady, clear, and in control.</h1>
+        <p class="lead">
+          ClarityStacked turns practical frameworks into simple apps you can use immediately.
+          Pick what you need today — and take one small step forward.
+        </p>
+
+        <div class="ctaRow">
+          <a class="btn primary" href="#tools">Choose a tool</a>
+          <a class="btn" href="#why">How it works</a>
+        </div>
+
+        <p class="subtle" style="margin-top:12px;">
+          No overwhelm. No fluff. Just calm structure.
+        </p>
+      </div>
+
+      <!-- TOOLS (single grid, no duplicates) -->
+      <div id="tools" class="grid">
+
+        <!-- LIVE APP -->
+        <div class="card">
+          <div class="tag"><span class="icon">📊</span> Live now</div>
+          <h3>MultiStream Tracking System</h3>
+          <p>
+            A structured system for tracking multiple income streams, expenses,
+            performance, and financial clarity — built for focused operators.
+          </p>
+          <div class="actions">
+            <a class="btn primary" href="PASTE_YOUR_APP_LINK_HERE" target="_blank" rel="noopener">
+              Open App
+            </a>
+          </div>
+        </div>
+
+        <!-- IN DEVELOPMENT -->
+        <div class="card">
+          <div class="tag"><span class="icon">🧠</span> In development</div>
+          <h3>ADHD Focus System</h3>
+          <p>
+            A calm structure for managing focus, routines, and execution without burnout.
+            Currently in development.
+          </p>
+          <div class="actions">
+            <span class="btn" style="opacity:.6; cursor:not-allowed;">Coming Soon</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="tag"><span class="icon">🌿</span> In development</div>
+          <h3>CBT Thought Reset Tool</h3>
+          <p>
+            A guided framework for restructuring thought patterns and reducing mental overload.
+            Currently in development.
+          </p>
+          <div class="actions">
+            <span class="btn" style="opacity:.6; cursor:not-allowed;">Coming Soon</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="tag"><span class="icon">🥫</span> In development</div>
+          <h3>Food Pantry System</h3>
+          <p>
+            A practical planning and organization system for community distribution workflows.
+            Currently in development.
+          </p>
+          <div class="actions">
+            <span class="btn" style="opacity:.6; cursor:not-allowed;">Coming Soon</span>
+          </div>
+        </div>
+
+      </div>
+      <!-- /TOOLS -->
+    </div>
+
+    <div id="why" class="section">
+      <h2>How it works</h2>
+      <div class="bullets">
+        <div class="bullet">
+          <strong>Pick one area</strong>
+          <div class="tiny">Choose the tool that matches what you’re dealing with right now.</div>
+        </div>
+        <div class="bullet">
+          <strong>Follow the steps</strong>
+          <div class="tiny">Each app is structured to guide you without overload.</div>
+        </div>
+        <div class="bullet">
+          <strong>Stack progress</strong>
+          <div class="tiny">Small, consistent actions compound into real change.</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="contact" class="section">
+      <h2>Contact</h2>
+      <div class="tiny">
+        Want a specific tool built from one of your frameworks or books?<br/>
+        Email: <a href="mailto:hello@claritystacked.com" style="text-decoration:underline;">hello@claritystacked.com</a>
+        <span class="subtle">(you can set this up later)</span>
+      </div>
+    </div>
+
+    <footer>
+      <div>© <span id="year"></span> ClarityStacked</div>
+      <div class="tiny">Calm structure • Real-life transformation</div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
