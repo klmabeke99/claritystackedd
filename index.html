@@ -3,262 +3,271 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="ClarityStacked — done-for-you transformational tools: practical apps that create calm structure in real life." />
-  <title>ClarityStacked — Transformational Micro-Apps</title>
+  <meta name="description" content="ClarityStacked — calm, done-for-you transformational tools: simple systems you can use immediately." />
+  <title>ClarityStacked — Calm, Transformational Tools</title>
 
   <style>
     :root{
-      --bg:#f6f8fb;          /* light like Equals */
-      --panel:#ffffff;
-      --panel2:#fbfcfe;
-      --border:rgba(15,23,42,0.10);
-      --text:#0f172a;
-      --muted:rgba(15,23,42,0.70);
-      --accent:#2563eb;      /* calm fintech blue */
-      --accent2:#10b981;     /* calm green */
-      --shadow: 0 18px 50px rgba(15,23,42,0.10);
+      --bg:#0b1224;
+      --bg2:#0f172a;
+      --panel:rgba(255,255,255,0.06);
+      --panel2:rgba(255,255,255,0.04);
+      --border:rgba(255,255,255,0.10);
+      --text:rgba(255,255,255,0.92);
+      --muted:rgba(255,255,255,0.70);
+      --accent:#34d399;
+      --accent2:#60a5fa;
+      --shadow: 0 18px 60px rgba(0,0,0,0.40);
       --radius:18px;
       --radius2:14px;
-      --max:1160px;
+      --max:1140px;
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
       background:
-        radial-gradient(900px 500px at 15% 0%, rgba(37,99,235,0.10), transparent 55%),
-        radial-gradient(900px 500px at 85% 10%, rgba(16,185,129,0.10), transparent 55%),
-        linear-gradient(180deg, var(--bg) 0%, #ffffff 55%, var(--bg) 100%);
+        radial-gradient(1200px 600px at 15% 0%, rgba(52,211,153,0.18), transparent 55%),
+        radial-gradient(950px 520px at 90% 10%, rgba(96,165,250,0.18), transparent 52%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
       color:var(--text);
-      line-height:1.5;
+      line-height:1.45;
+    }
+    .bg-noise{
+      position:fixed; inset:0; pointer-events:none; opacity:.08; mix-blend-mode:overlay;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");
     }
     a{color:inherit; text-decoration:none}
     .wrap{max-width:var(--max); margin:0 auto; padding:22px}
     .nav{
       display:flex; align-items:center; justify-content:space-between; gap:12px;
-      padding:10px 0;
-      position:sticky; top:0;
-      background: rgba(246,248,251,0.72);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(15,23,42,0.06);
-      z-index:50;
+      padding:12px 0;
     }
-    .brand{display:flex; align-items:center; gap:10px; font-weight:900; letter-spacing:-0.2px}
+    .brand{display:flex; align-items:center; gap:10px; font-weight:900; letter-spacing:0.2px}
     .dot{
       width:12px; height:12px; border-radius:999px;
       background: linear-gradient(135deg, var(--accent), var(--accent2));
-      box-shadow: 0 0 0 6px rgba(37,99,235,0.08);
+      box-shadow: 0 0 0 6px rgba(255,255,255,0.03);
     }
-    .navlinks{display:flex; gap:16px; color:var(--muted); font-size:14px; font-weight:650}
+    .navlinks{display:flex; gap:14px; color:var(--muted); font-size:14px}
     .navlinks a:hover{color:var(--text)}
     .btn{
       display:inline-flex; align-items:center; justify-content:center; gap:8px;
-      padding:11px 14px;
+      padding:12px 14px;
       border-radius:999px;
       border:1px solid var(--border);
-      background: var(--panel);
+      background: rgba(255,255,255,0.04);
       color:var(--text);
       cursor:pointer;
-      transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
       user-select:none;
       font-weight:800;
       font-size:14px;
       white-space:nowrap;
     }
-    .btn:hover{transform:translateY(-1px); box-shadow: 0 12px 28px rgba(15,23,42,0.10)}
+    .btn:hover{transform:translateY(-1px); background:rgba(255,255,255,0.06)}
     .btn.primary{
-      background: linear-gradient(135deg, rgba(37,99,235,0.95), rgba(16,185,129,0.90));
-      color:#fff;
-      border-color: rgba(37,99,235,0.30);
+      background: linear-gradient(135deg, rgba(52,211,153,0.22), rgba(96,165,250,0.18));
+      border-color: rgba(255,255,255,0.18);
     }
     .btn.ghost{background:transparent}
     .pill{
       display:inline-flex; align-items:center; gap:8px;
       padding:8px 10px;
       border-radius:999px;
-      border:1px solid rgba(15,23,42,0.10);
-      background: rgba(255,255,255,0.70);
-      color: rgba(15,23,42,0.78);
+      border:1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.03);
+      color: rgba(255,255,255,0.78);
       font-size:13px;
-      font-weight:650;
     }
+    .stars{letter-spacing:1px; color: rgba(255,255,255,0.86)}
+    .tiny{color:rgba(255,255,255,0.55); font-size:13px}
 
-    /* HERO (Equals-like: simple headline + CTA + proof strip) */
+    /* HERO */
     .hero{
-      margin-top:16px;
-      border:1px solid rgba(15,23,42,0.08);
-      border-radius: var(--radius);
-      background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.72));
+      margin-top:18px;
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
       box-shadow: var(--shadow);
       overflow:hidden;
       position:relative;
     }
-    .heroInner{
-      padding:30px 22px 18px;
+    .hero:before{
+      content:""; position:absolute; inset:-1px; pointer-events:none;
+      background:
+        radial-gradient(820px 420px at 12% 0%, rgba(52,211,153,.20), transparent 62%),
+        radial-gradient(720px 420px at 92% 10%, rgba(96,165,250,.16), transparent 60%);
+      opacity:.9;
+    }
+    .heroGrid{
       display:grid;
-      grid-template-columns: 1.05fr .95fr;
+      grid-template-columns: 1.08fr .92fr;
       gap:18px;
-      align-items:stretch;
+      padding:28px 22px 18px;
+      position:relative;
+      z-index:1;
     }
     .kicker{
       display:inline-flex; align-items:center; gap:10px;
       padding:7px 12px;
       border-radius:999px;
-      border:1px solid rgba(15,23,42,0.10);
-      background: rgba(255,255,255,0.70);
-      color: rgba(15,23,42,0.72);
+      border:1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.03);
+      color:var(--muted);
       font-size:13px;
-      width:fit-content;
-      font-weight:650;
+      width: fit-content;
     }
     .kicker .pulse{
-      width:8px; height:8px; border-radius:999px; background: var(--accent2);
-      box-shadow: 0 0 0 6px rgba(16,185,129,0.12);
+      width:8px; height:8px; border-radius:999px; background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(52,211,153,0.10);
     }
     h1{
       margin:14px 0 10px;
-      font-size: clamp(30px, 4.2vw, 54px);
+      font-size: clamp(30px, 4.4vw, 54px);
       line-height:1.05;
-      letter-spacing:-0.9px;
+      letter-spacing:-0.8px;
     }
     .lead{
       margin: 0 0 16px;
       color:var(--muted);
       font-size: clamp(15px, 2vw, 18px);
-      max-width: 70ch;
+      max-width: 68ch;
     }
     .ctaRow{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
-    .proofRow{
-      display:flex; flex-wrap:wrap; gap:10px;
-      margin-top:14px;
-    }
+    .trustRow{display:flex; flex-wrap:wrap; gap:10px; margin-top:14px}
 
-    /* right hero preview */
-    .preview{
-      border:1px solid rgba(15,23,42,0.10);
+    .previewCard{
+      border:1px solid rgba(255,255,255,0.10);
       border-radius: var(--radius2);
-      background: linear-gradient(180deg, rgba(255,255,255,0.90), rgba(255,255,255,0.72));
+      background: rgba(255,255,255,0.03);
       padding:14px;
-      display:flex;
-      flex-direction:column;
-      gap:12px;
-    }
-    .mock{
-      height:210px;
-      border-radius:14px;
-      border:1px solid rgba(15,23,42,0.10);
-      background:
-        radial-gradient(160px 100px at 20% 40%, rgba(37,99,235,0.16), transparent 60%),
-        radial-gradient(180px 120px at 70% 40%, rgba(16,185,129,0.14), transparent 60%),
-        linear-gradient(135deg, rgba(37,99,235,0.06), rgba(16,185,129,0.05));
       position:relative;
       overflow:hidden;
+      min-height: 290px;
+    }
+    .mock{
+      height: 210px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background:
+        radial-gradient(140px 90px at 20% 40%, rgba(255,255,255,0.12), transparent 60%),
+        linear-gradient(135deg, rgba(52,211,153,0.16), rgba(96,165,250,0.14));
       display:flex;
       align-items:flex-end;
+      justify-content:flex-start;
       padding:14px;
+      position:relative;
+      overflow:hidden;
+    }
+    .mock:after{
+      content:"";
+      position:absolute; inset:-40px;
+      background: radial-gradient(circle at 35% 45%, rgba(255,255,255,0.12), transparent 56%);
+      transform: rotate(10deg);
     }
     .mockLabel{
-      display:inline-flex; align-items:center; gap:8px;
+      position:relative;
+      z-index:2;
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
       padding:8px 10px;
       border-radius:999px;
-      background: rgba(255,255,255,0.80);
-      border:1px solid rgba(15,23,42,0.10);
+      background: rgba(0,0,0,0.22);
+      border: 1px solid rgba(255,255,255,0.14);
+      backdrop-filter: blur(6px);
       font-size:12px;
-      font-weight:700;
-      color: rgba(15,23,42,0.86);
+      color: rgba(255,255,255,0.86);
     }
-    .miniList{display:grid; gap:6px; color:var(--muted); font-size:13px}
+    .miniList{
+      margin-top:10px;
+      color: var(--muted);
+      font-size:13px;
+      display:grid;
+      gap:6px;
+    }
     .miniList div{display:flex; gap:8px; align-items:flex-start}
-    .tick{color: var(--accent2); font-weight:900}
+    .tick{color: rgba(52,211,153,0.95)}
 
-    /* Sections */
+    /* SECTIONS */
     .section{
       margin-top:18px;
-      border:1px solid rgba(15,23,42,0.08);
-      border-radius: var(--radius);
-      background: rgba(255,255,255,0.82);
-      box-shadow: 0 14px 40px rgba(15,23,42,0.06);
-      padding:18px;
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      background: rgba(255,255,255,0.03);
+      padding: 18px 18px;
     }
     .sectionTitle{
       display:flex; align-items:flex-end; justify-content:space-between; gap:12px;
       margin-bottom:10px;
     }
-    .sectionTitle h2{margin:0; font-size:18px; letter-spacing:-0.2px}
-    .tiny{color:rgba(15,23,42,0.58); font-size:13px}
+    .sectionTitle h2{margin:0; font-size:18px}
 
-    /* App blocks (big like Equals product sections) */
+    /* BIG APP BLOCKS (Equals-like “product sections”) */
     .appStack{display:grid; gap:14px; margin-top:12px;}
     .appBlock{
-      border:1px solid rgba(15,23,42,0.10);
+      border:1px solid rgba(255,255,255,0.10);
       border-radius: 18px;
-      background: #fff;
+      background: rgba(255,255,255,0.03);
       overflow:hidden;
       display:grid;
       grid-template-columns: 1fr 1fr;
       gap:0;
-      min-height: 300px;
+      min-height: 280px;
     }
     .appVisual{
       padding:18px;
       background:
-        radial-gradient(240px 160px at 20% 30%, rgba(37,99,235,0.14), transparent 60%),
-        linear-gradient(135deg, rgba(37,99,235,0.06), rgba(16,185,129,0.06));
-      border-right: 1px solid rgba(15,23,42,0.08);
+        radial-gradient(240px 160px at 20% 30%, rgba(255,255,255,0.10), transparent 60%),
+        linear-gradient(135deg, rgba(52,211,153,0.16), rgba(96,165,250,0.12));
+      border-right: 1px solid rgba(255,255,255,0.08);
+      position:relative;
     }
-    .appVisual.alt1{
-      background:
-        radial-gradient(240px 160px at 20% 30%, rgba(99,102,241,0.14), transparent 60%),
-        linear-gradient(135deg, rgba(99,102,241,0.06), rgba(37,99,235,0.05));
+    .appVisual.alt1{ background:
+        radial-gradient(240px 160px at 20% 30%, rgba(255,255,255,0.10), transparent 60%),
+        linear-gradient(135deg, rgba(96,165,250,0.18), rgba(167,139,250,0.12));
     }
-    .appVisual.alt2{
-      background:
-        radial-gradient(240px 160px at 20% 30%, rgba(16,185,129,0.14), transparent 60%),
-        linear-gradient(135deg, rgba(16,185,129,0.06), rgba(34,197,94,0.05));
+    .appVisual.alt2{ background:
+        radial-gradient(240px 160px at 20% 30%, rgba(255,255,255,0.10), transparent 60%),
+        linear-gradient(135deg, rgba(52,211,153,0.14), rgba(34,197,94,0.10));
     }
-    .appVisual.alt3{
-      background:
-        radial-gradient(240px 160px at 20% 30%, rgba(245,158,11,0.16), transparent 60%),
-        linear-gradient(135deg, rgba(245,158,11,0.06), rgba(37,99,235,0.04));
+    .appVisual.alt3{ background:
+        radial-gradient(240px 160px at 20% 30%, rgba(255,255,255,0.10), transparent 60%),
+        linear-gradient(135deg, rgba(251,191,36,0.14), rgba(96,165,250,0.10));
     }
     .badge{
       display:inline-flex; align-items:center; gap:8px;
       padding:8px 10px;
       border-radius:999px;
-      border:1px solid rgba(15,23,42,0.10);
-      background: rgba(255,255,255,0.72);
+      border:1px solid rgba(255,255,255,0.14);
+      background: rgba(0,0,0,0.18);
+      color: rgba(255,255,255,0.86);
       font-size:12px;
-      font-weight:800;
-      color: rgba(15,23,42,0.80);
+      backdrop-filter: blur(6px);
     }
     .emojiBox{
       width:26px; height:26px; border-radius:10px;
       display:inline-flex; align-items:center; justify-content:center;
-      background: rgba(15,23,42,0.04);
-      border:1px solid rgba(15,23,42,0.08);
+      background: rgba(255,255,255,0.10);
+      border:1px solid rgba(255,255,255,0.10);
     }
     .visualTitle{
       margin-top:14px;
-      font-weight:950;
+      font-weight:900;
       font-size:18px;
       letter-spacing:-0.2px;
     }
-    .visualSub{
-      margin-top:6px;
-      color: rgba(15,23,42,0.70);
-      font-size:13px;
-      max-width: 54ch;
-    }
+    .visualSub{margin-top:6px; color:rgba(255,255,255,0.70); font-size:13px; max-width: 52ch;}
     .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px}
     .chip{
       display:inline-flex; align-items:center;
       padding:6px 10px; border-radius:999px;
-      border:1px solid rgba(15,23,42,0.10);
-      background: rgba(255,255,255,0.75);
-      color: rgba(15,23,42,0.70);
+      border:1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.03);
+      color: var(--muted);
       font-size:12px;
-      font-weight:650;
     }
     .appContent{
       padding:18px;
@@ -267,19 +276,19 @@
       gap:10px;
     }
     .appContent h3{margin:0; font-size:20px; letter-spacing:-0.2px}
-    .appContent p{margin:0; color:var(--muted); font-size:14px; max-width: 72ch}
+    .appContent p{margin:0; color:var(--muted); font-size:14px; max-width: 70ch}
     .whyBox{
-      border:1px solid rgba(15,23,42,0.10);
+      border:1px solid rgba(255,255,255,0.10);
       border-radius:14px;
-      background: rgba(15,23,42,0.02);
+      background: rgba(255,255,255,0.03);
       padding:12px;
-      color: rgba(15,23,42,0.78);
+      color:rgba(255,255,255,0.80);
       font-size:13px;
     }
-    .whyBox strong{color: rgba(15,23,42,0.90)}
+    .whyBox strong{color:rgba(255,255,255,0.90)}
     .actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:auto}
 
-    /* Platform tiles */
+    /* PLATFORM PREVIEW TILES */
     .tileGrid{
       display:grid;
       grid-template-columns: repeat(12, 1fr);
@@ -288,26 +297,26 @@
     }
     .tile{
       grid-column: span 4;
-      border:1px solid rgba(15,23,42,0.10);
+      border:1px solid rgba(255,255,255,0.10);
       border-radius:14px;
-      background: #fff;
+      background: rgba(255,255,255,0.03);
       padding:12px;
     }
     .tile .img{
       height:120px;
       border-radius:12px;
-      border:1px solid rgba(15,23,42,0.10);
+      border:1px solid rgba(255,255,255,0.10);
       background:
-        radial-gradient(120px 70px at 25% 35%, rgba(37,99,235,0.14), transparent 60%),
-        linear-gradient(135deg, rgba(37,99,235,0.05), rgba(16,185,129,0.04));
+        radial-gradient(120px 70px at 25% 35%, rgba(255,255,255,0.12), transparent 60%),
+        linear-gradient(135deg, rgba(96,165,250,0.18), rgba(52,211,153,0.12));
       margin-bottom:10px;
     }
-    .tile h4{margin:0 0 6px; font-size:14px; letter-spacing:-0.1px}
+    .tile h4{margin:0 0 6px; font-size:14px}
     .tile p{margin:0; color:var(--muted); font-size:13px}
 
     footer{
       padding:22px 0 40px;
-      color:rgba(15,23,42,0.60);
+      color:var(--muted);
       font-size:13px;
       display:flex;
       justify-content:space-between;
@@ -316,16 +325,18 @@
     }
 
     @media (max-width: 980px){
+      .heroGrid{grid-template-columns: 1fr}
       .navlinks{display:none}
-      .heroInner{grid-template-columns: 1fr}
       .appBlock{grid-template-columns: 1fr}
-      .appVisual{border-right:none; border-bottom: 1px solid rgba(15,23,42,0.08);}
+      .appVisual{border-right:none; border-bottom: 1px solid rgba(255,255,255,0.08);}
       .tile{grid-column: span 12}
     }
   </style>
 </head>
 
 <body>
+  <div class="bg-noise"></div>
+
   <div class="wrap">
     <div class="nav">
       <a class="brand" href="#">
@@ -343,14 +354,15 @@
       <a class="btn primary" href="#tools">Explore tools</a>
     </div>
 
+    <!-- HERO -->
     <section class="hero">
-      <div class="heroInner">
+      <div class="heroGrid">
         <div>
           <div class="kicker"><span class="pulse"></span> Calm systems for real-life change</div>
-          <h1>Transformational micro-apps that make progress feel doable.</h1>
+          <h1>Done-for-you apps that turn overwhelm into clarity.</h1>
           <p class="lead">
-            ClarityStacked turns practical frameworks into guided tools you can use immediately.
-            Choose the area you want to improve — and follow a calm path from “stuck” to “clear”.
+            ClarityStacked is a growing library of micro-tools built from practical frameworks.
+            Each one is designed to help you take one clear step today — and stack progress over time.
           </p>
 
           <div class="ctaRow">
@@ -358,31 +370,32 @@
             <a class="btn ghost" href="#why">How it works</a>
           </div>
 
-          <div class="proofRow">
+          <div class="trustRow">
+            <div class="pill"><span class="stars">★★★★★</span> Simple • calm • usable</div>
             <div class="pill">Built for real life (not theory)</div>
             <div class="pill">Start free • upgrade when ready</div>
-            <div class="pill">Simple • calm • usable</div>
           </div>
         </div>
 
-        <div class="preview">
+        <div class="previewCard">
           <div class="mock">
-            <div class="mockLabel">🧩 Guided steps • clear actions • real momentum</div>
+            <div class="mockLabel">🧩 Micro tools • clear steps • real momentum</div>
           </div>
           <div class="miniList">
             <div><span class="tick">✓</span> Each app solves one focused problem</div>
-            <div><span class="tick">✓</span> No blank pages — just the next step</div>
-            <div><span class="tick">✓</span> Calm UI that reduces friction</div>
-            <div><span class="tick">✓</span> Systems built from your books/frameworks</div>
+            <div><span class="tick">✓</span> Guided workflow, not a blank page</div>
+            <div><span class="tick">✓</span> Calm design that reduces friction</div>
+            <div><span class="tick">✓</span> Built as “done-for-you” systems from books</div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- TOOLS -->
     <section id="tools" class="section">
       <div class="sectionTitle">
         <h2>Tools</h2>
-        <div class="tiny">Big blocks, clear story — like a product funnel section.</div>
+        <div class="tiny">Pick the one that matches what you need right now.</div>
       </div>
 
       <div class="appStack">
@@ -392,8 +405,7 @@
             <div class="badge"><span class="emojiBox">📊</span> Live now</div>
             <div class="visualTitle">Money clarity for multi-stream life</div>
             <div class="visualSub">
-              When income and invoices are scattered, decisions become emotional.
-              This system gives you one calm view of what’s happening.
+              When income is scattered, decisions get emotional. This system brings everything into one calm view.
             </div>
             <div class="chips">
               <span class="chip">Streams</span>
@@ -409,24 +421,27 @@
               Track multiple income streams, invoices, and expenses in one place — so you always know what’s coming in,
               what’s going out, and what needs attention.
             </p>
+
             <div class="whyBox">
-              <strong>Why it’s essential:</strong> Most people don’t fail because they “don’t earn” — they fail because they
-              can’t see the full picture. This turns money chaos into simple next actions.
+              <strong>Why it matters:</strong> Most people don’t fail because they “don’t earn” — they fail because they can’t
+              see the full picture. This tool turns money chaos into simple next actions.
             </div>
+
             <div class="actions">
               <a class="btn primary" href="https://freelance-command-os.vercel.app/" target="_blank" rel="noopener">Open app</a>
+              <!-- Optional: replace with Stripe premium link later -->
               <a class="btn" href="#contact">Ask about Premium</a>
             </div>
           </div>
         </div>
 
-        <!-- IN DEVELOPMENT -->
+        <!-- IN DEVELOPMENT: ADHD -->
         <div class="appBlock">
           <div class="appVisual alt1">
             <div class="badge"><span class="emojiBox">🧠</span> In development</div>
-            <div class="visualTitle">Focus without burnout</div>
+            <div class="visualTitle">Focus, without burnout</div>
             <div class="visualSub">
-              Gentle structure for planning and follow-through when your brain resists rigid systems.
+              Gentle structure for planning, prioritising, and following through when your brain resists “rigid systems.”
             </div>
             <div class="chips">
               <span class="chip">Routines</span>
@@ -442,23 +457,26 @@
               A guided workflow that helps you choose one priority, break it into doable steps, and stay consistent —
               even on low-energy days.
             </p>
+
             <div class="whyBox">
-              <strong>Why it’s essential:</strong> When focus is unstable, life becomes reactive. This builds calm “rails”
-              so progress doesn’t depend on motivation.
+              <strong>Why it matters:</strong> When focus is unstable, life becomes reactive. This tool builds a calm “rails”
+              system so progress doesn’t depend on motivation.
             </div>
+
             <div class="actions">
-              <span class="btn" style="opacity:.55; cursor:not-allowed;">Coming soon</span>
-              <a class="btn" href="#contact">Get updates</a>
+              <span class="btn" style="opacity:.6; cursor:not-allowed;">Coming soon</span>
+              <a class="btn" href="#contact">Join updates</a>
             </div>
           </div>
         </div>
 
+        <!-- IN DEVELOPMENT: CBT -->
         <div class="appBlock">
           <div class="appVisual alt2">
             <div class="badge"><span class="emojiBox">🌿</span> In development</div>
             <div class="visualTitle">Reset the thought spiral</div>
             <div class="visualSub">
-              A CBT-inspired flow to slow down, name what’s happening, and rebuild steadier thinking.
+              A calm CBT-inspired flow to slow down, name what’s happening, and rebuild a steadier inner narrative.
             </div>
             <div class="chips">
               <span class="chip">Reframe</span>
@@ -473,23 +491,26 @@
             <p>
               A simple guided tool to untangle thoughts, reduce spirals, and convert mental noise into a clear next action.
             </p>
+
             <div class="whyBox">
-              <strong>Why it’s essential:</strong> You can’t “logic” your way out of a spiral — you need a process.
-              This gives you that process in minutes.
+              <strong>Why it matters:</strong> You can’t “logic” your way out of a spiral — you need a process. This tool gives
+              you that process in minutes.
             </div>
+
             <div class="actions">
-              <span class="btn" style="opacity:.55; cursor:not-allowed;">Coming soon</span>
-              <a class="btn" href="#contact">Get updates</a>
+              <span class="btn" style="opacity:.6; cursor:not-allowed;">Coming soon</span>
+              <a class="btn" href="#contact">Join updates</a>
             </div>
           </div>
         </div>
 
+        <!-- IN DEVELOPMENT: FOOD PANTRY -->
         <div class="appBlock">
           <div class="appVisual alt3">
             <div class="badge"><span class="emojiBox">🥫</span> In development</div>
             <div class="visualTitle">Community logistics, simplified</div>
             <div class="visualSub">
-              Practical planning for inventory and distribution — kept calm, clear, and usable for volunteers.
+              Practical planning for inventory, distribution days, and community needs — kept calm, clear, and usable.
             </div>
             <div class="chips">
               <span class="chip">Inventory</span>
@@ -504,85 +525,92 @@
             <p>
               Organise inventory, distribution days, and demand — so volunteers can focus on people, not paperwork.
             </p>
+
             <div class="whyBox">
-              <strong>Why it’s essential:</strong> When systems are messy, support becomes stressful. This makes operations
+              <strong>Why it matters:</strong> When systems are messy, support becomes stressful. This tool makes operations
               smoother and more humane.
             </div>
+
             <div class="actions">
-              <span class="btn" style="opacity:.55; cursor:not-allowed;">Coming soon</span>
-              <a class="btn" href="#contact">Get updates</a>
+              <span class="btn" style="opacity:.6; cursor:not-allowed;">Coming soon</span>
+              <a class="btn" href="#contact">Join updates</a>
             </div>
           </div>
         </div>
+
       </div>
     </section>
 
+    <!-- PLATFORM -->
     <section id="platform" class="section">
       <div class="sectionTitle">
-        <h2>Explore the experience</h2>
-        <div class="tiny">Clean screens and guided flows — designed to be used on real days.</div>
+        <h2>Explore the platform style</h2>
+        <div class="tiny">Calm screens. Clear steps. Minimal friction.</div>
       </div>
 
       <div class="tileGrid">
         <div class="tile">
           <div class="img"></div>
-          <h4>Guided steps</h4>
-          <p>Each tool leads you through a calm path — so you always know what to do next.</p>
+          <h4>Guided flows</h4>
+          <p>Each tool leads you through a simple path — so you don’t have to figure it out alone.</p>
         </div>
         <div class="tile">
           <div class="img"></div>
           <h4>Snapshot views</h4>
-          <p>See the essentials first: totals, priorities, and what needs attention today.</p>
+          <p>See what matters first: totals, next actions, and the one thing to handle today.</p>
         </div>
         <div class="tile">
           <div class="img"></div>
-          <h4>Low-friction design</h4>
-          <p>Less clutter = less resistance. Built for consistency, not perfection.</p>
+          <h4>Clean, calm UI</h4>
+          <p>Less clutter = less resistance. Designed to be used on real days, not perfect days.</p>
         </div>
       </div>
     </section>
 
+    <!-- WHY / HOW IT WORKS -->
     <section id="why" class="section">
       <div class="sectionTitle">
         <h2>How it works</h2>
-        <div class="tiny">Pick one area. Use it in minutes. Stack progress.</div>
+        <div class="tiny">Pick one. Use it in minutes. Stack progress.</div>
       </div>
 
       <div class="tileGrid">
         <div class="tile">
           <div class="img"></div>
-          <h4>1) Choose one tool</h4>
-          <p>Select the app that matches your current pain point.</p>
+          <h4>1) Choose one area</h4>
+          <p>Select the tool that matches your current pain point.</p>
         </div>
         <div class="tile">
           <div class="img"></div>
-          <h4>2) Follow the workflow</h4>
-          <p>Use the guided process to move from “stuck” to “clear”.</p>
+          <h4>2) Follow the steps</h4>
+          <p>Use the built-in workflow to move from “stuck” to “clear.”</p>
         </div>
         <div class="tile">
           <div class="img"></div>
           <h4>3) Repeat calmly</h4>
-          <p>Small actions compound. Consistency beats intensity.</p>
+          <p>Small actions compound. You don’t need intensity — you need consistency.</p>
         </div>
       </div>
     </section>
 
+    <!-- CONTACT -->
     <section id="contact" class="section">
       <div class="sectionTitle">
         <h2>Contact / Updates</h2>
-        <div class="tiny">Want early access to upcoming tools?</div>
+        <div class="tiny">Want early access to the next tools?</div>
       </div>
 
       <div class="tiny">
         Email: <a href="mailto:hello@claritystacked.com" style="text-decoration:underline;">hello@claritystacked.com</a>
+        <span class="tiny">(you can set this up later)</span>
         <br/><br/>
-        If you want, I can add a simple waitlist button that links to a free Google Form (no paid email software needed).
+        Tip: if you want a simple “waitlist” without paying for anything, I can add a Google Form link or a Mailchimp embed.
       </div>
     </section>
 
     <footer>
       <div>© <span id="year"></span> ClarityStacked</div>
-      <div>Calm structure • Real-life transformation</div>
+      <div class="tiny">Calm structure • Real-life transformation</div>
     </footer>
   </div>
 
