@@ -323,6 +323,131 @@
       gap:12px;
       flex-wrap:wrap;
     }
+    /* ===== App Feature Sections (image left / text right) ===== */
+.appSection{
+  margin-top:18px;
+  border:1px solid rgba(255,255,255,0.10);
+  border-radius:18px;
+  background: rgba(255,255,255,0.03);
+  overflow:hidden;
+}
+
+.appRow{
+  display:grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap:0;
+  min-height: 360px;
+}
+
+.appMedia{
+  position:relative;
+  border-right:1px solid rgba(255,255,255,0.08);
+  background: rgba(0,0,0,0.20);
+}
+
+.appMedia img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  filter: saturate(1.05) contrast(1.02);
+}
+
+.appMedia:after{
+  content:"";
+  position:absolute; inset:0;
+  background:
+    radial-gradient(600px 260px at 20% 20%, rgba(168,85,247,0.22), transparent 60%),
+    radial-gradient(500px 260px at 90% 10%, rgba(59,130,246,0.18), transparent 60%),
+    linear-gradient(180deg, rgba(0,0,0,0.20), rgba(0,0,0,0.35));
+  pointer-events:none;
+}
+
+.appBody{
+  padding:18px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+}
+
+.appHeader{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.statusPill{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:7px 10px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,0.12);
+  background: rgba(0,0,0,0.20);
+  color: rgba(255,255,255,0.86);
+  font-size:12px;
+}
+
+.statusDot{
+  width:8px; height:8px; border-radius:999px;
+  background: #34d399;
+  box-shadow: 0 0 0 6px rgba(52,211,153,0.12);
+}
+
+.appTitle{
+  margin:0;
+  font-size:22px;
+  letter-spacing:-0.2px;
+}
+
+.appDesc{
+  margin:0;
+  color: rgba(255,255,255,0.72);
+  font-size:14px;
+  max-width: 70ch;
+}
+
+.appWhy{
+  border:1px solid rgba(255,255,255,0.10);
+  border-radius:14px;
+  background: rgba(255,255,255,0.03);
+  padding:12px;
+  color: rgba(255,255,255,0.78);
+  font-size:13px;
+}
+
+.appWhy strong{ color: rgba(255,255,255,0.92); }
+
+.appBullets{
+  display:grid;
+  gap:8px;
+  color: rgba(255,255,255,0.75);
+  font-size:13px;
+}
+
+.appBullets div{
+  display:flex;
+  gap:8px;
+  align-items:flex-start;
+}
+
+.bTick{ color:#34d399; font-weight:900; }
+
+.appActions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:auto;
+}
+
+/* Responsive */
+@media (max-width: 920px){
+  .appRow{ grid-template-columns: 1fr; }
+  .appMedia{ border-right:none; border-bottom:1px solid rgba(255,255,255,0.08); min-height: 240px; }
+}
 
     @media (max-width: 980px){
       .heroGrid{grid-template-columns: 1fr}
@@ -390,224 +515,90 @@
         </div>
       </div>
     </section>
+<!-- TOOLS -->
+<section id="tools" class="section">
+  <div class="sectionTitle">
+    <h2>Tools</h2>
+    <div class="tiny">Pick the one that matches what you need right now.</div>
+  </div>
 
-    <!-- TOOLS -->
-    <section id="tools" class="section">
-      <div class="sectionTitle">
-        <h2>Tools</h2>
-        <div class="tiny">Pick the one that matches what you need right now.</div>
+  <!-- MULTISTREAM -->
+  <section class="appSection">
+    <div class="appRow">
+      <div class="appMedia">
+        <img src="assets/images/multistream-hero.png" alt="MultiStream Tracking System visual" />
       </div>
 
-      <div class="appStack">
-        <!-- LIVE APP -->
-        <div class="appBlock">
-          <div class="appVisual">
-            <div class="badge"><span class="emojiBox">📊</span> Live now</div>
-            <div class="visualTitle">Money clarity for multi-stream life</div>
-            <div class="visualSub">
-              When income is scattered, decisions get emotional. This system brings everything into one calm view.
-            </div>
-            <div class="chips">
-              <span class="chip">Streams</span>
-              <span class="chip">Invoices</span>
-              <span class="chip">Expenses</span>
-              <span class="chip">Overdue radar</span>
-            </div>
-          </div>
-
-          <div class="appContent">
-            <h3>MultiStream Tracking System</h3>
-            <p>
-              Track multiple income streams, invoices, and expenses in one place — so you always know what’s coming in,
-              what’s going out, and what needs attention.
-            </p>
-
-            <div class="whyBox">
-              <strong>Why it matters:</strong> Most people don’t fail because they “don’t earn” — they fail because they can’t
-              see the full picture. This tool turns money chaos into simple next actions.
-            </div>
-
-            <div class="actions">
-              <a class="btn primary" href="https://freelance-command-os.vercel.app/" target="_blank" rel="noopener">Open app</a>
-              <!-- Optional: replace with Stripe premium link later -->
-              <a class="btn" href="#contact">Ask about Premium</a>
-            </div>
-          </div>
+      <div class="appBody">
+        <div class="appHeader">
+          <h3 class="appTitle">MultiStream Tracking System</h3>
+          <span class="statusPill"><span class="statusDot"></span> Live now</span>
         </div>
 
-        <!-- IN DEVELOPMENT: ADHD -->
-        <div class="appBlock">
-          <div class="appVisual alt1">
-            <div class="badge"><span class="emojiBox">🧠</span> In development</div>
-            <div class="visualTitle">Focus, without burnout</div>
-            <div class="visualSub">
-              Gentle structure for planning, prioritising, and following through when your brain resists “rigid systems.”
-            </div>
-            <div class="chips">
-              <span class="chip">Routines</span>
-              <span class="chip">Priorities</span>
-              <span class="chip">Momentum</span>
-              <span class="chip">Calm planning</span>
-            </div>
-          </div>
+        <p class="appDesc">
+          Track multiple income streams, invoices, and expenses in one calm dashboard — so you can make decisions with confidence.
+        </p>
 
-          <div class="appContent">
-            <h3>ADHD Calm Focus System</h3>
-            <p>
-              A guided workflow that helps you choose one priority, break it into doable steps, and stay consistent —
-              even on low-energy days.
-            </p>
-
-            <div class="whyBox">
-              <strong>Why it matters:</strong> When focus is unstable, life becomes reactive. This tool builds a calm “rails”
-              system so progress doesn’t depend on motivation.
-            </div>
-
-            <div class="actions">
-              <span class="btn" style="opacity:.6; cursor:not-allowed;">Coming soon</span>
-              <a class="btn" href="#contact">Join updates</a>
-            </div>
-          </div>
+        <div class="appWhy">
+          <strong>Why it matters:</strong> When money info is scattered across notes, apps, and memory, you lose control.
+          This tool gives you one source of truth — what’s coming in, what’s due, and what needs action.
         </div>
 
-        <!-- IN DEVELOPMENT: CBT -->
-        <div class="appBlock">
-          <div class="appVisual alt2">
-            <div class="badge"><span class="emojiBox">🌿</span> In development</div>
-            <div class="visualTitle">Reset the thought spiral</div>
-            <div class="visualSub">
-              A calm CBT-inspired flow to slow down, name what’s happening, and rebuild a steadier inner narrative.
-            </div>
-            <div class="chips">
-              <span class="chip">Reframe</span>
-              <span class="chip">Calm</span>
-              <span class="chip">Clarity</span>
-              <span class="chip">Next step</span>
-            </div>
-          </div>
-
-          <div class="appContent">
-            <h3>CBT Thought Reset</h3>
-            <p>
-              A simple guided tool to untangle thoughts, reduce spirals, and convert mental noise into a clear next action.
-            </p>
-
-            <div class="whyBox">
-              <strong>Why it matters:</strong> You can’t “logic” your way out of a spiral — you need a process. This tool gives
-              you that process in minutes.
-            </div>
-
-            <div class="actions">
-              <span class="btn" style="opacity:.6; cursor:not-allowed;">Coming soon</span>
-              <a class="btn" href="#contact">Join updates</a>
-            </div>
-          </div>
+        <div class="appBullets">
+          <div><span class="bTick">✓</span> Stream-by-stream visibility (no guessing)</div>
+          <div><span class="bTick">✓</span> Invoice status + overdue awareness</div>
+          <div><span class="bTick">✓</span> Clean tracking flow you’ll actually use</div>
         </div>
 
-        <!-- IN DEVELOPMENT: FOOD PANTRY -->
-        <div class="appBlock">
-          <div class="appVisual alt3">
-            <div class="badge"><span class="emojiBox">🥫</span> In development</div>
-            <div class="visualTitle">Community logistics, simplified</div>
-            <div class="visualSub">
-              Practical planning for inventory, distribution days, and community needs — kept calm, clear, and usable.
-            </div>
-            <div class="chips">
-              <span class="chip">Inventory</span>
-              <span class="chip">Distribution</span>
-              <span class="chip">Planning</span>
-              <span class="chip">Community</span>
-            </div>
-          </div>
-
-          <div class="appContent">
-            <h3>Food Pantry Planner</h3>
-            <p>
-              Organise inventory, distribution days, and demand — so volunteers can focus on people, not paperwork.
-            </p>
-
-            <div class="whyBox">
-              <strong>Why it matters:</strong> When systems are messy, support becomes stressful. This tool makes operations
-              smoother and more humane.
-            </div>
-
-            <div class="actions">
-              <span class="btn" style="opacity:.6; cursor:not-allowed;">Coming soon</span>
-              <a class="btn" href="#contact">Join updates</a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- PLATFORM -->
-    <section id="platform" class="section">
-      <div class="sectionTitle">
-        <h2>Explore the platform style</h2>
-        <div class="tiny">Calm screens. Clear steps. Minimal friction.</div>
-      </div>
-
-      <div class="tileGrid">
-        <div class="tile">
-          <div class="img"></div>
-          <h4>Guided flows</h4>
-          <p>Each tool leads you through a simple path — so you don’t have to figure it out alone.</p>
-        </div>
-        <div class="tile">
-          <div class="img"></div>
-          <h4>Snapshot views</h4>
-          <p>See what matters first: totals, next actions, and the one thing to handle today.</p>
-        </div>
-        <div class="tile">
-          <div class="img"></div>
-          <h4>Clean, calm UI</h4>
-          <p>Less clutter = less resistance. Designed to be used on real days, not perfect days.</p>
+        <div class="appActions">
+          <a class="btn primary" href="https://freelance-command-os.vercel.app/" target="_blank" rel="noopener">Open app</a>
+          <a class="btn" href="#contact">Premium / Support</a>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- WHY / HOW IT WORKS -->
-    <section id="why" class="section">
-      <div class="sectionTitle">
-        <h2>How it works</h2>
-        <div class="tiny">Pick one. Use it in minutes. Stack progress.</div>
+  <!-- PREPPERS PANTRY -->
+  <section class="appSection">
+    <div class="appRow">
+      <div class="appMedia">
+        <img src="assets/images/pantry-hero.png" alt="Preppers Pantry App visual" />
       </div>
 
-      <div class="tileGrid">
-        <div class="tile">
-          <div class="img"></div>
-          <h4>1) Choose one area</h4>
-          <p>Select the tool that matches your current pain point.</p>
+      <div class="appBody">
+        <div class="appHeader">
+          <h3 class="appTitle">Preppers Pantry App</h3>
+          <span class="statusPill"><span class="statusDot"></span> Live now</span>
         </div>
-        <div class="tile">
-          <div class="img"></div>
-          <h4>2) Follow the steps</h4>
-          <p>Use the built-in workflow to move from “stuck” to “clear.”</p>
+
+        <p class="appDesc">
+          Organise your pantry, track supplies, and reduce waste — with a calm system for planning and peace of mind.
+        </p>
+
+        <div class="appWhy">
+          <strong>Why it matters:</strong> Most people buy duplicates, miss expiry dates, and waste money.
+          This tool helps you see what you have, what you need, and what to use next — without overwhelm.
         </div>
-        <div class="tile">
-          <div class="img"></div>
-          <h4>3) Repeat calmly</h4>
-          <p>Small actions compound. You don’t need intensity — you need consistency.</p>
+
+        <div class="appBullets">
+          <div><span class="bTick">✓</span> Inventory clarity (what you have right now)</div>
+          <div><span class="bTick">✓</span> Smarter planning (buy what’s needed)</div>
+          <div><span class="bTick">✓</span> Less waste (use before expiry)</div>
+        </div>
+
+        <div class="appActions">
+          <a class="btn primary" href="https://preppers-pantry-app.vercel.app/" target="_blank" rel="noopener">Open app</a>
+          <a class="btn" href="#contact">Premium / Support</a>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="section">
-      <div class="sectionTitle">
-        <h2>Contact / Updates</h2>
-        <div class="tiny">Want early access to the next tools?</div>
-      </div>
-
-      <div class="tiny">
-        Email: <a href="mailto:hello@claritystacked.com" style="text-decoration:underline;">hello@claritystacked.com</a>
-        <span class="tiny">(you can set this up later)</span>
-        <br/><br/>
-        Tip: if you want a simple “waitlist” without paying for anything, I can add a Google Form link or a Mailchimp embed.
-      </div>
-    </section>
-
+  <!-- COMING SOON (optional placeholders, no images yet) -->
+  <div class="tiny" style="margin-top:12px;">
+    More tools are in development: ADHD Calm Focus System • CBT Thought Reset • Food Pantry Planner (advanced ops)
+  </div>
+</section>
     <footer>
       <div>© <span id="year"></span> ClarityStacked</div>
       <div class="tiny">Calm structure • Real-life transformation</div>
