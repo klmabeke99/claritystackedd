@@ -456,6 +456,29 @@
       .appVisual{border-right:none; border-bottom: 1px solid rgba(255,255,255,0.08);}
       .tile{grid-column: span 12}
     }
+    /* HERO: show preview image correctly */
+.mock.mockImg{
+  padding:0 !important;
+  background:none !important;
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 14px;
+  overflow:hidden;
+  height: 210px;
+  display:block;
+  position:relative;
+}
+
+/* disable the old overlay effect from .mock:after */
+.mock.mockImg:after{
+  display:none !important;
+}
+
+.mock.mockImg img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
   </style>
 </head>
 
@@ -504,7 +527,7 @@
 
        <div class="previewCard">
       <div class="mock mockImg">
-    <img src="assets/images/claritystacked-vision.png" alt="ClarityStacked vision" />
+     <img src="assets/images/claritystacked-vision.png" alt="ClarityStacked vision" />  
     </div>
     <div class="miniList">
     <div><span class="tick">✓</span> Each app solves one focused problem</div>
