@@ -27,10 +27,7 @@
       --teal:#18c5b5;
       --teal-dark:#0f9f95;
       --blue:#5b8def;
-      --blue-dark:#3b82f6;
       --purple:#8b5cf6;
-      --green:#16a34a;
-      --gold:#eab308;
 
       --shadow-lg:0 28px 90px rgba(59,130,246,0.10);
       --shadow-md:0 16px 42px rgba(59,130,246,0.08);
@@ -38,7 +35,6 @@
 
       --radius-xl:30px;
       --radius-lg:22px;
-      --radius-md:16px;
 
       --max:1460px;
     }
@@ -77,6 +73,7 @@
       z-index:1;
     }
 
+    /* desktop app rail */
     .app-rail{
       position:fixed;
       left:16px;
@@ -117,9 +114,7 @@
     }
 
     @media (min-width:1200px){
-      .wrap{
-        padding-left:190px;
-      }
+      .wrap{ padding-left:190px; }
     }
 
     .topbar{
@@ -493,7 +488,6 @@
       line-height:1.6;
     }
 
-    /* NEW cleaner product intro block */
     .product-intro{
       display:grid;
       gap:14px;
@@ -562,11 +556,6 @@
       margin-top:4px;
     }
 
-    .product-stack{
-      display:grid;
-      gap:18px;
-    }
-
     .product-preview-card{
       border:1px solid rgba(255,255,255,0.30);
       border-radius:28px;
@@ -590,7 +579,6 @@
     .product-visual{
       min-height:390px;
       padding:24px;
-      border-right:1px solid rgba(255,255,255,0.28);
       background:
         radial-gradient(320px 180px at 18% 28%, rgba(255,255,255,0.55), transparent 60%),
         radial-gradient(260px 180px at 85% 15%, rgba(139,92,246,0.12), transparent 65%),
@@ -771,30 +759,17 @@
     }
 
     @media (max-width:920px){
-      .app-rail{
-        display:none;
-      }
+      .app-rail{ display:none; }
 
-      .wrap{
-        padding:0 18px;
-      }
+      .wrap{ padding:0 18px; }
 
-      .topbar{
-        grid-template-columns:1fr auto;
-      }
+      .topbar{ grid-template-columns:1fr auto; }
 
-      .nav-wrap{
-        display:none;
-      }
+      .nav-wrap{ display:none; }
 
-      .hero-stack{
-        padding:24px 18px 18px;
-        gap:18px;
-      }
+      .hero-stack{ padding:24px 18px 18px; gap:18px; }
 
-      .section{
-        padding:18px;
-      }
+      .section{ padding:18px; }
 
       .trust-grid,
       .features-grid,
@@ -808,13 +783,9 @@
         flex-direction:column;
       }
 
-      .btn{
-        width:100%;
-      }
+      .btn{ width:100%; }
 
-      .live-preview{
-        height:520px;
-      }
+      .live-preview{ height:520px; }
 
       .mobile-app-bar{
         position:fixed;
@@ -841,15 +812,11 @@
         font-size:13px;
       }
 
-      body{
-        padding-bottom:84px;
-      }
+      body{ padding-bottom:84px; }
     }
 
     @media (max-width:640px){
-      .hero h1{
-        font-size:clamp(34px, 10vw, 48px);
-      }
+      .hero h1{ font-size:clamp(34px, 10vw, 48px); }
 
       .hero p.lead,
       .product-intro p,
@@ -861,21 +828,13 @@
         font-size:15px;
       }
 
-      .live-preview{
-        height:430px;
-      }
+      .live-preview{ height:430px; }
 
-      .browser-url{
-        font-size:12px;
-      }
+      .browser-url{ font-size:12px; }
 
-      .final-cta h2{
-        font-size:28px;
-      }
+      .final-cta h2{ font-size:28px; }
 
-      .product-intro h3{
-        font-size:28px;
-      }
+      .product-intro h3{ font-size:28px; }
     }
   </style>
 </head>
@@ -993,7 +952,6 @@
       </div>
     </section>
 
-    <!-- IMPROVED MULTISTREAM SECTION -->
     <section id="multistream" class="section">
       <div class="section-head">
         <div>
@@ -1002,59 +960,36 @@
         </div>
       </div>
 
-      <div class="product-stack">
-        <div class="product-intro">
-          <div class="status">
-            <span class="status-dot"></span>
-            Live now
-          </div>
-
-          <h3>One clear dashboard for work, money, and next actions</h3>
-
-          <p>
-            The MultiStream Command System helps you see what is coming in, what is in progress, what is overdue, and what needs attention — without jumping between scattered notes, spreadsheets, and apps.
-          </p>
-
-          <div class="why-box">
-            <strong>Why it matters:</strong> when income, invoices, and project activity live in too many places, decision-making gets slower and more stressful. This tool gives you one clean operational view.
-          </div>
-
-          <div class="feature-list">
-            <div><strong>✓</strong> Track multiple income streams from one place</div>
-            <div><strong>✓</strong> Monitor clients, invoices, expenses, and projects together</div>
-            <div><strong>✓</strong> Use overdue radar to catch what needs action fast</div>
-            <div><strong>✓</strong> Keep your workflow visible and easier to manage daily</div>
-          </div>
-
-          <div class="action-row">
-            <a class="btn btn-primary" href="https://freelance-command-center-opal.vercel.app/" target="_blank" rel="noopener">
-              Open the app
-            </a>
-            <a class="btn btn-secondary" href="#features">
-              Explore features
-            </a>
-          </div>
+      <div class="product-intro">
+        <div class="status">
+          <span class="status-dot"></span>
+          Live now
         </div>
 
-        <div class="product-preview-card">
-          <div class="preview-shell">
-            <div class="browser-bar">
-              <div class="browser-dots">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-              <div class="browser-url">freelance-command-center-opal.vercel.app/dashboard-preview</div>
-            </div>
+        <h3>One clear dashboard for work, money, and next actions</h3>
 
-            <iframe
-              class="live-preview"
-              src="https://freelance-command-center-opal.vercel.app/dashboard-preview"
-              title="MultiStream Command System product preview"
-              loading="lazy"
-              referrerpolicy="strict-origin-when-cross-origin">
-            </iframe>
-          </div>
+        <p>
+          The MultiStream Command System helps you see what is coming in, what is in progress, what is overdue, and what needs attention — without jumping between scattered notes, spreadsheets, and apps.
+        </p>
+
+        <div class="why-box">
+          <strong>Why it matters:</strong> when income, invoices, and project activity live in too many places, decision-making gets slower and more stressful. This tool gives you one clean operational view.
+        </div>
+
+        <div class="feature-list">
+          <div><strong>✓</strong> Track multiple income streams from one place</div>
+          <div><strong>✓</strong> Monitor clients, invoices, expenses, and projects together</div>
+          <div><strong>✓</strong> Use overdue radar to catch what needs action fast</div>
+          <div><strong>✓</strong> Keep your workflow visible and easier to manage daily</div>
+        </div>
+
+        <div class="action-row">
+          <a class="btn btn-primary" href="https://freelance-command-center-opal.vercel.app/" target="_blank" rel="noopener">
+            Open the app
+          </a>
+          <a class="btn btn-secondary" href="#features">
+            Explore features
+          </a>
         </div>
       </div>
     </section>
