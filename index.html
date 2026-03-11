@@ -244,26 +244,26 @@
       pointer-events:none;
     }
 
-    .hero-grid{
+    /* UPDATED HERO LAYOUT */
+    .hero-stack{
       display:grid;
-      grid-template-columns:0.9fr 1.1fr;
-      gap:34px;
-      align-items:center;
-      padding:40px 34px 30px;
-    }
-
-    .hero-copy{
+      gap:24px;
+      padding:34px 34px 30px;
       position:relative;
       z-index:2;
     }
 
+    .hero-copy{
+      max-width:920px;
+    }
+
     .hero-logo-wrap{
       display:block;
-      margin-bottom:20px;
+      margin-bottom:16px;
     }
 
     .hero-logo-copy{
-      max-width:320px;
+      max-width:360px;
     }
 
     .hero-logo-copy h3{
@@ -308,29 +308,30 @@
       box-shadow:0 0 0 6px rgba(24,197,181,0.10);
     }
 
+    /* REDUCED HERO TITLE SIZE */
     .hero h1{
-      margin:0 0 16px;
-      font-size:clamp(40px, 5vw, 76px);
-      line-height:0.96;
-      letter-spacing:-1.5px;
-      max-width:11ch;
+      margin:0 0 14px;
+      font-size:clamp(34px, 4vw, 56px);
+      line-height:1.02;
+      letter-spacing:-1.2px;
+      max-width:14ch;
       color:var(--text-strong);
       text-wrap:balance;
     }
 
     .hero p.lead{
-      margin:0 0 22px;
+      margin:0 0 18px;
       color:var(--muted);
-      font-size:clamp(17px, 1.75vw, 20px);
-      max-width:60ch;
-      line-height:1.65;
+      font-size:clamp(16px, 1.3vw, 18px);
+      max-width:78ch;
+      line-height:1.7;
     }
 
     .cta-row{
       display:flex;
       gap:12px;
       flex-wrap:wrap;
-      margin-bottom:18px;
+      margin-bottom:16px;
     }
 
     .hero-badges{
@@ -777,7 +778,6 @@
     }
 
     @media (max-width:1180px){
-      .hero-grid,
       .product-block{
         grid-template-columns:1fr;
       }
@@ -790,7 +790,6 @@
       .trust-grid{grid-template-columns:repeat(2, 1fr)}
       .features-grid{grid-template-columns:repeat(2, 1fr)}
       .tools-grid{grid-template-columns:repeat(2, 1fr)}
-      .hero h1{max-width:none}
     }
 
     @media (max-width:920px){
@@ -810,10 +809,9 @@
         display:none;
       }
 
-      .hero-grid{
-        grid-template-columns:1fr;
-        gap:20px;
+      .hero-stack{
         padding:24px 18px 18px;
+        gap:18px;
       }
 
       .section{
@@ -930,8 +928,9 @@
       </a>
     </header>
 
+    <!-- UPDATED HERO -->
     <section class="hero">
-      <div class="hero-grid">
+      <div class="hero-stack">
         <div class="hero-copy">
           <div class="hero-logo-wrap">
             <div class="hero-logo-copy">
