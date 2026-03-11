@@ -13,10 +13,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="icon" type="image/png" href="assets/images/claritystacked-mark.png" />
   <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=Sora:wght@600;700;800&display=swap"
     rel="stylesheet"
   />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
 
   <style>
     :root{
@@ -37,6 +36,8 @@
       --blue:#5b8def;
       --blue-dark:#3b82f6;
       --purple:#8b5cf6;
+      --green:#16a34a;
+      --gold:#eab308;
 
       --shadow-lg:0 28px 90px rgba(59, 130, 246, 0.10);
       --shadow-md:0 16px 42px rgba(59, 130, 246, 0.08);
@@ -83,6 +84,46 @@
       z-index:1;
     }
 
+    /* ===== DESKTOP SIDE APP NAV ===== */
+    .app-nav{
+      position:fixed;
+      left:18px;
+      top:118px;
+      width:220px;
+      padding:16px;
+      border-radius:20px;
+      background:rgba(255,255,255,0.88);
+      border:1px solid rgba(15,23,42,0.08);
+      box-shadow:0 18px 50px rgba(15,23,42,0.08);
+      backdrop-filter:blur(10px);
+      z-index:50;
+    }
+
+    .app-nav h4{
+      margin:0 0 10px;
+      font-size:12px;
+      color:#5f7388;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+    }
+
+    .app-nav a{
+      display:block;
+      padding:10px 12px;
+      border-radius:12px;
+      font-weight:700;
+      font-size:14px;
+      color:#314960;
+      transition:background .18s ease, color .18s ease;
+    }
+
+    .app-nav a:hover{
+      background:rgba(91,141,239,0.10);
+      color:#0f172a;
+    }
+
+    /* ===== TOP BAR ===== */
     .topbar{
       display:grid;
       grid-template-columns:auto 1fr auto;
@@ -175,6 +216,7 @@
       background:rgba(255,255,255,0.72);
     }
 
+    /* ===== HERO ===== */
     .hero{
       margin-top:18px;
       border:1px solid rgba(15, 23, 42, 0.08);
@@ -212,73 +254,31 @@
     }
 
     .hero-logo-wrap{
-      display:flex;
-      align-items:center;
-      gap:20px;
+      display:block;
       margin-bottom:20px;
     }
 
-    .hero-logo-card{
-      width:138px;
-      min-width:138px;
-      height:138px;
-      border-radius:28px;
-      background:
-        radial-gradient(100px 100px at 35% 35%, rgba(24,197,181,0.16), transparent 60%),
-        radial-gradient(110px 110px at 75% 20%, rgba(91,141,239,0.18), transparent 60%),
-        linear-gradient(180deg, rgba(255,255,255,0.56), rgba(255,255,255,0.18));
-      border:1px solid rgba(15, 23, 42, 0.06);
-      box-shadow:0 18px 40px rgba(91,141,239,0.12);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:16px;
-      position:relative;
-      overflow:hidden;
-    }
-
-    .hero-logo-card::before{
-      content:"";
-      position:absolute;
-      inset:12px;
-      border-radius:22px;
-      background:
-        radial-gradient(circle at 50% 30%, rgba(255,255,255,0.75), transparent 55%),
-        linear-gradient(180deg, rgba(255,255,255,0.30), rgba(255,255,255,0.06));
-      filter:blur(2px);
-      pointer-events:none;
-    }
-
-    .hero-logo-card img{
-      width:100%;
-      height:100%;
-      object-fit:contain;
-      position:relative;
-      z-index:2;
-      filter:drop-shadow(0 10px 22px rgba(91,141,239,0.16));
-    }
-
     .hero-logo-copy{
-      max-width:300px;
+      max-width:320px;
     }
 
-   .hero-logo-copy h3{
-    margin:0 0 8px;
-    font-family:'Sora', sans-serif;
-    font-size:36px;
-    font-weight:800;
-    line-height:0.95;
-    letter-spacing:-1.5px;
-    color:#081120;
-}
+    .hero-logo-copy h3{
+      margin:0 0 8px;
+      font-family:'Sora', sans-serif;
+      font-size:36px;
+      font-weight:800;
+      line-height:0.95;
+      letter-spacing:-1.5px;
+      color:#081120;
+    }
 
-   .hero-logo-copy p{
-     margin:0;
-    color:#4b5f73;
-    font-size:15px;
-    line-height:1.7;
-    max-width:30ch;
-   }
+    .hero-logo-copy p{
+      margin:0;
+      color:#4b5f73;
+      font-size:15px;
+      line-height:1.7;
+      max-width:30ch;
+    }
 
     .eyebrow{
       display:inline-flex;
@@ -419,6 +419,7 @@
       z-index:2;
     }
 
+    /* ===== SECTIONS ===== */
     .section{
       margin-top:20px;
       border:1px solid rgba(15, 23, 42, 0.07);
@@ -487,6 +488,7 @@
       line-height:1.6;
     }
 
+    /* ===== PRODUCT BLOCKS ===== */
     .product-block{
       display:grid;
       grid-template-columns:1.04fr .96fr;
@@ -524,6 +526,13 @@
       border-radius:50%;
       background:radial-gradient(circle, rgba(91,141,239,0.12), transparent 70%);
       pointer-events:none;
+    }
+
+    .product-visual.pantry-visual{
+      background:
+        radial-gradient(320px 180px at 18% 28%, rgba(255,255,255,0.55), transparent 60%),
+        radial-gradient(260px 180px at 85% 15%, rgba(34,197,94,0.14), transparent 65%),
+        linear-gradient(135deg, rgba(16,185,129,0.18), rgba(250,204,21,0.16));
     }
 
     .mini-badge{
@@ -749,6 +758,17 @@
       flex-wrap:wrap;
     }
 
+    /* ===== MOBILE QUICK APP BAR ===== */
+    .mobile-app-bar{
+      display:none;
+    }
+
+    @media (min-width:1100px){
+      .wrap{
+        padding-left:260px;
+      }
+    }
+
     @media (max-width: 1180px){
       .hero-grid,
       .product-block{
@@ -767,6 +787,10 @@
     }
 
     @media (max-width: 920px){
+      .app-nav{
+        display:none;
+      }
+
       .topbar{
         grid-template-columns:1fr auto;
       }
@@ -777,9 +801,29 @@
 
       .live-preview{height:620px}
       .steps-grid{grid-template-columns:1fr}
-      .hero-logo-wrap{
-        flex-direction:column;
-        align-items:flex-start;
+
+      .mobile-app-bar{
+        position:fixed;
+        bottom:0;
+        left:0;
+        right:0;
+        display:flex;
+        gap:8px;
+        padding:12px;
+        background:rgba(255,255,255,0.96);
+        border-top:1px solid rgba(15,23,42,0.08);
+        box-shadow:0 -8px 24px rgba(15,23,42,0.06);
+        z-index:100;
+      }
+
+      .mobile-app-bar a{
+        flex:1;
+        text-align:center;
+        padding:12px 8px;
+        border-radius:12px;
+        background:linear-gradient(135deg, rgba(24,197,181,0.18), rgba(91,141,239,0.18));
+        font-weight:800;
+        font-size:13px;
       }
     }
 
@@ -801,26 +845,21 @@
       }
       .live-preview{height:430px}
       .browser-url{font-size:12px}
-      .hero-logo-card{
-        width:104px;
-        min-width:104px;
-        height:104px;
-        border-radius:22px;
-      }
       .final-cta h2{font-size:28px}
-
-      .hero-logo-wrap-textonly{
-      display:block;
-     margin-bottom:20px;
-}
-   .hero-logo-card{
-    display:none;
-}
+      body{
+        padding-bottom:84px;
+      }
     }
   </style>
 </head>
 <body>
   <div class="noise"></div>
+
+  <nav class="app-nav">
+    <h4>Command Systems</h4>
+    <a href="#multistream">MultiStream System</a>
+    <a href="#pantry">Prepper Pantry</a>
+  </nav>
 
   <div class="wrap">
     <header class="topbar">
@@ -831,7 +870,8 @@
 
       <div class="nav-wrap">
         <nav class="nav">
-          <a href="#product">Product</a>
+          <a href="#multistream">Featured</a>
+          <a href="#pantry">Pantry</a>
           <a href="#features">Features</a>
           <a href="#tools">Tools</a>
           <a href="#how">How it works</a>
@@ -846,12 +886,12 @@
     <section class="hero">
       <div class="hero-grid">
         <div class="hero-copy">
-          <div class="hero-logo-wrap hero-logo-wrap-textonly">
-         <div class="hero-logo-copy">
-        <h3>ClarityStacked</h3>
-       <p>Focused command systems designed to turn overwhelm into calm, practical action.</p>
-       </div>
-       </div>
+          <div class="hero-logo-wrap">
+            <div class="hero-logo-copy">
+              <h3>ClarityStacked</h3>
+              <p>Focused command systems designed to turn overwhelm into calm, practical action.</p>
+            </div>
+          </div>
 
           <div class="eyebrow">
             <span class="eyebrow-dot"></span>
@@ -869,15 +909,18 @@
             <a class="btn btn-primary" href="https://freelance-command-center-opal.vercel.app/" target="_blank" rel="noopener">
               Open the app
             </a>
-            <a class="btn btn-secondary" href="#product">
+            <a class="btn btn-secondary" href="#multistream">
               See product details
+            </a>
+            <a class="btn btn-secondary" href="https://prepper-pantry-command.vercel.app/" target="_blank" rel="noopener">
+              Open Pantry app
             </a>
           </div>
 
           <div class="hero-badges">
             <div class="pill">Live dashboard preview</div>
             <div class="pill">Scroll inside the product</div>
-            <div class="pill">Standalone tool</div>
+            <div class="pill">Standalone tools</div>
           </div>
         </div>
 
@@ -923,7 +966,7 @@
       </div>
     </section>
 
-    <section id="product" class="section">
+    <section id="multistream" class="section">
       <div class="section-head">
         <div>
           <h2>Featured product</h2>
@@ -979,6 +1022,68 @@
             </a>
             <a class="btn btn-secondary" href="#features">
               Explore features
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pantry" class="section">
+      <div class="section-head">
+        <div>
+          <h2>Prepper Pantry Command</h2>
+          <p>A calm system for managing food inventory, expiry, and smarter restocking.</p>
+        </div>
+      </div>
+
+      <div class="product-block">
+        <div class="product-visual pantry-visual">
+          <div class="mini-badge">Live now • Household command system</div>
+
+          <div class="visual-copy">
+            <h3>Prepper Pantry Command</h3>
+            <p>
+              Organise pantry stock, track expiry dates, and see what to use next — all from one clear dashboard.
+            </p>
+
+            <div class="chip-row">
+              <span class="chip">Inventory tracking</span>
+              <span class="chip">Expiry alerts</span>
+              <span class="chip">Use-next logic</span>
+              <span class="chip">Waste reduction</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-copy">
+          <div class="status">
+            <span class="status-dot"></span>
+            Live now
+          </div>
+
+          <h3>Know what you have, what to use, and what to buy next</h3>
+
+          <p>
+            Prepper Pantry Command helps households avoid duplicate purchases, reduce waste, and plan meals using what is already available.
+          </p>
+
+          <div class="why-box">
+            <strong>Why it matters:</strong> when pantry items are scattered or forgotten, money gets wasted and planning becomes stressful. This system restores visibility.
+          </div>
+
+          <div class="feature-list">
+            <div><strong>✓</strong> Track pantry items in one place</div>
+            <div><strong>✓</strong> See upcoming expiries early</div>
+            <div><strong>✓</strong> Plan meals from current stock</div>
+            <div><strong>✓</strong> Restock smarter, not blindly</div>
+          </div>
+
+          <div class="action-row">
+            <a class="btn btn-primary" href="https://prepper-pantry-command.vercel.app/" target="_blank" rel="noopener">
+              Open the app
+            </a>
+            <a class="btn btn-secondary" href="#tools">
+              View all tools
             </a>
           </div>
         </div>
@@ -1056,7 +1161,7 @@
         </div>
         <div class="tool-card">
           <div class="tag">Live now</div>
-          <h3>Prepper Pantry App</h3>
+          <h3>Prepper Pantry Command</h3>
           <p>Organise household supplies, reduce waste, and keep inventory visible with less stress.</p>
         </div>
         <div class="tool-card">
@@ -1071,15 +1176,15 @@
       <h2>Start with the tool that solves today’s problem</h2>
       <p>
         ClarityStacked helps you move from chaos to clarity with focused systems you can actually use.
-        Begin with the MultiStream Command System and build from there.
+        Begin with the MultiStream Command System or jump straight into Prepper Pantry Command.
       </p>
 
       <div class="cta-row" style="justify-content:center;">
         <a class="btn btn-primary" href="https://freelance-command-center-opal.vercel.app/" target="_blank" rel="noopener">
-          Open the app
+          Open MultiStream
         </a>
-        <a class="btn btn-secondary" href="#product">
-          View product details
+        <a class="btn btn-secondary" href="https://prepper-pantry-command.vercel.app/" target="_blank" rel="noopener">
+          Open Pantry
         </a>
       </div>
     </section>
@@ -1088,6 +1193,11 @@
       <div>© <span id="year"></span> ClarityStacked</div>
       <div>Calm structure • Real-life transformation</div>
     </footer>
+  </div>
+
+  <div class="mobile-app-bar">
+    <a href="https://freelance-command-center-opal.vercel.app/" target="_blank" rel="noopener">MultiStream</a>
+    <a href="https://prepper-pantry-command.vercel.app/" target="_blank" rel="noopener">Pantry</a>
   </div>
 
   <script>
