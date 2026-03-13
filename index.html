@@ -787,19 +787,19 @@
 
   .live-preview{ height:520px; }
 
-  /* only MultiStream preview in hero */
+  /* MultiStream preview as a real mobile viewport */
   .hero .preview-shell{
-    height: 420px;
+    max-width: 430px;
+    margin: 0 auto;
+    border-radius: 30px;
     overflow: hidden;
   }
 
   .hero .live-preview{
-    width: 1440px;
-    height: 900px;
-    border: 0;
+    width: 100%;
+    height: 760px;
     display: block;
-    transform: scale(0.25);
-    transform-origin: top left;
+    border: 0;
   }
 
   .mobile-app-bar{
@@ -845,16 +845,13 @@
 
   .live-preview{ height:430px; }
 
-  /* smaller phones */
   .hero .preview-shell{
-    height: 335px;
+    max-width: 100%;
   }
 
   .hero .live-preview{
-    width: 1440px;
-    height: 900px;
-    transform: scale(0.21);
-    transform-origin: top left;
+    width: 100%;
+    height: 680px;
   }
 
   .browser-url{ font-size:12px; }
