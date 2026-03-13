@@ -787,16 +787,18 @@
 
   .live-preview{ height:520px; }
 
-  /* fix only the hero MultiStream iframe on mobile */
+  /* only MultiStream preview in hero */
   .hero .preview-shell{
-    height: 430px;
+    height: 420px;
     overflow: hidden;
   }
 
   .hero .live-preview{
-    width: 1280px;
-    height: 820px;
-    transform: scale(0.34);
+    width: 1440px;
+    height: 900px;
+    border: 0;
+    display: block;
+    transform: scale(0.25);
     transform-origin: top left;
   }
 
@@ -841,18 +843,17 @@
     font-size:15px;
   }
 
-  /* keep pantry/general previews normal */
   .live-preview{ height:430px; }
 
-  /* tighter fit for smaller phones */
+  /* smaller phones */
   .hero .preview-shell{
-    height: 365px;
+    height: 335px;
   }
 
   .hero .live-preview{
-    width: 1280px;
-    height: 820px;
-    transform: scale(0.285);
+    width: 1440px;
+    height: 900px;
+    transform: scale(0.21);
     transform-origin: top left;
   }
 
