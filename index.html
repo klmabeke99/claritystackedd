@@ -73,7 +73,6 @@
       z-index:1;
     }
 
-    /* desktop app rail */
     .app-rail{
       position:fixed;
       left:16px;
@@ -159,6 +158,8 @@
       backdrop-filter:blur(10px);
       border-radius:999px;
       box-shadow:var(--shadow-sm);
+      flex-wrap:wrap;
+      justify-content:center;
     }
 
     .nav a{
@@ -610,6 +611,13 @@
         linear-gradient(135deg, rgba(16,185,129,0.18), rgba(250,204,21,0.16));
     }
 
+    .product-visual.third-visual{
+      background:
+        radial-gradient(320px 180px at 18% 28%, rgba(255,255,255,0.55), transparent 60%),
+        radial-gradient(260px 180px at 85% 15%, rgba(139,92,246,0.16), transparent 65%),
+        linear-gradient(135deg, rgba(139,92,246,0.16), rgba(91,141,239,0.18));
+    }
+
     .mini-badge{
       display:inline-flex;
       align-items:center;
@@ -696,7 +704,7 @@
 
     .tools-grid{
       display:grid;
-      grid-template-columns:repeat(3, 1fr);
+      grid-template-columns:repeat(4, 1fr);
       gap:14px;
       margin-top:14px;
     }
@@ -758,108 +766,112 @@
       .tools-grid{grid-template-columns:repeat(2, 1fr)}
     }
 
-@media (max-width:920px){
-  .app-rail{ display:none; }
+    @media (max-width:920px){
+      .app-rail{ display:none; }
 
-  .wrap{ padding:0 18px; }
+      .wrap{ padding:0 18px; }
 
-  .topbar{ grid-template-columns:1fr auto; }
+      .topbar{ grid-template-columns:1fr auto; }
 
-  .nav-wrap{ display:none; }
+      .nav-wrap{ display:none; }
 
-  .hero-stack{ padding:24px 18px 18px; gap:18px; }
+      .hero-stack{ padding:24px 18px 18px; gap:18px; }
 
-  .section{ padding:18px; }
+      .section{ padding:18px; }
 
-  .trust-grid,
-  .features-grid,
-  .tools-grid,
-  .steps-grid{
-    grid-template-columns:1fr;
-  }
+      .trust-grid,
+      .features-grid,
+      .tools-grid,
+      .steps-grid{
+        grid-template-columns:1fr;
+      }
 
-  .cta-row,
-  .action-row{
-    flex-direction:column;
-  }
+      .cta-row,
+      .action-row{
+        flex-direction:column;
+      }
 
-  .btn{ width:100%; }
+      .btn{ width:100%; }
 
-  .live-preview{ height:520px; }
+      .live-preview{ height:520px; }
 
-  /* MultiStream preview as a real mobile viewport */
-  .hero .preview-shell{
-    max-width: 430px;
-    margin: 0 auto;
-    border-radius: 30px;
-    overflow: hidden;
-  }
+      .hero .preview-shell{
+        max-width:430px;
+        margin:0 auto;
+        border-radius:30px;
+        overflow:hidden;
+      }
 
-  .hero .live-preview{
-    width: 100%;
-    height: 760px;
-    display: block;
-    border: 0;
-  }
+      .hero .live-preview{
+        width:100%;
+        height:760px;
+        display:block;
+        border:0;
+      }
 
-  .mobile-app-bar{
-    position:fixed;
-    bottom:0;
-    left:0;
-    right:0;
-    display:flex;
-    gap:8px;
-    padding:12px;
-    background:rgba(255,255,255,0.92);
-    border-top:1px solid rgba(15,23,42,0.08);
-    box-shadow:0 -8px 24px rgba(15,23,42,0.06);
-    backdrop-filter:blur(10px);
-    z-index:100;
-  }
+      .mobile-app-bar{
+        position:fixed;
+        bottom:0;
+        left:0;
+        right:0;
+        display:grid;
+        grid-template-columns:repeat(3, 1fr);
+        gap:8px;
+        padding:12px;
+        background:rgba(255,255,255,0.92);
+        border-top:1px solid rgba(15,23,42,0.08);
+        box-shadow:0 -8px 24px rgba(15,23,42,0.06);
+        backdrop-filter:blur(10px);
+        z-index:100;
+      }
 
-  .mobile-app-bar a{
-    flex:1;
-    text-align:center;
-    padding:12px 8px;
-    border-radius:12px;
-    background:linear-gradient(135deg, rgba(24,197,181,0.18), rgba(91,141,239,0.18));
-    font-weight:800;
-    font-size:13px;
-  }
+      .mobile-app-bar a{
+        text-align:center;
+        padding:12px 8px;
+        border-radius:12px;
+        background:linear-gradient(135deg, rgba(24,197,181,0.18), rgba(91,141,239,0.18));
+        font-weight:800;
+        font-size:13px;
+      }
 
-  body{ padding-bottom:84px; }
-}
+      body{ padding-bottom:84px; }
+    }
 
-@media (max-width:640px){
-  .hero h1{ font-size:clamp(34px, 10vw, 48px); }
+    @media (max-width:640px){
+      .hero h1{ font-size:clamp(34px, 10vw, 48px); }
 
-  .hero p.lead,
-  .product-intro p,
-  .visual-copy p,
-  .trust-card p,
-  .feature-card p,
-  .tool-card p,
-  .step-card p{
-    font-size:15px;
-  }
+      .hero p.lead,
+      .product-intro p,
+      .visual-copy p,
+      .trust-card p,
+      .feature-card p,
+      .tool-card p,
+      .step-card p{
+        font-size:15px;
+      }
 
-  .live-preview{ height:430px; }
+      .live-preview{ height:430px; }
 
-  .hero .preview-shell{
-    max-width: 100%;
-  }
+      .hero .preview-shell{
+        max-width:100%;
+      }
 
-  .hero .live-preview{
-    width: 100%;
-    height: 680px;
-  }
+      .hero .live-preview{
+        width:100%;
+        height:680px;
+      }
 
-  .browser-url{ font-size:12px; }
+      .browser-url{ font-size:12px; }
 
-  .final-cta h2{ font-size:28px; }
+      .final-cta h2{ font-size:28px; }
 
-  .product-intro h3{ font-size:28px; }
-}
+      .product-intro h3{ font-size:28px; }
+
+      .mobile-app-bar a{
+        font-size:12px;
+        padding:11px 6px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -869,6 +881,7 @@
     <div class="app-rail-title">Command Systems</div>
     <a href="#multistream">MultiStream</a>
     <a href="#pantry">Prepper Pantry</a>
+    <a href="#third-app">Third App</a>
   </nav>
 
   <div class="wrap">
@@ -882,6 +895,7 @@
         <nav class="nav">
           <a href="#multistream">Featured</a>
           <a href="#pantry">Pantry</a>
+          <a href="#third-app">Third App</a>
           <a href="#features">Features</a>
           <a href="#tools">Tools</a>
           <a href="#how">How it works</a>
@@ -1106,6 +1120,99 @@
       </div>
     </section>
 
+    <!-- THIRD APP START -->
+    <!-- Replace the placeholder name, URL, and copy below with your real third app details -->
+
+    <section id="third-app" class="section">
+      <div class="section-head">
+        <div>
+          <h2>Third App Command</h2>
+          <p>A focused standalone system for organising one more important part of daily work or life.</p>
+        </div>
+      </div>
+
+      <div class="product-visual third-visual">
+        <div class="mini-badge">Live now • Standalone command system</div>
+
+        <div class="visual-copy">
+          <h3>Third App Command</h3>
+          <p>
+            Bring another area of your workflow into one visible, calmer space so decisions become easier and progress stays clearer.
+          </p>
+
+          <div class="chip-row">
+            <span class="chip">Clear tracking</span>
+            <span class="chip">Simple workflow</span>
+            <span class="chip">Focused actions</span>
+            <span class="chip">Low friction</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-intro" style="margin-top:18px;">
+        <div class="status">
+          <span class="status-dot"></span>
+          Live now
+        </div>
+
+        <h3>Keep another key system visible, organised, and easier to manage</h3>
+
+        <p>
+          Third App Command is designed to reduce the confusion that comes from scattered information and disconnected tools. It gives users one clear place to see what matters and act faster with less stress.
+        </p>
+
+        <div class="why-box">
+          <strong>Why it matters:</strong> when information is split across too many places, momentum slows down. This app helps restore clarity with a more focused working view.
+        </div>
+
+        <div class="feature-list">
+          <div><strong>✓</strong> Keep important information in one place</div>
+          <div><strong>✓</strong> Reduce switching between scattered tools</div>
+          <div><strong>✓</strong> Make next steps easier to see</div>
+          <div><strong>✓</strong> Support calmer, clearer daily decisions</div>
+        </div>
+
+        <div class="action-row">
+          <a class="btn btn-primary" href="https://your-third-app-url.vercel.app/" target="_blank" rel="noopener">
+            Open the app
+          </a>
+          <a class="btn btn-secondary" href="#third-app-preview">
+            See live preview
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="third-app-preview" class="section">
+      <div class="section-head">
+        <div>
+          <h2>Third App live preview</h2>
+          <p>Browse the product directly on the page before opening the full app.</p>
+        </div>
+      </div>
+
+      <div class="preview-shell">
+        <div class="browser-bar">
+          <div class="browser-dots">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="browser-url">your-third-app-url.vercel.app</div>
+        </div>
+
+        <iframe
+          class="live-preview"
+          src="https://your-third-app-url.vercel.app/"
+          title="Third App preview"
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin">
+        </iframe>
+      </div>
+    </section>
+
+    <!-- THIRD APP END -->
+
     <section id="features" class="section">
       <div class="section-head">
         <div>
@@ -1129,7 +1236,7 @@
         </div>
         <div class="feature-card">
           <h3>Overdue / expiry awareness</h3>
-          <p>Catch what needs action sooner, whether that is an invoice or pantry item.</p>
+          <p>Catch what needs action sooner, whether that is an invoice, pantry item, or another key task.</p>
         </div>
       </div>
     </section>
@@ -1181,6 +1288,11 @@
           <p>Organise household supplies, reduce waste, and keep inventory visible with less stress.</p>
         </div>
         <div class="tool-card">
+          <div class="tag">Live now</div>
+          <h3>Third App Command</h3>
+          <p>Add your third focused system here so visitors can quickly understand what it solves.</p>
+        </div>
+        <div class="tool-card">
           <div class="tag">In development</div>
           <h3>More focused tools coming</h3>
           <p>New standalone apps will continue the same ClarityStacked approach: clear structure, low friction, and real-life usefulness.</p>
@@ -1192,7 +1304,7 @@
       <h2>Start with the tool that solves today’s problem</h2>
       <p>
         ClarityStacked helps you move from chaos to clarity with focused systems you can actually use.
-        Begin with the MultiStream Command System or jump straight into Prepper Pantry Command.
+        Begin with MultiStream, jump into Prepper Pantry, or open the third app that matches your next priority.
       </p>
 
       <div class="cta-row" style="justify-content:center;">
@@ -1201,6 +1313,9 @@
         </a>
         <a class="btn btn-secondary" href="https://prepper-pantry-command.vercel.app/" target="_blank" rel="noopener">
           Open Pantry
+        </a>
+        <a class="btn btn-secondary" href="https://your-third-app-url.vercel.app/" target="_blank" rel="noopener">
+          Open Third App
         </a>
       </div>
     </section>
@@ -1214,6 +1329,7 @@
   <div class="mobile-app-bar">
     <a href="https://freelance-command-center-opal.vercel.app/" target="_blank" rel="noopener">MultiStream</a>
     <a href="https://prepper-pantry-command.vercel.app/" target="_blank" rel="noopener">Pantry</a>
+    <a href="https://your-third-app-url.vercel.app/" target="_blank" rel="noopener">Third App</a>
   </div>
 
   <script>
