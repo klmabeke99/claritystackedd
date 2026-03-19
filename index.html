@@ -28,6 +28,7 @@
       --teal-dark:#0f9f95;
       --blue:#5b8def;
       --purple:#8b5cf6;
+      --indigo:#7c3aed;
 
       --shadow-lg:0 28px 90px rgba(59,130,246,0.10);
       --shadow-md:0 16px 42px rgba(59,130,246,0.08);
@@ -77,7 +78,7 @@
       position:fixed;
       left:16px;
       top:126px;
-      width:148px;
+      width:160px;
       z-index:40;
       padding:10px;
       border-radius:20px;
@@ -113,7 +114,7 @@
     }
 
     @media (min-width:1200px){
-      .wrap{ padding-left:190px; }
+      .wrap{ padding-left:202px; }
     }
 
     .topbar{
@@ -500,6 +501,27 @@
       margin-bottom:0;
     }
 
+    .status{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-size:13px;
+      font-weight:800;
+      color:#36506a;
+      padding:8px 12px;
+      border-radius:999px;
+      background:rgba(255,255,255,0.48);
+      border:1px solid rgba(255,255,255,0.36);
+      width:max-content;
+    }
+
+    .status-dot{
+      width:8px;
+      height:8px;
+      border-radius:999px;
+      background:var(--teal);
+    }
+
     .product-intro h3{
       margin:0;
       font-size:32px;
@@ -598,6 +620,13 @@
         linear-gradient(135deg, rgba(96,165,250,0.16), rgba(167,139,250,0.18));
     }
 
+    .product-visual.adhd-visual{
+      background:
+        radial-gradient(320px 180px at 18% 28%, rgba(255,255,255,0.58), transparent 60%),
+        radial-gradient(260px 180px at 85% 15%, rgba(124,58,237,0.18), transparent 65%),
+        linear-gradient(135deg, rgba(125,211,252,0.18), rgba(129,140,248,0.18));
+    }
+
     .mini-badge{
       display:inline-flex;
       align-items:center;
@@ -684,7 +713,7 @@
 
     .tools-grid{
       display:grid;
-      grid-template-columns:repeat(4, 1fr);
+      grid-template-columns:repeat(5, 1fr);
       gap:14px;
       margin-top:14px;
     }
@@ -740,6 +769,10 @@
       display:none;
     }
 
+    @media (max-width:1300px){
+      .tools-grid{grid-template-columns:repeat(3, 1fr)}
+    }
+
     @media (max-width:1180px){
       .trust-grid{grid-template-columns:repeat(2, 1fr)}
       .features-grid{grid-template-columns:repeat(2, 1fr)}
@@ -790,7 +823,7 @@
         left:0;
         right:0;
         display:grid;
-        grid-template-columns:repeat(3, 1fr);
+        grid-template-columns:repeat(4, 1fr);
         gap:8px;
         padding:12px;
         background:rgba(255,255,255,0.92);
@@ -806,10 +839,10 @@
         border-radius:12px;
         background:linear-gradient(135deg, rgba(24,197,181,0.18), rgba(91,141,239,0.18));
         font-weight:800;
-        font-size:13px;
+        font-size:12px;
       }
 
-      body{ padding-bottom:84px; }
+      body{ padding-bottom:88px; }
     }
 
     @media (max-width:640px){
@@ -841,8 +874,8 @@
       .product-intro h3{ font-size:28px; }
 
       .mobile-app-bar a{
-        font-size:12px;
-        padding:11px 6px;
+        font-size:11px;
+        padding:10px 5px;
       }
     }
   </style>
@@ -855,6 +888,7 @@
     <a href="#multistream">MultiStream</a>
     <a href="#pantry">Prepper Pantry</a>
     <a href="#calmframe">CalmFrame</a>
+    <a href="#adhd-work">ADHD Work</a>
   </nav>
 
   <div class="wrap">
@@ -869,6 +903,7 @@
           <a href="#multistream">Featured</a>
           <a href="#pantry">Pantry</a>
           <a href="#calmframe">CalmFrame</a>
+          <a href="#adhd-work">ADHD Work</a>
           <a href="#features">Features</a>
           <a href="#tools">Tools</a>
           <a href="#how">How it works</a>
@@ -1097,7 +1132,7 @@
       <div class="section-head">
         <div>
           <h2>CalmFrame</h2>
-          <p>A CBT self-help app for anxiety, built to help users check in, reframe anxious thoughts, and take the next steady step. :contentReference[oaicite:0]{index=0}</p>
+          <p>A CBT self-help app for anxiety, built to help users check in, reframe anxious thoughts, and take the next steady step.</p>
         </div>
       </div>
 
@@ -1107,7 +1142,7 @@
         <div class="visual-copy">
           <h3>CalmFrame</h3>
           <p>
-            CalmFrame gives users a supportive structure for noticing triggers, challenging anxious thinking, and using simple calming tools they can return to anytime. :contentReference[oaicite:1]{index=1}
+            CalmFrame gives users a supportive structure for noticing triggers, challenging anxious thinking, and using simple calming tools they can return to anytime.
           </p>
 
           <div class="chip-row">
@@ -1128,11 +1163,11 @@
         <h3>A calmer way to check in, challenge spirals, and move forward</h3>
 
         <p>
-          CalmFrame is designed around a simple flow: check in, reframe, and take one next step. It also highlights daily check-ins, thought records, trigger tracking, core calm tools, and a progress view, with Premium adding deeper pattern insights, richer calm tool packs, longer history, and stronger trend tracking. :contentReference[oaicite:2]{index=2}
+          CalmFrame is designed around a simple flow: check in, reframe, and take one next step. It also highlights daily check-ins, thought records, trigger tracking, core calm tools, and a progress view, with Premium adding deeper pattern insights, richer calm tool packs, longer history, and stronger trend tracking.
         </p>
 
         <div class="why-box">
-          <strong>Why it matters:</strong> anxiety tools are often either too clinical or too overwhelming. CalmFrame aims to feel supportive, structured, and easy to return to when anxiety starts building. :contentReference[oaicite:3]{index=3}
+          <strong>Why it matters:</strong> anxiety tools are often either too clinical or too overwhelming. CalmFrame aims to feel supportive, structured, and easy to return to when anxiety starts building.
         </div>
 
         <div class="feature-list">
@@ -1178,6 +1213,122 @@
           loading="lazy"
           referrerpolicy="strict-origin-when-cross-origin">
         </iframe>
+      </div>
+    </section>
+
+    <section id="adhd-work" class="section">
+      <div class="section-head">
+        <div>
+          <h2>ADHD Advantage at Work</h2>
+          <p>A calm planning system for professionals with ADHD who want more focus, less overwhelm, and better follow-through at work.</p>
+        </div>
+      </div>
+
+      <div class="product-visual adhd-visual">
+        <div class="mini-badge">Live now • Work support command system</div>
+
+        <div class="visual-copy">
+          <h3>ADHD Advantage at Work</h3>
+          <p>
+            This app is built to reduce mental clutter, create calmer workday structure, and support professionals who need a more realistic, lower-friction way to plan and follow through.
+          </p>
+
+          <div class="chip-row">
+            <span class="chip">Task unpacking</span>
+            <span class="chip">Focus planning</span>
+            <span class="chip">Meeting prep</span>
+            <span class="chip">Energy awareness</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-intro" style="margin-top:18px;">
+        <div class="status">
+          <span class="status-dot"></span>
+          Live now
+        </div>
+
+        <h3>A calmer way to plan work, reduce overwhelm, and follow through</h3>
+
+        <p>
+          ADHD Advantage at Work is positioned as a calm, structured workday system for professionals. It focuses on practical support such as today’s focus, breaking heavy work into smaller next steps, weekly resets, and workday planning that feels supportive instead of rigid.
+        </p>
+
+        <div class="why-box">
+          <strong>Why it matters:</strong> the app is designed for real workplace pressure — helping users lower friction before starting, planning, or finishing work, while avoiding noisy or guilt-based productivity systems.
+        </div>
+
+        <div class="feature-list">
+          <div><strong>✓</strong> Task Unpacking to turn vague, overwhelming work into smaller actions</div>
+          <div><strong>✓</strong> Focus Planning to clarify what matters now and reduce mental crowding</div>
+          <div><strong>✓</strong> Meeting Prep and Weekly Review for calmer follow-through</div>
+          <div><strong>✓</strong> Energy Awareness and ADHD Work Profile to understand patterns and build better support</div>
+        </div>
+
+        <div class="action-row">
+          <a class="btn btn-primary" href="https://adhd-work-app.vercel.app/" target="_blank" rel="noopener">
+            Open the app
+          </a>
+          <a class="btn btn-secondary" href="#adhd-work-preview">
+            See live preview
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="adhd-work-preview" class="section">
+      <div class="section-head">
+        <div>
+          <h2>ADHD Advantage at Work live preview</h2>
+          <p>Browse the product directly on the page before opening the full app.</p>
+        </div>
+      </div>
+
+      <div class="preview-shell">
+        <div class="browser-bar">
+          <div class="browser-dots">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="browser-url">adhd-work-app.vercel.app</div>
+        </div>
+
+        <iframe
+          class="live-preview"
+          src="https://adhd-work-app.vercel.app/"
+          title="ADHD Advantage at Work preview"
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin">
+        </iframe>
+      </div>
+    </section>
+
+    <section id="features" class="section">
+      <div class="section-head">
+        <div>
+          <h2>Core features</h2>
+          <p>These are the parts of the product users can understand quickly and get value from immediately.</p>
+        </div>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>Dashboard overview</h3>
+          <p>See revenue, expenses, active work, and important signals at a glance.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Income stream tracking</h3>
+          <p>Organise multiple streams in one view so you can compare and manage them clearly.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Inventory clarity</h3>
+          <p>Keep household or business essentials visible in one place instead of scattered lists.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Guided support flows</h3>
+          <p>Use clear check-ins, reframing, weekly resets, and task-unpacking tools to stay more grounded and consistent.</p>
+        </div>
       </div>
     </section>
 
@@ -1230,7 +1381,12 @@
         <div class="tool-card">
           <div class="tag">Live now</div>
           <h3>CalmFrame</h3>
-          <p>Support anxiety self-help with check-ins, thought reframing, calm tools, and deeper progress insights. :contentReference[oaicite:5]{index=5}</p>
+          <p>Support anxiety self-help with check-ins, thought reframing, calm tools, and deeper progress insights.</p>
+        </div>
+        <div class="tool-card">
+          <div class="tag">Live now</div>
+          <h3>ADHD Advantage at Work</h3>
+          <p>Support focus, planning, energy awareness, and follow-through with calmer workday structure.</p>
         </div>
         <div class="tool-card">
           <div class="tag">In development</div>
@@ -1244,7 +1400,7 @@
       <h2>Start with the tool that solves today’s problem</h2>
       <p>
         ClarityStacked helps you move from chaos to clarity with focused systems you can actually use.
-        Begin with MultiStream, jump into Prepper Pantry, or open CalmFrame for a calmer, more guided mental reset. :contentReference[oaicite:6]{index=6}
+        Begin with MultiStream, jump into Prepper Pantry, open CalmFrame, or use ADHD Advantage at Work for calmer professional support.
       </p>
 
       <div class="cta-row" style="justify-content:center;">
@@ -1256,6 +1412,9 @@
         </a>
         <a class="btn btn-secondary" href="https://calmframe.vercel.app/" target="_blank" rel="noopener">
           Open CalmFrame
+        </a>
+        <a class="btn btn-secondary" href="https://adhd-work-app.vercel.app/" target="_blank" rel="noopener">
+          Open ADHD Work
         </a>
       </div>
     </section>
@@ -1270,6 +1429,7 @@
     <a href="https://freelance-command-center-opal.vercel.app/" target="_blank" rel="noopener">MultiStream</a>
     <a href="https://prepper-pantry-command.vercel.app/" target="_blank" rel="noopener">Pantry</a>
     <a href="https://calmframe.vercel.app/" target="_blank" rel="noopener">CalmFrame</a>
+    <a href="https://adhd-work-app.vercel.app/" target="_blank" rel="noopener">ADHD Work</a>
   </div>
 
   <script>
