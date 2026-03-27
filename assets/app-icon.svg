@@ -1,0 +1,58 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background gradient -->
+    <linearGradient id="bg" x1="80" y1="60" x2="432" y2="452" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7DD3FC"/>
+      <stop offset="0.5" stop-color="#3B82F6"/>
+      <stop offset="1" stop-color="#8B5CF6"/>
+    </linearGradient>
+
+    <!-- Glass layers -->
+    <linearGradient id="top" x1="160" y1="140" x2="350" y2="260">
+      <stop stop-color="#E0F2FE" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#BFDBFE" stop-opacity="0.7"/>
+    </linearGradient>
+
+    <linearGradient id="middle" x1="140" y1="220" x2="380" y2="360">
+      <stop stop-color="#C4B5FD" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#8B5CF6" stop-opacity="0.75"/>
+    </linearGradient>
+
+    <linearGradient id="bottom" x1="160" y1="340" x2="360" y2="420">
+      <stop stop-color="#E9D5FF" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#A78BFA" stop-opacity="0.85"/>
+    </linearGradient>
+
+    <!-- Glow -->
+    <filter id="shadow" x="40" y="40" width="432" height="432">
+      <feDropShadow dx="0" dy="20" stdDeviation="20" flood-color="#4F46E5" flood-opacity="0.25"/>
+    </filter>
+
+    <!-- Sparkle -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2"/>
+    </filter>
+  </defs>
+
+  <!-- Rounded background -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="40" width="432" height="432" rx="120" fill="url(#bg)"/>
+  </g>
+
+  <!-- Top layer -->
+  <path d="M140 210L250 160C260 155 272 155 282 160L392 210L280 265C268 272 244 272 232 265L140 210Z" fill="url(#top)"/>
+
+  <!-- Middle layer -->
+  <path d="M160 240L240 280C252 286 260 286 272 280L352 240V330C352 350 340 368 320 378L280 398C260 408 252 408 232 398L192 378C172 368 160 350 160 330V240Z" fill="url(#middle)"/>
+
+  <!-- Bottom layer -->
+  <path d="M170 380L230 410C250 420 262 420 282 410L342 380V420C342 435 330 448 315 448H197C182 448 170 435 170 420V380Z" fill="url(#bottom)"/>
+
+  <!-- Highlights -->
+  <path d="M160 220L250 180C260 175 270 175 280 180L370 220" stroke="white" stroke-opacity="0.5" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Sparkle -->
+  <g filter="url(#glow)">
+    <path d="M360 140L368 168L396 176L368 184L360 212L352 184L324 176L352 168L360 140Z" fill="white"/>
+  </g>
+</svg>
