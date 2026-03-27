@@ -13,12 +13,22 @@
   <link rel="apple-touch-icon" href="assets/app-icon.svg">
   <link rel="icon" sizes="192x192" href="assets/app-icon.svg">
   <link rel="icon" sizes="512x512" href="assets/app-icon.svg">
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=Sora:wght@600;700;800&display=swap"
     rel="stylesheet"
   />
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S37CRLGDNV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-S37CRLGDNV');
+  </script>
 
   <style>
     :root{
@@ -132,19 +142,13 @@
       display:flex;
       align-items:center;
       gap:12px;
-      font-weight:900;
-      letter-spacing:.2px;
       color:var(--text-strong);
-      font-size:1.05rem;
     }
 
-    .brand-mark{
-      width:14px;
-      height:14px;
-      border-radius:999px;
-      background:linear-gradient(135deg, var(--teal), var(--blue));
-      box-shadow:0 0 0 7px rgba(91,141,239,0.08);
-      flex-shrink:0;
+    .logo-full{
+      height:42px;
+      width:auto;
+      display:block;
     }
 
     .nav-wrap{
@@ -347,9 +351,11 @@
       backdrop-filter:blur(8px);
     }
 
-    <p style="margin:0 0 12px; color:#4b5f73; font-size:14px;">
-    Preview only — for full access, open the app in a new tab.
-   </p>
+    .preview-note{
+      margin:0 0 12px;
+      color:#4b5f73;
+      font-size:14px;
+    }
 
     .preview-shell{
       border:1px solid rgba(255,255,255,0.34);
@@ -898,10 +904,11 @@
     <a href="#adhd-work">ADHD Work</a>
   </nav>
 
-    <a class="brand" href="#">
-    <span class="brand-mark"></span>
-    <span>ClarityStacked</span>
-    </a>
+  <div class="wrap">
+    <header class="topbar">
+      <a class="brand" href="#">
+        <img src="assets/logo-full.svg" alt="ClarityStacked" class="logo-full">
+      </a>
 
       <div class="nav-wrap">
         <nav class="nav">
@@ -918,18 +925,6 @@
       <a class="btn btn-primary" href="https://freelance-command-center-opal.vercel.app/" target="_blank" rel="noopener">
         Open app
       </a>
-      
-
-    <!-- Google Analytics -->
-   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-   <script>
-   window.dataLayer = window.dataLayer || [];
-   function gtag(){dataLayer.push(arguments);}
-   gtag('js', new Date());
-
-    gtag('config', 'G-S37CRLGDNV');
-    </script>
-
     </header>
 
     <section class="hero">
@@ -973,6 +968,8 @@
           </div>
         </div>
 
+        <p class="preview-note">Preview only — for full access, open the app in a new tab.</p>
+
         <div class="preview-shell">
           <div class="browser-bar">
             <div class="browser-dots">
@@ -983,14 +980,14 @@
             <div class="browser-url">freelance-command-center-opal.vercel.app/dashboard-preview</div>
           </div>
 
-         <iframe
-  class="live-preview"
-  src="https://freelance-command-center-opal.vercel.app/dashboard"
-  title="MultiStream Command System preview"
-  loading="lazy"
-  referrerpolicy="strict-origin-when-cross-origin"
-  sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox">
-</iframe>
+          <iframe
+            class="live-preview"
+            src="https://freelance-command-center-opal.vercel.app/dashboard"
+            title="MultiStream Command System preview"
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+            sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox">
+          </iframe>
         </div>
       </div>
     </section>
@@ -1048,11 +1045,12 @@
         </div>
 
         <div class="action-row">
-         <a class="btn btn-primary"
-         href="https://freelance-command-center-opal.vercel.app/"
-         target="_blank"
-         onclick="gtag('event','click',{'event_category':'app','event_label':'multistream'});">
-          Open the app
+          <a class="btn btn-primary"
+             href="https://freelance-command-center-opal.vercel.app/"
+             target="_blank"
+             rel="noopener"
+             onclick="gtag('event','click',{'event_category':'app','event_label':'multistream'});">
+            Open the app
           </a>
           <a class="btn btn-secondary" href="#features">
             Explore features
@@ -1109,17 +1107,15 @@
           <div><strong>✓</strong> Plan meals from current stock</div>
           <div><strong>✓</strong> Restock smarter, not blindly</div>
         </div>
+
         <div class="action-row">
-        <a class="btn btn-primary"
-         href="https://prepper-pantry-command.vercel.app/"
-        target="_blank"
-       rel="noopener"
-      onclick="gtag('event','click', {
-     event_category: 'app',
-     event_label: 'pantry'
-   });">
-   Open the app
-  </a>
+          <a class="btn btn-primary"
+             href="https://prepper-pantry-command.vercel.app/"
+             target="_blank"
+             rel="noopener"
+             onclick="gtag('event','click',{'event_category':'app','event_label':'pantry'});">
+            Open the app
+          </a>
           <a class="btn btn-secondary" href="#pantry-preview">
             See live preview
           </a>
@@ -1135,6 +1131,8 @@
         </div>
       </div>
 
+      <p class="preview-note">Preview only — for full access, open the app in a new tab.</p>
+
       <div class="preview-shell">
         <div class="browser-bar">
           <div class="browser-dots">
@@ -1145,14 +1143,14 @@
           <div class="browser-url">prepper-pantry-command.vercel.app</div>
         </div>
 
-      <iframe
-  class="live-preview"
-  src="https://prepper-pantry-command.vercel.app/"
-  title="Prepper Pantry Command preview"
-  loading="lazy"
-  referrerpolicy="strict-origin-when-cross-origin"
-  sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox">
-</iframe>
+        <iframe
+          class="live-preview"
+          src="https://prepper-pantry-command.vercel.app/"
+          title="Prepper Pantry Command preview"
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+          sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox">
+        </iframe>
       </div>
     </section>
 
@@ -1206,13 +1204,13 @@
         </div>
 
         <div class="action-row">
-         <a class="btn btn-primary"
-         href="https://calmframe.vercel.app/"
-        target="_blank"
-        rel="noopener"
-       onclick="gtag('event','click',{'event_category':'app','event_label':'calmframe'});">
-       Open the app
-       </a>
+          <a class="btn btn-primary"
+             href="https://calmframe.vercel.app/"
+             target="_blank"
+             rel="noopener"
+             onclick="gtag('event','click',{'event_category':'app','event_label':'calmframe'});">
+            Open the app
+          </a>
           <a class="btn btn-secondary" href="#calmframe-preview">
             See live preview
           </a>
@@ -1228,6 +1226,8 @@
         </div>
       </div>
 
+      <p class="preview-note">Preview only — for full access, open the app in a new tab.</p>
+
       <div class="preview-shell">
         <div class="browser-bar">
           <div class="browser-dots">
@@ -1238,14 +1238,14 @@
           <div class="browser-url">calmframe.vercel.app</div>
         </div>
 
-    <iframe
-  class="live-preview"
-  src="https://calmframe.vercel.app/"
-  title="CalmFrame preview"
-  loading="lazy"
-  referrerpolicy="strict-origin-when-cross-origin"
-  sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox">
-</iframe>
+        <iframe
+          class="live-preview"
+          src="https://calmframe.vercel.app/"
+          title="CalmFrame preview"
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+          sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox">
+        </iframe>
       </div>
     </section>
 
@@ -1299,15 +1299,15 @@
         </div>
 
         <div class="action-row">
-         <a class="btn btn-primary"
-         href="https://adhd-work-app.vercel.app/"
-         target="_blank"
-         rel="noopener"
-         onclick="gtag('event','click',{'event_category':'app','event_label':'adhd_work'});">
-         Open the app
-         </a>
-        <a class="btn btn-secondary" href="#adhd-work-preview">
-         See live preview
+          <a class="btn btn-primary"
+             href="https://adhd-work-app.vercel.app/"
+             target="_blank"
+             rel="noopener"
+             onclick="gtag('event','click',{'event_category':'app','event_label':'adhd_work'});">
+            Open the app
+          </a>
+          <a class="btn btn-secondary" href="#adhd-work-preview">
+            See live preview
           </a>
         </div>
       </div>
@@ -1321,6 +1321,8 @@
         </div>
       </div>
 
+      <p class="preview-note">Preview only — for full access, open the app in a new tab.</p>
+
       <div class="preview-shell">
         <div class="browser-bar">
           <div class="browser-dots">
@@ -1331,14 +1333,14 @@
           <div class="browser-url">adhd-work-app.vercel.app</div>
         </div>
 
-     <iframe
-  class="live-preview"
-  src="https://adhd-work-app.vercel.app/"
-  title="ADHD Advantage at Work preview"
-  loading="lazy"
-  referrerpolicy="strict-origin-when-cross-origin"
-  sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox">
-</iframe>
+        <iframe
+          class="live-preview"
+          src="https://adhd-work-app.vercel.app/"
+          title="ADHD Advantage at Work preview"
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+          sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox">
+        </iframe>
       </div>
     </section>
 
