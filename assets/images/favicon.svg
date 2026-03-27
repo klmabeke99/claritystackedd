@@ -1,0 +1,53 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="8" y1="6" x2="56" y2="58" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7DD3FC"/>
+      <stop offset="0.55" stop-color="#3B82F6"/>
+      <stop offset="1" stop-color="#8B5CF6"/>
+    </linearGradient>
+
+    <linearGradient id="glassTop" x1="20" y1="18" x2="43" y2="34" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E0F2FE" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#BFDBFE" stop-opacity="0.7"/>
+    </linearGradient>
+
+    <linearGradient id="glassFront" x1="18" y1="28" x2="46" y2="46" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#C4B5FD" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#8B5CF6" stop-opacity="0.75"/>
+    </linearGradient>
+
+    <linearGradient id="glassBase" x1="20" y1="40" x2="44" y2="50" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E9D5FF" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#A78BFA" stop-opacity="0.85"/>
+    </linearGradient>
+
+    <filter id="shadow" x="6" y="6" width="52" height="52" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#4F46E5" flood-opacity="0.22"/>
+    </filter>
+
+    <filter id="sparkleGlow" x="39" y="12" width="16" height="16" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="1.2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <g filter="url(#shadow)">
+    <rect x="8" y="8" width="48" height="48" rx="14" fill="url(#bg)"/>
+    <rect x="8.75" y="8.75" width="46.5" height="46.5" rx="13.25" stroke="white" stroke-opacity="0.45" stroke-width="1.5"/>
+  </g>
+
+  <path d="M17 25.5L30.5 19.5C31.46 19.07 32.54 19.07 33.5 19.5L47 25.5L33.7 31.65C32.6 32.16 31.4 32.16 30.3 31.65L17 25.5Z" fill="url(#glassTop)"/>
+  <path d="M19.5 27.5L30.8 32.7C31.57 33.05 32.43 33.05 33.2 32.7L44.5 27.5V38.8C44.5 39.94 43.84 40.98 42.8 41.46L33.91 45.56C32.72 46.11 31.28 46.11 30.09 45.56L21.2 41.46C20.16 40.98 19.5 39.94 19.5 38.8V27.5Z" fill="url(#glassFront)"/>
+  <path d="M20 43.5L29.8 48.05C31.22 48.71 32.78 48.71 34.2 48.05L44 43.5V48C44 49.1 43.11 50 42 50H22C20.9 50 20 49.1 20 48V43.5Z" fill="url(#glassBase)"/>
+
+  <path d="M20.5 25.9L31.1 21.15C31.67 20.9 32.33 20.9 32.9 21.15L43.5 25.9" stroke="white" stroke-opacity="0.55" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M22.5 29.2V38.3" stroke="white" stroke-opacity="0.3" stroke-width="1.3" stroke-linecap="round"/>
+  <path d="M41.5 29.2V38.3" stroke="white" stroke-opacity="0.24" stroke-width="1.3" stroke-linecap="round"/>
+
+  <g filter="url(#sparkleGlow)">
+    <path d="M47 15.5L47.7 18.3L50.5 19L47.7 19.7L47 22.5L46.3 19.7L43.5 19L46.3 18.3L47 15.5Z" fill="white"/>
+  </g>
+</svg>
