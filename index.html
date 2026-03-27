@@ -917,6 +917,18 @@
       <a class="btn btn-primary" href="https://freelance-command-center-opal.vercel.app/" target="_blank" rel="noopener">
         Open app
       </a>
+      
+
+    <!-- Google Analytics -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+   <script>
+   window.dataLayer = window.dataLayer || [];
+   function gtag(){dataLayer.push(arguments);}
+   gtag('js', new Date());
+
+    gtag('config', 'G-S37CRLGDNV');
+    </script>
+
     </header>
 
     <section class="hero">
@@ -1035,8 +1047,11 @@
         </div>
 
         <div class="action-row">
-          <a class="btn btn-primary" href="https://freelance-command-center-opal.vercel.app/" target="_blank" rel="noopener">
-            Open the app
+         <a class="btn btn-primary"
+         href="https://freelance-command-center-opal.vercel.app/"
+         target="_blank"
+         onclick="gtag('event','click',{'event_category':'app','event_label':'multistream'});">
+          Open the app
           </a>
           <a class="btn btn-secondary" href="#features">
             Explore features
@@ -1093,11 +1108,17 @@
           <div><strong>✓</strong> Plan meals from current stock</div>
           <div><strong>✓</strong> Restock smarter, not blindly</div>
         </div>
-
         <div class="action-row">
-          <a class="btn btn-primary" href="https://prepper-pantry-command.vercel.app/" target="_blank" rel="noopener">
-            Open the app
-          </a>
+        <a class="btn btn-primary"
+         href="https://prepper-pantry-command.vercel.app/"
+        target="_blank"
+       rel="noopener"
+      onclick="gtag('event','click', {
+     event_category: 'app',
+     event_label: 'pantry'
+   });">
+   Open the app
+  </a>
           <a class="btn btn-secondary" href="#pantry-preview">
             See live preview
           </a>
@@ -1184,9 +1205,13 @@
         </div>
 
         <div class="action-row">
-          <a class="btn btn-primary" href="https://calmframe.vercel.app/" target="_blank" rel="noopener">
-            Open the app
-          </a>
+         <a class="btn btn-primary"
+         href="https://calmframe.vercel.app/"
+        target="_blank"
+        rel="noopener"
+       onclick="gtag('event','click',{'event_category':'app','event_label':'calmframe'});">
+       Open the app
+       </a>
           <a class="btn btn-secondary" href="#calmframe-preview">
             See live preview
           </a>
@@ -1273,11 +1298,15 @@
         </div>
 
         <div class="action-row">
-          <a class="btn btn-primary" href="https://adhd-work-app.vercel.app/" target="_blank" rel="noopener">
-            Open the app
-          </a>
-          <a class="btn btn-secondary" href="#adhd-work-preview">
-            See live preview
+         <a class="btn btn-primary"
+         href="https://adhd-work-app.vercel.app/"
+         target="_blank"
+         rel="noopener"
+         onclick="gtag('event','click',{'event_category':'app','event_label':'adhd_work'});">
+         Open the app
+         </a>
+        <a class="btn btn-secondary" href="#adhd-work-preview">
+         See live preview
           </a>
         </div>
       </div>
