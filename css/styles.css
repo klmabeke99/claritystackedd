@@ -858,4 +858,16 @@
         font-size:11px;
         padding:10px 5px;
       }
-    }
+
+.apps-grid{
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:16px;
+  margin-top:16px;
+}
+
+@media (max-width:768px){
+  .apps-grid{
+    grid-template-columns:1fr;
+  }
+}
