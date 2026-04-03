@@ -869,5 +869,14 @@
 @media (max-width:768px){
   .apps-grid{
     grid-template-columns:1fr;
-  }
+
+.apps-grid .tool-card{
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
+.apps-grid .tool-card:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(15,23,42,0.12);
+}
+}
+
