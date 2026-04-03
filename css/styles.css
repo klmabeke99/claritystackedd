@@ -1,9 +1,8 @@
-
-    :root{
-      --text:#0f172a;
-      --text-strong:#081120;
-      --muted:#4b5f73;
-      --muted-2:#6b7f93;
+:root{
+  --text:#0f172a;
+  --text-strong:#081120;
+  --muted:#4b5f73;
+  --muted-2:#6b7f93;
 
       --teal:#18c5b5;
       --teal-dark:#0f9f95;
