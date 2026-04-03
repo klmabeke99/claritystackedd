@@ -877,6 +877,17 @@
 .apps-grid .tool-card:hover{
   transform: translateY(-4px);
   box-shadow: 0 18px 40px rgba(15,23,42,0.12);
+
+    .card-link{
+  text-decoration:none;
+  color:inherit;
+  display:flex;
+  flex-direction:column;
+}
+
+.card-link:hover{
+  text-decoration:none;
 }
 }
+
 
