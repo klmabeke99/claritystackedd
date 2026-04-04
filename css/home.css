@@ -164,23 +164,22 @@ body{
 }
 
 .hero-new-copy h1{
-  margin: 0 0 18px;
-  font-family: 'Sora', sans-serif;
-  font-size: clamp(54px, 5.8vw, 86px);
-  line-height: .98;
-  letter-spacing: -2.4px;
-  max-width: 8.5ch;
-  color: #081120;
+  margin:0 0 18px;
+  font-family:'Sora',sans-serif;
+  font-size:clamp(52px, 5vw, 76px);
+  line-height:1.0;
+  letter-spacing:-2px;
+  max-width:9.2ch;
+  color:#081120;
 }
 
 .hero-new-lead{
-  margin: 0 0 24px;
-  max-width: 58ch;
-  color: var(--home-muted);
-  font-size: 18px;
-  line-height: 1.75;
+  margin:0 0 24px;
+  max-width:62ch;
+  color:var(--home-muted);
+  font-size:18px;
+  line-height:1.75;
 }
-
 .hero-new-actions{
   display: flex;
   gap: 12px;
