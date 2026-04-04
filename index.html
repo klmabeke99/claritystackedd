@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="ClarityStacked — standalone command systems and done-for-you tools that turn overwhelm into calm, clear action."
+    content="ClarityStacked — standalone command systems and focused tools that turn overwhelm into calm, clear action."
   />
   <title>ClarityStacked — Calm, Focused Command Systems</title>
 
@@ -17,14 +17,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-  href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=Sora:wght@600;700;800&display=swap"
-  rel="stylesheet"
-/>
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=Sora:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  />
 
-<link rel="stylesheet" href="css/styles.css">
-<link rel="stylesheet" href="css/home.css">
-
-  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-S37CRLGDNV"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -33,384 +29,925 @@
     gtag('config', 'G-S37CRLGDNV');
   </script>
 
- 
+  <style>
+    :root{
+      --bg:#f4f7fb;
+      --panel:#ffffff;
+      --panel-soft:#f8fbff;
+      --border:#dfe8f1;
+      --text:#0f172a;
+      --text-strong:#081120;
+      --muted:#607287;
+      --muted-2:#7a8a9d;
+      --teal:#18c5b5;
+      --blue:#5b8def;
+      --shadow-sm:0 8px 24px rgba(15,23,42,0.05);
+      --shadow-md:0 18px 50px rgba(15,23,42,0.07);
+      --shadow-lg:0 30px 80px rgba(15,23,42,0.10);
+      --radius-xl:30px;
+      --radius-lg:22px;
+      --radius-md:16px;
+      --max:1440px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+
+    body{
+      margin:0;
+      font-family:'Roboto',system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(700px 420px at 0% 0%, rgba(24,197,181,0.08), transparent 60%),
+        radial-gradient(900px 520px at 100% 0%, rgba(91,141,239,0.10), transparent 62%),
+        var(--bg);
+      line-height:1.55;
+    }
+
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+
+    .noise{
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      opacity:.02;
+      mix-blend-mode:soft-light;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");
+    }
+
+    .wrap{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:0 24px 48px;
+      position:relative;
+      z-index:1;
+    }
+
+    .topbar{
+      position:sticky;
+      top:10px;
+      z-index:60;
+      display:grid;
+      grid-template-columns:180px minmax(0,1fr) 150px;
+      align-items:center;
+      gap:14px;
+      margin:10px 0 24px;
+      padding:12px 14px;
+      border:1px solid var(--border);
+      border-radius:24px;
+      background:rgba(255,255,255,0.84);
+      box-shadow:var(--shadow-sm);
+      backdrop-filter:blur(8px);
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      color:var(--text-strong);
+      min-width:0;
+    }
+
+    .logo-full{
+      height:34px;
+      width:auto;
+    }
+
+    .nav-wrap{
+      min-width:0;
+      overflow:hidden;
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:flex-start;
+      gap:4px;
+      width:100%;
+      padding:6px;
+      border:1px solid #e7eef5;
+      background:#f8fbff;
+      border-radius:18px;
+      overflow-x:auto;
+      scrollbar-width:none;
+    }
+
+    .nav::-webkit-scrollbar{display:none}
+
+    .nav a{
+      flex:0 0 auto;
+      padding:10px 12px;
+      border-radius:12px;
+      font-size:14px;
+      font-weight:800;
+      color:#4d6278;
+      white-space:nowrap;
+      transition:background .18s ease,color .18s ease;
+    }
+
+    .nav a:hover{
+      background:#edf5fb;
+      color:var(--text-strong);
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      padding:0 20px;
+      border-radius:999px;
+      border:1px solid #d7e3ee;
+      background:#fff;
+      color:var(--text-strong);
+      font-weight:800;
+      font-size:15px;
+      cursor:pointer;
+      white-space:nowrap;
+      box-shadow:var(--shadow-sm);
+      transition:transform .16s ease, box-shadow .16s ease, background .16s ease;
+    }
+
+    .btn:hover{
+      transform:translateY(-1px);
+      box-shadow:0 12px 26px rgba(15,23,42,0.07);
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg, rgba(24,197,181,0.18), rgba(91,141,239,0.18));
+    }
+
+    .btn-secondary{
+      background:#fff;
+    }
+
+    .topbar .btn{
+      min-height:44px;
+      width:100%;
+      padding:0 14px;
+      font-size:14px;
+    }
+
+    .hero{
+      margin:8px 0 22px;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:minmax(0,1.18fr) minmax(520px,.82fr);
+      gap:48px;
+      align-items:center;
+    }
+
+    .hero-copy{
+      padding:8px 0;
+    }
+
+    .hero-badge{
+      display:inline-flex;
+      align-items:center;
+      min-height:36px;
+      padding:0 14px;
+      border-radius:999px;
+      background:#eef6fb;
+      border:1px solid #e3edf6;
+      color:#3a5872;
+      font-size:13px;
+      font-weight:800;
+      margin-bottom:18px;
+    }
+
+    .hero-copy h1{
+      margin:0 0 18px;
+      font-family:'Sora',sans-serif;
+      font-size:clamp(52px,5vw,76px);
+      line-height:1;
+      letter-spacing:-2px;
+      max-width:9.2ch;
+      color:var(--text-strong);
+    }
+
+    .hero-lead{
+      margin:0 0 24px;
+      max-width:62ch;
+      color:var(--muted);
+      font-size:18px;
+      line-height:1.75;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-bottom:18px;
+    }
+
+    .hero-meta{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .hero-meta span{
+      display:inline-flex;
+      align-items:center;
+      min-height:38px;
+      padding:0 14px;
+      border-radius:999px;
+      background:#fff;
+      border:1px solid #e6edf5;
+      color:#5b6b7f;
+      font-size:13px;
+      font-weight:800;
+      box-shadow:var(--shadow-sm);
+    }
+
+    .hero-visual{
+      min-width:0;
+    }
+
+    .hero-panel{
+      border:1px solid var(--border);
+      border-radius:30px;
+      background:
+        radial-gradient(420px 220px at 12% 0%, rgba(24,197,181,0.10), transparent 65%),
+        radial-gradient(420px 240px at 100% 100%, rgba(91,141,239,0.10), transparent 68%),
+        var(--panel);
+      box-shadow:var(--shadow-lg);
+      overflow:hidden;
+    }
+
+    .hero-panel-top{
+      display:flex;
+      gap:8px;
+      padding:18px 20px 0;
+    }
+
+    .hero-panel-top span{
+      width:10px;
+      height:10px;
+      border-radius:999px;
+      background:#cad7e4;
+    }
+
+    .hero-panel-body{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:14px;
+      padding:20px;
+    }
+
+    .hero-stat,
+    .hero-mini{
+      border:1px solid #e6edf5;
+      border-radius:18px;
+      background:linear-gradient(180deg,#ffffff,#f9fbfe);
+      padding:18px;
+      box-shadow:var(--shadow-sm);
+    }
+
+    .hero-stat strong{
+      display:block;
+      margin-bottom:6px;
+      font-size:24px;
+      line-height:1.1;
+      color:var(--text-strong);
+    }
+
+    .hero-stat span{
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.5;
+    }
+
+    .hero-stat-wide{
+      grid-column:1 / -1;
+    }
+
+    .hero-stat-wide strong{
+      font-size:20px;
+    }
+
+    .hero-mini-grid{
+      grid-column:1 / -1;
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:12px;
+    }
+
+    .hero-mini{
+      font-weight:800;
+      color:#31495f;
+      text-align:center;
+    }
+
+    .section{
+      margin-top:22px;
+      border:1px solid var(--border);
+      border-radius:30px;
+      background:rgba(255,255,255,0.82);
+      padding:32px;
+      box-shadow:var(--shadow-md);
+      backdrop-filter:blur(8px);
+    }
+
+    .section-head{
+      display:flex;
+      align-items:end;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:18px;
+    }
+
+    .section-head h2{
+      margin:0;
+      font-size:34px;
+      letter-spacing:-1px;
+      color:var(--text-strong);
+    }
+
+    .section-head p{
+      margin:0;
+      color:var(--muted);
+      font-size:15px;
+      max-width:58ch;
+      line-height:1.65;
+    }
+
+    .trust-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:16px;
+    }
+
+    .features-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:16px;
+    }
+
+    .steps-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+    }
+
+    .tools-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:16px;
+    }
+
+    .apps-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:18px;
+      margin-top:16px;
+    }
+
+    .trust-card,
+    .feature-card,
+    .tool-card,
+    .step-card{
+      border:1px solid #e7eef5;
+      border-radius:22px;
+      background:linear-gradient(180deg,#ffffff,#f9fbfe);
+      padding:22px;
+      box-shadow:var(--shadow-sm);
+    }
+
+    .trust-card h3,
+    .feature-card h3,
+    .tool-card h3,
+    .step-card h3{
+      margin:0 0 8px;
+      font-size:18px;
+      line-height:1.35;
+      color:var(--text-strong);
+    }
+
+    .trust-card p,
+    .feature-card p,
+    .tool-card p,
+    .step-card p{
+      margin:0;
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.7;
+    }
+
+    .tool-card .tag{
+      display:inline-flex;
+      align-items:center;
+      padding:7px 11px;
+      border-radius:999px;
+      border:1px solid #e3edf6;
+      background:#f6faff;
+      color:#46657f;
+      font-size:12px;
+      font-weight:800;
+      margin-bottom:10px;
+    }
+
+    .apps-grid .tool-card{
+      display:flex;
+      flex-direction:column;
+      min-height:100%;
+      transition:transform .2s ease, box-shadow .2s ease;
+    }
+
+    .apps-grid .tool-card:hover{
+      transform:translateY(-4px);
+      box-shadow:0 18px 40px rgba(15,23,42,0.10);
+    }
+
+    .apps-grid .tool-card p{
+      margin-bottom:18px;
+    }
+
+    .apps-grid .action-row{
+      margin-top:auto !important;
+    }
+
+    .feature-list{
+      display:grid;
+      gap:10px;
+    }
+
+    .feature-list div{
+      display:flex;
+      align-items:flex-start;
+      gap:8px;
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.55;
+    }
+
+    .feature-list strong{
+      color:#0f9f95;
+      font-weight:900;
+    }
+
+    .action-row{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:4px;
+    }
+
+    .steps-grid .step-card span{
+      display:inline-flex;
+      width:38px;
+      height:38px;
+      align-items:center;
+      justify-content:center;
+      border-radius:12px;
+      border:1px solid #e3edf6;
+      background:#f7fbff;
+      margin-bottom:10px;
+      font-weight:900;
+      color:#17314c;
+      box-shadow:var(--shadow-sm);
+    }
+
+    .final-cta{
+      text-align:center;
+      padding:48px 24px;
+      background:
+        radial-gradient(520px 200px at 50% 0%, rgba(24,197,181,0.10), transparent 70%),
+        rgba(255,255,255,0.86);
+    }
+
+    .final-cta h2{
+      margin:0 0 10px;
+      font-size:42px;
+      letter-spacing:-0.8px;
+      color:var(--text-strong);
+    }
+
+    .final-cta p{
+      margin:0 auto 18px;
+      color:var(--muted);
+      max-width:62ch;
+      font-size:16px;
+      line-height:1.7;
+    }
+
+    footer{
+      padding:24px 0 42px;
+      color:#4f6478;
+      font-size:13px;
+      font-weight:700;
+      display:flex;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+
+    .mobile-app-bar{
+      display:none;
+    }
+
+    @media (max-width:1180px){
+      .hero-grid{
+        grid-template-columns:1fr;
+      }
+
+      .hero-copy h1{
+        max-width:11ch;
+      }
+
+      .trust-grid,
+      .features-grid,
+      .tools-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+    }
+
+    @media (max-width:920px){
+      .wrap{
+        padding:0 18px;
+        max-width:100%;
+      }
+
+      .topbar{
+        grid-template-columns:1fr auto;
+        gap:12px;
+        margin:12px 0 18px;
+        padding:12px;
+        border-radius:18px;
+      }
+
+      .nav-wrap{display:none;}
+
+      .apps-grid,
+      .trust-grid,
+      .features-grid,
+      .tools-grid,
+      .steps-grid{
+        grid-template-columns:1fr;
+      }
+
+      .hero-actions,
+      .action-row,
+      .cta-row{
+        flex-direction:column;
+      }
+
+      .btn{width:100%;}
+      .section{padding:18px;}
+
+      .mobile-app-bar{
+        position:fixed;
+        bottom:0;
+      left:0;
+        right:0;
+        display:grid;
+        grid-template-columns:repeat(4,1fr);
+        gap:8px;
+        padding:12px;
+        background:rgba(255,255,255,0.94);
+        border-top:1px solid rgba(15,23,42,0.08);
+        box-shadow:0 -8px 24px rgba(15,23,42,0.06);
+        backdrop-filter:blur(10px);
+        z-index:100;
+      }
+
+      .mobile-app-bar a{
+        text-align:center;
+        padding:12px 8px;
+        border-radius:12px;
+        background:linear-gradient(135deg, rgba(24,197,181,0.12), rgba(91,141,239,0.12));
+        font-weight:800;
+        font-size:12px;
+      }
+
+      body{padding-bottom:88px;}
+    }
+
+    @media (max-width:640px){
+      .hero-copy h1{
+        font-size:clamp(36px, 12vw, 50px);
+        max-width:9.5ch;
+      }
+
+      .hero-lead,
+      .trust-card p,
+      .feature-card p,
+      .tool-card p,
+      .step-card p{
+        font-size:15px;
+      }
+
+      .hero-panel-body,
+      .hero-mini-grid{
+        grid-template-columns:1fr;
+      }
+
+      .final-cta h2{
+        font-size:30px;
+      }
+
+      .mobile-app-bar a{
+        font-size:11px;
+        padding:10px 5px;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="noise"></div>
 
   <div class="wrap">
     <header class="topbar">
-      <a class="brand" href="#">
+      <a class="brand" href="index.html">
         <img src="assets/logo-full.svg" alt="ClarityStacked" class="logo-full">
       </a>
 
       <div class="nav-wrap">
-      <nav class="nav">
-     <a href="multistream.html">MultiStream</a>
-     <a href="pantry.html">Pantry</a>
-     <a href="calmframe.html">CalmFrame</a>
-     <a href="adhd-work.html">ADHD Work</a>
-     <a href="#features">Features</a>
-    <a href="#tools">Tools</a>
-    <a href="#how">How it works</a>
-</nav>
+        <nav class="nav">
+          <a href="multistream.html">MultiStream</a>
+          <a href="pantry.html">Pantry</a>
+          <a href="calmframe.html">CalmFrame</a>
+          <a href="adhd-work.html">ADHD Work</a>
+          <a href="#features">Features</a>
+          <a href="#tools">Tools</a>
+          <a href="#how">How it works</a>
+        </nav>
       </div>
 
-     <a class="btn btn-primary" href="multistream.html">
-  View app page
-</a>
+      <a class="btn btn-primary" href="multistream.html">View app page</a>
     </header>
 
-   <section class="hero-new">
-  <div class="hero-new-grid">
-    <div class="hero-new-copy">
-      <div class="hero-new-badge">Focused command systems for real-life work</div>
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="hero-badge">Focused command systems for real-life work</div>
 
-      <h1>One place to run the systems that keep life and work moving</h1>
+          <h1>One place to run the systems that keep life and work moving</h1>
 
-      <p class="hero-new-lead">
-        ClarityStacked is a growing library of focused command systems designed to reduce overwhelm and help you act with more clarity.
-      </p>
+          <p class="hero-lead">
+            ClarityStacked is a growing library of focused command systems designed to reduce overwhelm and help you act with more clarity.
+          </p>
 
-      <div class="hero-new-actions">
-        <a class="btn btn-primary" href="multistream.html">Explore MultiStream</a>
-        <a class="btn btn-secondary" href="#features">See how it works</a>
-      </div>
-
-      <div class="hero-new-meta">
-        <span>Multi-app system</span>
-        <span>Focused tools</span>
-        <span>Built for clarity</span>
-      </div>
-    </div>
-
-    <div class="hero-new-visual">
-      <div class="hero-new-panel">
-        <div class="hero-new-panel-top">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-
-        <div class="hero-new-panel-body">
-          <div class="hero-stat-card">
-            <strong>4</strong>
-            <span>Live systems</span>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="multistream.html">Explore MultiStream</a>
+            <a class="btn btn-secondary" href="#features">See how it works</a>
           </div>
 
-          <div class="hero-stat-card">
-            <strong>1 hub</strong>
-            <span>Clear navigation</span>
-          </div>
-
-          <div class="hero-stat-card hero-stat-wide">
-            <strong>Start with one tool. Expand only when needed.</strong>
-            <span>Cleaner than a bloated all-in-one workspace</span>
-          </div>
-
-          <div class="hero-mini-grid">
-            <div class="hero-mini-app">MultiStream</div>
-            <div class="hero-mini-app">Pantry</div>
-            <div class="hero-mini-app">CalmFrame</div>
-            <div class="hero-mini-app">ADHD Work</div>
+          <div class="hero-meta">
+            <span>Multi-app system</span>
+            <span>Focused tools</span>
+            <span>Built for clarity</span>
           </div>
         </div>
+
+        <div class="hero-visual">
+          <div class="hero-panel">
+            <div class="hero-panel-top">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+
+            <div class="hero-panel-body">
+              <div class="hero-stat">
+                <strong>4</strong>
+                <span>Live systems</span>
+              </div>
+
+              <div class="hero-stat">
+                <strong>1 hub</strong>
+                <span>Clear navigation</span>
+              </div>
+
+              <div class="hero-stat hero-stat-wide">
+                <strong>Start with one tool. Expand only when needed.</strong>
+                <span>Cleaner than a bloated all-in-one workspace</span>
+              </div>
+
+              <div class="hero-mini-grid">
+                <div class="hero-mini">MultiStream</div>
+                <div class="hero-mini">Pantry</div>
+                <div class="hero-mini">CalmFrame</div>
+                <div class="hero-mini">ADHD Work</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
-<section class="section">
-  <div class="trust-grid">
-    <div class="trust-card">
-      <h3>Focused, not bloated</h3>
-      <p>Each command system is designed around one real problem, so the experience stays clean and useful.</p>
-    </div>
-    <div class="trust-card">
-      <h3>Built for real work</h3>
-      <p>Track what matters, spot what is overdue, and make decisions from one visible source of truth.</p>
-    </div>
-    <div class="trust-card">
-      <h3>Made to reduce friction</h3>
-      <p>Clear layouts, practical workflows, and simple actions that help you move without second-guessing.</p>
-    </div>
-    <div class="trust-card">
-      <h3>Grow your stack over time</h3>
-      <p>Start with one tool that solves today’s problem, then add others as your needs expand.</p>
-    </div>
-  </div>
-</section>
+    </section>
 
-<section class="section">
-  <div class="section-head">
-    <div>
-      <h2>Explore the tools</h2>
-      <p>Choose the system that solves your current problem.</p>
-    </div>
-  </div>
+    <section class="section">
+      <div class="trust-grid">
+        <div class="trust-card">
+          <h3>Focused, not bloated</h3>
+          <p>Each command system is designed around one real problem, so the experience stays clean and useful.</p>
+        </div>
+        <div class="trust-card">
+          <h3>Built for real work</h3>
+          <p>Track what matters, spot what is overdue, and make decisions from one visible source of truth.</p>
+        </div>
+        <div class="trust-card">
+          <h3>Made to reduce friction</h3>
+          <p>Clear layouts, practical workflows, and simple actions that help you move without second-guessing.</p>
+        </div>
+        <div class="trust-card">
+          <h3>Grow your stack over time</h3>
+          <p>Start with one tool that solves today’s problem, then add others as your needs expand.</p>
+        </div>
+      </div>
+    </section>
 
-  <div class="apps-grid">
-    <div class="tool-card">
-      <div class="tag">Live now</div>
-      <h3>MultiStream Command System</h3>
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <h2>Explore the tools</h2>
+          <p>Choose the system that solves your current problem.</p>
+        </div>
+      </div>
+
+      <div class="apps-grid">
+        <div class="tool-card">
+          <div class="tag">Live now</div>
+          <h3>MultiStream Command System</h3>
+          <p>Track clients, invoices, expenses, and projects from one clear dashboard.</p>
+          <div class="action-row">
+            <a class="btn btn-primary" href="multistream.html">View app page</a>
+            <a class="btn btn-secondary" href="https://freelance-command-center-opal.vercel.app/" target="_blank" rel="noopener">Open app</a>
+          </div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tag">Live now</div>
+          <h3>Prepper Pantry Command</h3>
+          <p>Organise pantry stock, track expiry dates, reduce waste, and plan restocking with more clarity.</p>
+          <div class="action-row">
+            <a class="btn btn-primary" href="pantry.html">View app page</a>
+            <a class="btn btn-secondary" href="https://prepper-pantry-command.vercel.app/" target="_blank" rel="noopener">Open app</a>
+          </div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tag">Live now</div>
+          <h3>CalmFrame</h3>
+          <p>Track thoughts, manage triggers, and use simple calming tools to regain clarity and control.</p>
+          <div class="action-row">
+            <a class="btn btn-primary" href="calmframe.html">View app page</a>
+            <a class="btn btn-secondary" href="https://calmframe.vercel.app/" target="_blank" rel="noopener">Open app</a>
+          </div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tag">Live now</div>
+          <h3>ADHD Advantage at Work</h3>
+          <p>Support focus, planning, meeting prep, and energy-aware work structure with a calmer workflow.</p>
+          <div class="action-row">
+            <a class="btn btn-primary" href="adhd-work.html">View app page</a>
+            <a class="btn btn-secondary" href="https://adhd-work-app.vercel.app/" target="_blank" rel="noopener">Open app</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="section">
+      <div class="section-head">
+        <div>
+          <h2>Core features</h2>
+          <p>These are the parts of the product users can understand quickly and get value from immediately.</p>
+        </div>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>Dashboard overview</h3>
+          <p>See revenue, expenses, active work, and important signals at a glance.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Income stream tracking</h3>
+          <p>Organise multiple streams in one view so you can compare and manage them clearly.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Inventory clarity</h3>
+          <p>Keep household or business essentials visible in one place instead of scattered lists.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Guided support flows</h3>
+          <p>Use clear check-ins, reframing, weekly resets, and task-unpacking tools to stay more grounded and consistent.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="how" class="section">
+      <div class="section-head">
+        <div>
+          <h2>How it works</h2>
+          <p>A simple flow designed to feel clear from the first click.</p>
+        </div>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <span>1</span>
+          <h3>Choose the command system</h3>
+          <p>Start with the focused tool that matches the problem you want to solve right now.</p>
+        </div>
+        <div class="step-card">
+          <span>2</span>
+          <h3>Use the core workflow</h3>
+          <p>Open the app, track what matters, and make your next actions more visible.</p>
+        </div>
+        <div class="step-card">
+          <span>3</span>
+          <h3>Expand only when needed</h3>
+          <p>Add more tools over time without forcing everything into one bloated workspace.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="tools" class="section">
+      <div class="section-head">
+        <div>
+          <h2>The ClarityStacked tool direction</h2>
+          <p>ClarityStacked is a growing collection of focused standalone systems rather than one bloated all-in-one platform.</p>
+        </div>
+      </div>
+
+      <div class="tools-grid">
+        <div class="tool-card">
+          <div class="tag">Current approach</div>
+          <h3>Focused standalone systems</h3>
+          <p>Each tool is built around one clear problem so the experience stays simpler, faster, and easier to use.</p>
+        </div>
+
+        <div class="tool-card">
+          <div class="tag">Scalable</div>
+          <h3>Grow your stack over time</h3>
+          <p>Start with one tool, then add more as your needs expand without forcing everything into one bloated workspace.</p>
+        </div>
+
+        <div class="tool-card">
+          <div class="tag">Low friction</div>
+          <h3>Made for real-life use</h3>
+          <p>Clear layouts, practical flows, and focused actions help users move faster with less overwhelm.</p>
+        </div>
+
+        <div class="tool-card">
+          <div class="tag">Coming next</div>
+          <h3>More command systems ahead</h3>
+          <p>New apps can be added into the same structure easily, with their own page, preview, and launch flow.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <h2>Simple pricing direction</h2>
+          <p>Use the core experience first, then upgrade only if you need more depth.</p>
+        </div>
+      </div>
+
+      <div class="apps-grid">
+        <div class="tool-card">
+          <div class="tag">Free</div>
+          <h3>Core access</h3>
+          <p>Start with the essential version of each tool and use the main workflow without extra friction.</p>
+          <div class="feature-list" style="margin-top:14px;">
+            <div><strong>✓</strong> Core dashboards and workflows</div>
+            <div><strong>✓</strong> Simple everyday use</div>
+            <div><strong>✓</strong> Good for getting started fast</div>
+          </div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tag">Premium</div>
+          <h3>Deeper support</h3>
+          <p>Unlock more advanced features, longer history, stronger insights, and a richer working experience.</p>
+          <div class="feature-list" style="margin-top:14px;">
+            <div><strong>✓</strong> Deeper insights and tracking</div>
+            <div><strong>✓</strong> More advanced features</div>
+            <div><strong>✓</strong> Better fit for regular users</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section final-cta">
+      <h2>Start with the tool that solves today’s problem</h2>
       <p>
-        Track clients, invoices, expenses, and projects from one clear dashboard.
+        ClarityStacked helps you move from chaos to clarity with focused systems you can actually use.
+        Begin with MultiStream, jump into Prepper Pantry, open CalmFrame, or use ADHD Advantage at Work for calmer professional support.
       </p>
 
-      <div class="action-row" style="margin-top:14px;">
-        <a class="btn btn-primary" href="multistream.html">
-          View app page
-        </a>
-        <a class="btn btn-secondary"
-           href="https://freelance-command-center-opal.vercel.app/"
-           target="_blank"
-           rel="noopener">
-          Open app
-        </a>
+      <div class="hero-actions" style="justify-content:center;">
+        <a class="btn btn-primary" href="https://freelance-command-center-opal.vercel.app/" target="_blank" rel="noopener">Open MultiStream</a>
+        <a class="btn btn-secondary" href="https://prepper-pantry-command.vercel.app/" target="_blank" rel="noopener">Open Pantry</a>
+        <a class="btn btn-secondary" href="https://calmframe.vercel.app/" target="_blank" rel="noopener">Open CalmFrame</a>
+        <a class="btn btn-secondary" href="https://adhd-work-app.vercel.app/" target="_blank" rel="noopener">Open ADHD Work</a>
       </div>
-    </div>
-
-    <div class="tool-card">
-      <div class="tag">Live now</div>
-      <h3>Prepper Pantry Command</h3>
-      <p>
-        Organise pantry stock, track expiry dates, reduce waste, and plan restocking with more clarity.
-      </p>
-
-      <div class="action-row" style="margin-top:14px;">
-        <a class="btn btn-primary" href="pantry.html">
-          View app page
-        </a>
-        <a class="btn btn-secondary"
-           href="https://prepper-pantry-command.vercel.app/"
-           target="_blank"
-           rel="noopener">
-          Open app
-        </a>
-      </div>
-    </div>
-
-    <div class="tool-card">
-      <div class="tag">Live now</div>
-      <h3>CalmFrame</h3>
-      <p>
-        Track thoughts, manage triggers, and use simple calming tools to regain clarity and control.
-      </p>
-
-      <div class="action-row" style="margin-top:14px;">
-        <a class="btn btn-primary" href="calmframe.html">
-          View app page
-        </a>
-        <a class="btn btn-secondary"
-           href="https://calmframe.vercel.app/"
-           target="_blank"
-           rel="noopener">
-          Open app
-        </a>
-      </div>
-    </div>
-
-    <div class="tool-card">
-      <div class="tag">Live now</div>
-      <h3>ADHD Advantage at Work</h3>
-      <p>
-        Support focus, planning, meeting prep, and energy-aware work structure with a calmer workflow.
-      </p>
-
-      <div class="action-row" style="margin-top:14px;">
-        <a class="btn btn-primary" href="adhd-work.html">
-          View app page
-        </a>
-        <a class="btn btn-secondary"
-           href="https://adhd-work-app.vercel.app/"
-           target="_blank"
-           rel="noopener">
-          Open app
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="features" class="section">
-  <div class="section-head">
-    <div>
-      <h2>Core features</h2>
-      <p>These are the parts of the product users can understand quickly and get value from immediately.</p>
-    </div>
-  </div>
-
-  <div class="features-grid">
-    <div class="feature-card">
-      <h3>Dashboard overview</h3>
-      <p>See revenue, expenses, active work, and important signals at a glance.</p>
-    </div>
-    <div class="feature-card">
-      <h3>Income stream tracking</h3>
-      <p>Organise multiple streams in one view so you can compare and manage them clearly.</p>
-    </div>
-    <div class="feature-card">
-      <h3>Inventory clarity</h3>
-      <p>Keep household or business essentials visible in one place instead of scattered lists.</p>
-    </div>
-    <div class="feature-card">
-      <h3>Guided support flows</h3>
-      <p>Use clear check-ins, reframing, weekly resets, and task-unpacking tools to stay more grounded and consistent.</p>
-    </div>
-  </div>
-</section>
-
-<section id="how" class="section">
-  <div class="section-head">
-    <div>
-      <h2>How it works</h2>
-      <p>A simple flow designed to feel clear from the first click.</p>
-    </div>
-  </div>
-
-  <div class="steps-grid">
-    <div class="step-card">
-      <span>1</span>
-      <h3>Open the command system</h3>
-      <p>Start inside a focused dashboard that shows your work, home stock, money, or priorities in one place.</p>
-    </div>
-    <div class="step-card">
-      <span>2</span>
-      <h3>Track what matters</h3>
-      <p>Add the information that is usually scattered so your workflow becomes visible.</p>
-    </div>
-    <div class="step-card">
-      <span>3</span>
-      <h3>Act with clarity</h3>
-      <p>Use the system to decide what needs attention now and what can wait.</p>
-    </div>
-  </div>
-</section>
-
-<section id="tools" class="section">
-  <div class="section-head">
-    <div>
-      <h2>The ClarityStacked tool direction</h2>
-      <p>ClarityStacked is a growing collection of focused standalone systems rather than one bloated all-in-one platform.</p>
-    </div>
-  </div>
-
-<div class="tools-grid">
-  <div class="tool-card">
-    <div class="tag">Current approach</div>
-    <h3>Focused standalone systems</h3>
-    <p>Each tool is built around one clear problem so the experience stays simpler, faster, and easier to use.</p>
-  </div>
-
-  <div class="tool-card">
-    <div class="tag">Scalable</div>
-    <h3>Grow your stack over time</h3>
-    <p>Start with one tool, then add more as your needs expand without forcing everything into one bloated workspace.</p>
-  </div>
-
-  <div class="tool-card">
-    <div class="tag">Low friction</div>
-    <h3>Made for real-life use</h3>
-    <p>Clear layouts, practical flows, and focused actions help users move faster with less overwhelm.</p>
-  </div>
-
-  <div class="tool-card">
-    <div class="tag">Coming next</div>
-    <h3>More command systems ahead</h3>
-    <p>New apps can be added into the same structure easily, with their own page, preview, and launch flow.</p>
-  </div>
-</div>
-</section>
-
-<section class="section">
-  <div class="section-head">
-    <div>
-      <h2>Simple pricing direction</h2>
-      <p>Use the core experience first, then upgrade only if you need more depth.</p>
-    </div>
-  </div>
-
-  <div class="apps-grid">
-    <div class="tool-card">
-      <div class="tag">Free</div>
-      <h3>Core access</h3>
-      <p>Start with the essential version of each tool and use the main workflow without extra friction.</p>
-      <div class="feature-list" style="margin-top:14px;">
-        <div><strong>✓</strong> Core dashboards and workflows</div>
-        <div><strong>✓</strong> Simple everyday use</div>
-        <div><strong>✓</strong> Good for getting started fast</div>
-      </div>
-    </div>
-
-    <div class="tool-card">
-      <div class="tag">Premium</div>
-      <h3>Deeper support</h3>
-      <p>Unlock more advanced features, longer history, stronger insights, and a richer working experience.</p>
-      <div class="feature-list" style="margin-top:14px;">
-        <div><strong>✓</strong> Deeper insights and tracking</div>
-        <div><strong>✓</strong> More advanced features</div>
-        <div><strong>✓</strong> Better fit for regular users</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="section-head">
-    <div>
-      <h2>How access works</h2>
-      <p>Start simple, then unlock more as you need it.</p>
-    </div>
-  </div>
-
-  <div class="tools-grid">
-    <div class="tool-card">
-      <div class="tag">Free</div>
-      <h3>Start using tools immediately</h3>
-      <p>
-        Each app is usable on its own with core features available right away. No setup, no friction.
-      </p>
-    </div>
-
-    <div class="tool-card">
-      <div class="tag">Upgrade later</div>
-      <h3>Unlock deeper features</h3>
-      <p>
-        Premium versions add more insights, tracking depth, and advanced tools as your needs grow.
-      </p>
-    </div>
-
-    <div class="tool-card">
-      <div class="tag">Flexible</div>
-      <h3>No all-in-one lock-in</h3>
-      <p>
-        Use only the tools you need. Add more over time without being forced into one bloated system.
-      </p>
-    </div>
-  </div>
-</section>
-
-<section class="section final-cta">
-  <h2>Start with the tool that solves today’s problem</h2>
-  <p>
-    ClarityStacked helps you move from chaos to clarity with focused systems you can actually use.
-    Begin with MultiStream, jump into Prepper Pantry, open CalmFrame, or use ADHD Advantage at Work for calmer professional support.
-  </p>
-
-  <div class="cta-row" style="justify-content:center;">
-    <a class="btn btn-primary" href="https://freelance-command-center-opal.vercel.app/" target="_blank" rel="noopener">
-      Open MultiStream
-    </a>
-    <a class="btn btn-secondary" href="https://prepper-pantry-command.vercel.app/" target="_blank" rel="noopener">
-      Open Pantry
-    </a>
-    <a class="btn btn-secondary" href="https://calmframe.vercel.app/" target="_blank" rel="noopener">
-      Open CalmFrame
-    </a>
-    <a class="btn btn-secondary" href="https://adhd-work-app.vercel.app/" target="_blank" rel="noopener">
-      Open ADHD Work
-    </a>
-  </div>
-</section>
+    </section>
 
     <footer>
       <div>© <span id="year"></span> ClarityStacked</div>
@@ -418,13 +955,15 @@
     </footer>
   </div>
 
-<div class="mobile-app-bar">
-  <a href="index.html">Home</a>
-  <a href="multistream.html">MultiStream</a>
-  <a href="pantry.html">Pantry</a>
-  <a href="calmframe.html">CalmFrame</a>
-</div>
+  <div class="mobile-app-bar">
+    <a href="index.html">Home</a>
+    <a href="multistream.html">MultiStream</a>
+    <a href="pantry.html">Pantry</a>
+    <a href="calmframe.html">CalmFrame</a>
+  </div>
 
-<script src="js/app.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
