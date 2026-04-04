@@ -1,21 +1,21 @@
 :root{
-  --bg:#f3f7fb;
+  --bg:#f4f7fb;
   --panel:#ffffff;
   --panel-soft:#f8fbff;
   --border:#dfe8f1;
   --text:#0f172a;
   --text-strong:#081120;
-  --muted:#5b6b7f;
-  --muted-2:#7a8a9d;
+  --muted:#5f7287;
+  --muted-2:#7a8b9d;
   --teal:#18c5b5;
   --blue:#5b8def;
   --shadow-sm:0 8px 24px rgba(15,23,42,0.05);
   --shadow-md:0 18px 50px rgba(15,23,42,0.07);
   --shadow-lg:0 30px 80px rgba(15,23,42,0.10);
-  --radius-xl:28px;
-  --radius-lg:20px;
+  --radius-xl:30px;
+  --radius-lg:22px;
   --radius-md:16px;
-  --max:1240px;
+  --max:1440px;
 }
 
 *{box-sizing:border-box}
@@ -26,8 +26,8 @@ body{
   font-family:'Roboto',system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
   color:var(--text);
   background:
-    radial-gradient(700px 420px at 0% 0%, rgba(24,197,181,0.10), transparent 60%),
-    radial-gradient(800px 480px at 100% 0%, rgba(91,141,239,0.12), transparent 62%),
+    radial-gradient(700px 420px at 0% 0%, rgba(24,197,181,0.08), transparent 60%),
+    radial-gradient(900px 520px at 100% 0%, rgba(91,141,239,0.10), transparent 62%),
     var(--bg);
   line-height:1.55;
 }
@@ -53,42 +53,45 @@ img{max-width:100%;display:block}
 }
 
 @media (min-width:1200px){
-  .wrap{padding-left:236px;}
+  .wrap{
+    padding-left:250px;
+    padding-right:24px;
+  }
 }
 
-/* Sidebar */
+/* sidebar */
 .app-rail{
   position:fixed;
-  left:18px;
-  top:110px;
-  width:188px;
+  left:16px;
+  top:92px;
+  width:192px;
   z-index:40;
   padding:14px;
   border-radius:22px;
   background:rgba(255,255,255,0.78);
   border:1px solid var(--border);
   box-shadow:var(--shadow-md);
-  backdrop-filter:blur(8px);
+  backdrop-filter:blur(10px);
 }
 
 .app-rail-title{
-  padding:4px 8px 12px;
   font-size:11px;
   font-weight:900;
   letter-spacing:.12em;
   text-transform:uppercase;
   color:var(--muted-2);
+  padding:6px 8px 12px;
 }
 
 .app-rail a{
+  min-height:44px;
   display:flex;
   align-items:center;
-  min-height:44px;
   padding:10px 12px;
   border-radius:14px;
   font-size:14px;
   font-weight:800;
-  color:#36506a;
+  color:#38516a;
   transition:background .18s ease,color .18s ease,box-shadow .18s ease;
 }
 
@@ -103,20 +106,20 @@ img{max-width:100%;display:block}
   box-shadow:var(--shadow-sm);
 }
 
-/* Topbar */
+/* topbar */
 .topbar{
   position:sticky;
-  top:12px;
+  top:10px;
   z-index:60;
   display:grid;
-  grid-template-columns:auto 1fr auto;
+  grid-template-columns:180px 1fr 150px;
   align-items:center;
-  gap:18px;
-  margin:10px 0 28px;
+  gap:14px;
+  margin:10px 0 24px;
   padding:12px 14px;
   border:1px solid var(--border);
-  border-radius:22px;
-  background:rgba(255,255,255,0.82);
+  border-radius:24px;
+  background:rgba(255,255,255,0.84);
   box-shadow:var(--shadow-sm);
   backdrop-filter:blur(8px);
 }
@@ -126,37 +129,43 @@ img{max-width:100%;display:block}
   align-items:center;
   gap:12px;
   color:var(--text-strong);
+  min-width:0;
 }
 
 .logo-full{
-  height:38px;
+  height:34px;
   width:auto;
 }
 
 .nav-wrap{
-  display:flex;
-  justify-content:center;
   min-width:0;
+  overflow:hidden;
 }
 
 .nav{
   display:flex;
   align-items:center;
-  justify-content:center;
-  gap:6px;
+  justify-content:flex-start;
+  gap:4px;
+  width:100%;
   padding:6px;
+  border:1px solid #e7eef5;
   background:#f8fbff;
-  border:1px solid #edf3f8;
-  border-radius:16px;
-  flex-wrap:wrap;
+  border-radius:18px;
+  overflow-x:auto;
+  scrollbar-width:none;
 }
 
+.nav::-webkit-scrollbar{display:none}
+
 .nav a{
+  flex:0 0 auto;
   padding:10px 12px;
   border-radius:12px;
   font-size:14px;
   font-weight:800;
-  color:#486078;
+  color:#4d6278;
+  white-space:nowrap;
   transition:background .18s ease,color .18s ease;
 }
 
@@ -166,7 +175,7 @@ img{max-width:100%;display:block}
   color:var(--text-strong);
 }
 
-/* Buttons */
+/* buttons */
 .btn{
   display:inline-flex;
   align-items:center;
@@ -198,167 +207,189 @@ img{max-width:100%;display:block}
   background:#fff;
 }
 
-/* New Hero */
-.hero-new{
-  margin-bottom:20px;
+.topbar .btn{
+  min-height:44px;
+  width:100%;
+  padding:0 14px;
+  font-size:14px;
 }
 
-.hero-new-grid{
+/* hero */
+.hero{
+  margin-top:8px;
+  border:1px solid var(--border);
+  border-radius:var(--radius-xl);
+  background:
+    radial-gradient(720px 360px at 8% 0%, rgba(24,197,181,0.10), transparent 62%),
+    radial-gradient(840px 420px at 100% 0%, rgba(91,141,239,0.12), transparent 64%),
+    rgba(255,255,255,0.84);
+  box-shadow:var(--shadow-lg);
+  overflow:hidden;
+  position:relative;
+  backdrop-filter:blur(8px);
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  right:-120px;
+  bottom:-120px;
+  width:360px;
+  height:360px;
+  background:radial-gradient(circle, rgba(91,141,239,0.08), transparent 70%);
+  pointer-events:none;
+}
+
+.hero-stack{
   display:grid;
-  grid-template-columns:1.02fr .98fr;
-  gap:28px;
+  grid-template-columns:minmax(0,1.05fr) minmax(420px,.95fr);
+  gap:30px;
   align-items:center;
+  padding:34px;
+  position:relative;
+  z-index:2;
 }
 
-.hero-new-copy{
-  padding:6px 0;
+.hero-copy{
+  max-width:none;
 }
 
-.hero-new-badge{
+.eyebrow{
   display:inline-flex;
   align-items:center;
-  min-height:34px;
-  padding:0 12px;
+  gap:10px;
+  min-height:36px;
+  padding:0 14px;
   border-radius:999px;
-  background:#eef6fb;
   border:1px solid #e3edf6;
+  background:#eef6fb;
   color:#38536d;
   font-size:13px;
   font-weight:800;
-  margin-bottom:18px;
+  margin-bottom:16px;
 }
 
-.hero-new-copy h1{
+.eyebrow-dot{
+  width:8px;
+  height:8px;
+  border-radius:999px;
+  background:var(--teal);
+}
+
+.hero h1{
   margin:0 0 16px;
   font-family:'Sora',sans-serif;
-  font-size:clamp(40px,5vw,66px);
+  font-size:clamp(42px,4.2vw,64px);
   line-height:1.02;
   letter-spacing:-1.8px;
   max-width:11ch;
   color:var(--text-strong);
 }
 
-.hero-new-lead{
+.hero p.lead{
   margin:0 0 22px;
-  max-width:56ch;
+  max-width:62ch;
   color:var(--muted);
   font-size:18px;
-  line-height:1.7;
+  line-height:1.72;
 }
 
-.hero-new-actions{
+.cta-row{
   display:flex;
   gap:12px;
   flex-wrap:wrap;
-  margin-bottom:18px;
+  margin-bottom:16px;
 }
 
-.hero-new-meta{
+.hero-badges{
   display:flex;
   gap:10px;
   flex-wrap:wrap;
 }
 
-.hero-new-meta span{
+.pill{
   display:inline-flex;
   align-items:center;
   min-height:38px;
   padding:0 14px;
   border-radius:999px;
+  border:1px solid #e6edf5;
   background:#fff;
-  border:1px solid #e7eef5;
-  color:#526579;
+  color:#5b6b7f;
   font-size:13px;
   font-weight:800;
   box-shadow:var(--shadow-sm);
 }
 
-.hero-new-visual{
-  min-width:0;
+/* preview */
+.preview-note{
+  margin:0 0 12px;
+  color:var(--muted);
+  font-size:14px;
 }
 
-.hero-new-panel{
+.preview-shell{
+  width:100%;
   border:1px solid var(--border);
-  border-radius:30px;
-  background:
-    radial-gradient(420px 220px at 12% 0%, rgba(24,197,181,0.10), transparent 65%),
-    radial-gradient(420px 240px at 100% 100%, rgba(91,141,239,0.10), transparent 68%),
-    var(--panel);
-  box-shadow:var(--shadow-lg);
+  border-radius:28px;
   overflow:hidden;
+  background:#f8fbff;
+  box-shadow:var(--shadow-md);
 }
 
-.hero-new-panel-top{
+.browser-bar{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  min-height:56px;
+  padding:0 14px;
+  background:linear-gradient(180deg, rgba(247,251,255,0.95), rgba(237,244,251,0.86));
+  border-bottom:1px solid #e3edf6;
+}
+
+.browser-dots{
   display:flex;
   gap:8px;
-  padding:18px 20px 0;
+  flex-shrink:0;
 }
 
-.hero-new-panel-top span{
+.browser-dots span{
   width:10px;
   height:10px;
   border-radius:999px;
-  background:#c8d5e2;
+  background:#c7d5e2;
 }
 
-.hero-new-panel-body{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:14px;
-  padding:20px;
+.browser-url{
+  min-width:0;
+  flex:1;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  font-size:13px;
+  font-weight:700;
+  color:#53697f;
+  background:#fff;
+  border:1px solid #e6edf5;
+  border-radius:999px;
+  padding:9px 13px;
 }
 
-.hero-stat-card,
-.hero-mini-app{
-  border:1px solid #e7eef5;
-  border-radius:18px;
-  background:linear-gradient(180deg,#ffffff,#f9fbfe);
-  padding:18px;
-  box-shadow:var(--shadow-sm);
-}
-
-.hero-stat-card strong{
+.live-preview{
+  width:100%;
+  height:720px;
+  border:0;
   display:block;
-  margin-bottom:6px;
-  font-size:24px;
-  line-height:1.1;
-  color:var(--text-strong);
+  background:#fff;
 }
 
-.hero-stat-card span{
-  color:var(--muted);
-  font-size:14px;
-  line-height:1.5;
-}
-
-.hero-stat-wide{
-  grid-column:1 / -1;
-}
-
-.hero-stat-wide strong{
-  font-size:20px;
-}
-
-.hero-mini-grid{
-  grid-column:1 / -1;
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:12px;
-}
-
-.hero-mini-app{
-  font-weight:800;
-  color:#30485f;
-  text-align:center;
-}
-
-/* Sections */
+/* sections */
 .section{
-  margin-top:20px;
+  margin-top:22px;
   border:1px solid var(--border);
-  border-radius:28px;
-  background:rgba(255,255,255,0.78);
-  padding:28px;
+  border-radius:30px;
+  background:rgba(255,255,255,0.82);
+  padding:30px;
   box-shadow:var(--shadow-md);
 }
 
@@ -372,8 +403,8 @@ img{max-width:100%;display:block}
 
 .section-head h2{
   margin:0;
-  font-size:32px;
-  letter-spacing:-0.8px;
+  font-size:34px;
+  letter-spacing:-1px;
   color:var(--text-strong);
 }
 
@@ -385,93 +416,62 @@ img{max-width:100%;display:block}
   line-height:1.65;
 }
 
-.trust-grid,
-.features-grid{
+.product-intro{
   display:grid;
-  grid-template-columns:repeat(4,1fr);
   gap:14px;
+  max-width:920px;
 }
 
-.steps-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:14px;
+.status{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  min-height:36px;
+  padding:0 12px;
+  border-radius:999px;
+  background:#eef6fb;
+  border:1px solid #e3edf6;
+  color:#38536d;
+  font-size:13px;
+  font-weight:800;
+  width:max-content;
 }
 
-.tools-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:14px;
+.status-dot{
+  width:8px;
+  height:8px;
+  border-radius:999px;
+  background:var(--teal);
 }
 
-.apps-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:16px;
-  margin-top:16px;
-}
-
-.trust-card,
-.feature-card,
-.tool-card,
-.step-card{
-  border:1px solid #e7eef5;
-  border-radius:22px;
-  background:linear-gradient(180deg,#ffffff,#f9fbfe);
-  padding:20px;
-  box-shadow:var(--shadow-sm);
-}
-
-.trust-card h3,
-.feature-card h3,
-.tool-card h3,
-.step-card h3{
-  margin:0 0 8px;
-  font-size:20px;
+.product-intro h3{
+  margin:0;
+  font-size:34px;
+  line-height:1.12;
+  letter-spacing:-1px;
   color:var(--text-strong);
 }
 
-.trust-card p,
-.feature-card p,
-.tool-card p,
-.step-card p{
+.product-intro p{
   margin:0;
   color:var(--muted);
+  font-size:16px;
+  line-height:1.72;
+  max-width:78ch;
+}
+
+.why-box{
+  border:1px solid #e6edf5;
+  border-radius:18px;
+  background:#f8fbff;
+  padding:16px;
+  color:#38536d;
   font-size:15px;
   line-height:1.65;
 }
 
-.tool-card .tag{
-  display:inline-flex;
-  align-items:center;
-  padding:7px 11px;
-  border-radius:999px;
-  border:1px solid #e3edf6;
-  background:#f6faff;
-  color:#46657f;
-  font-size:12px;
-  font-weight:800;
-  margin-bottom:10px;
-}
-
-.apps-grid .tool-card{
-  display:flex;
-  flex-direction:column;
-  height:100%;
-  transition:transform .2s ease, box-shadow .2s ease;
-}
-
-.apps-grid .tool-card:hover{
-  transform:translateY(-4px);
-  box-shadow:0 18px 40px rgba(15,23,42,0.10);
-}
-
-.apps-grid .tool-card p{
-  margin-bottom:18px;
-}
-
-.apps-grid .action-row{
-  margin-top:auto !important;
+.why-box strong{
+  color:var(--text-strong);
 }
 
 .feature-list{
@@ -489,8 +489,145 @@ img{max-width:100%;display:block}
 }
 
 .feature-list strong{
-  color:var(--teal-dark);
+  color:#0f9f95;
   font-weight:900;
+}
+
+.action-row{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:4px;
+}
+
+.features-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+}
+
+.feature-card,
+.tool-card,
+.step-card,
+.trust-card{
+  border:1px solid #e7eef5;
+  border-radius:22px;
+  background:linear-gradient(180deg,#ffffff,#f9fbfe);
+  padding:22px;
+  box-shadow:var(--shadow-sm);
+}
+
+.feature-card h3,
+.tool-card h3,
+.step-card h3,
+.trust-card h3{
+  margin:0 0 8px;
+  font-size:18px;
+  line-height:1.35;
+  color:var(--text-strong);
+}
+
+.feature-card p,
+.tool-card p,
+.step-card p,
+.trust-card p{
+  margin:0;
+  color:var(--muted);
+  font-size:15px;
+  line-height:1.7;
+}
+
+/* product visual blocks */
+.product-visual{
+  min-height:360px;
+  padding:24px;
+  border-radius:28px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(320px 180px at 18% 28%, rgba(255,255,255,0.55), transparent 60%),
+    radial-gradient(260px 180px at 85% 15%, rgba(139,92,246,0.12), transparent 65%),
+    linear-gradient(135deg, rgba(24,197,181,0.18), rgba(91,141,239,0.16));
+  border:1px solid #e3edf6;
+  box-shadow:var(--shadow-md);
+}
+
+.product-visual.pantry-visual{
+  background:
+    radial-gradient(320px 180px at 18% 28%, rgba(255,255,255,0.55), transparent 60%),
+    radial-gradient(260px 180px at 85% 15%, rgba(34,197,94,0.14), transparent 65%),
+    linear-gradient(135deg, rgba(16,185,129,0.16), rgba(250,204,21,0.14));
+}
+
+.product-visual.calmframe-visual{
+  background:
+    radial-gradient(320px 180px at 18% 28%, rgba(255,255,255,0.55), transparent 60%),
+    radial-gradient(260px 180px at 85% 15%, rgba(124,58,237,0.14), transparent 65%),
+    linear-gradient(135deg, rgba(96,165,250,0.14), rgba(167,139,250,0.16));
+}
+
+.product-visual.adhd-visual{
+  background:
+    radial-gradient(320px 180px at 18% 28%, rgba(255,255,255,0.55), transparent 60%),
+    radial-gradient(260px 180px at 85% 15%, rgba(79,70,229,0.14), transparent 65%),
+    linear-gradient(135deg, rgba(125,211,252,0.14), rgba(129,140,248,0.16));
+}
+
+.mini-badge{
+  display:inline-flex;
+  align-items:center;
+  min-height:36px;
+  padding:0 12px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,0.5);
+  background:rgba(255,255,255,0.52);
+  color:#15314c;
+  font-size:12px;
+  font-weight:800;
+  width:max-content;
+}
+
+.visual-copy h3{
+  margin:0 0 8px;
+  font-size:28px;
+  color:var(--text-strong);
+}
+
+.visual-copy p{
+  margin:0;
+  color:#31506b;
+  font-size:16px;
+  line-height:1.65;
+  max-width:54ch;
+}
+
+.chip-row{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-top:16px;
+}
+
+.chip{
+  display:inline-flex;
+  align-items:center;
+  min-height:34px;
+  padding:0 12px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,0.5);
+  background:rgba(255,255,255,0.48);
+  color:#31506b;
+  font-size:12px;
+  font-weight:800;
+}
+
+.steps-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
 }
 
 .steps-grid .step-card span{
@@ -508,17 +645,36 @@ img{max-width:100%;display:block}
   box-shadow:var(--shadow-sm);
 }
 
+.tools-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+}
+
+.tool-card .tag{
+  display:inline-flex;
+  align-items:center;
+  padding:7px 11px;
+  border-radius:999px;
+  border:1px solid #e3edf6;
+  background:#f6faff;
+  color:#46657f;
+  font-size:12px;
+  font-weight:800;
+  margin-bottom:10px;
+}
+
 .final-cta{
   text-align:center;
-  padding:46px 24px;
+  padding:48px 24px;
   background:
     radial-gradient(520px 200px at 50% 0%, rgba(24,197,181,0.10), transparent 70%),
-    rgba(255,255,255,0.84);
+    rgba(255,255,255,0.86);
 }
 
 .final-cta h2{
   margin:0 0 10px;
-  font-size:40px;
+  font-size:42px;
   letter-spacing:-0.8px;
   color:var(--text-strong);
 }
@@ -546,18 +702,32 @@ footer{
   display:none;
 }
 
-@media (max-width:1300px){
-  .tools-grid{grid-template-columns:repeat(2,1fr);}
-}
-
 @media (max-width:1180px){
-  .trust-grid,
-  .features-grid{grid-template-columns:repeat(2,1fr);}
+  .hero-stack{
+    grid-template-columns:1fr;
+  }
+
+  .features-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .tools-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .live-preview{
+    height:620px;
+  }
 }
 
 @media (max-width:920px){
   .app-rail{display:none;}
-  .wrap{padding:0 18px;}
+
+  .wrap{
+    padding:0 18px;
+    max-width:100%;
+  }
+
   .topbar{
     grid-template-columns:1fr auto;
     gap:12px;
@@ -565,23 +735,35 @@ footer{
     padding:12px;
     border-radius:18px;
   }
+
   .nav-wrap{display:none;}
 
-  .hero-new-grid,
-  .apps-grid,
-  .trust-grid,
+  .hero-stack{
+    padding:22px 18px 18px;
+    gap:18px;
+  }
+
+  .section{
+    padding:18px;
+  }
+
   .features-grid,
   .tools-grid,
   .steps-grid{
     grid-template-columns:1fr;
   }
 
-  .section{padding:18px;}
-  .hero-new-copy h1{max-width:12ch;}
-  .hero-new-actions,
-  .action-row,
-  .cta-row{flex-direction:column;}
+  .cta-row,
+  .action-row{
+    flex-direction:column;
+  }
+
   .btn{width:100%;}
+
+  .live-preview{
+    height:520px;
+  }
+
   .mobile-app-bar{
     position:fixed;
     bottom:0;
@@ -597,6 +779,7 @@ footer{
     backdrop-filter:blur(10px);
     z-index:100;
   }
+
   .mobile-app-bar a{
     text-align:center;
     padding:12px 8px;
@@ -605,426 +788,36 @@ footer{
     font-weight:800;
     font-size:12px;
   }
+
   body{padding-bottom:88px;}
 }
 
 @media (max-width:640px){
-  .hero-new-copy h1{font-size:clamp(34px,10vw,46px);}
-  .hero-new-lead,
-  .trust-card p,
+  .hero h1{
+    font-size:clamp(34px,10vw,46px);
+    max-width:10ch;
+  }
+
+  .hero p.lead,
+  .product-intro p,
+  .visual-copy p,
   .feature-card p,
   .tool-card p,
-  .step-card p{font-size:15px;}
-  .hero-new-panel-body,
-  .hero-mini-grid{grid-template-columns:1fr;}
-  .browser-url{font-size:12px;}
-  .final-cta h2{font-size:30px;}
+  .step-card p{
+    font-size:15px;
+  }
+
+  .final-cta h2{
+    font-size:30px;
+  }
+
+  .browser-url{
+    font-size:12px;
+  }
+
   .mobile-app-bar a{
     font-size:11px;
     padding:10px 5px;
   }
 }
-  </style>
-</head>
-<body>
-  <div class="noise"></div>
-
-<nav class="app-rail">
-  <div class="app-rail-title">Command Systems</div>
-  <a href="index.html" class="active">Home</a>
-  <a href="multistream.html">MultiStream</a>
-  <a href="pantry.html">Prepper Pantry</a>
-  <a href="calmframe.html">CalmFrame</a>
-  <a href="adhd-work.html">ADHD Work</a>
-</nav>
-
-  <div class="wrap">
-    <header class="topbar">
-      <a class="brand" href="#">
-        <img src="assets/logo-full.svg" alt="ClarityStacked" class="logo-full">
-      </a>
-
-      <div class="nav-wrap">
-      <nav class="nav">
-     <a href="multistream.html">MultiStream</a>
-     <a href="pantry.html">Pantry</a>
-     <a href="calmframe.html">CalmFrame</a>
-     <a href="adhd-work.html">ADHD Work</a>
-     <a href="#features">Features</a>
-    <a href="#tools">Tools</a>
-    <a href="#how">How it works</a>
-</nav>
-      </div>
-
-     <a class="btn btn-primary" href="multistream.html">
-  View app page
-</a>
-    </header>
-
-   <section class="hero-new">
-  <div class="hero-new-grid">
-    <div class="hero-new-copy">
-      <div class="hero-new-badge">Focused command systems for real-life work</div>
-
-      <h1>One place to run the systems that keep life and work moving</h1>
-
-      <p class="hero-new-lead">
-        ClarityStacked is a growing library of focused command systems designed to reduce overwhelm and help you act with more clarity.
-      </p>
-
-      <div class="hero-new-actions">
-        <a class="btn btn-primary" href="multistream.html">Explore MultiStream</a>
-        <a class="btn btn-secondary" href="#features">See how it works</a>
-      </div>
-
-      <div class="hero-new-meta">
-        <span>Multi-app system</span>
-        <span>Focused tools</span>
-        <span>Built for clarity</span>
-      </div>
-    </div>
-
-    <div class="hero-new-visual">
-      <div class="hero-new-panel">
-        <div class="hero-new-panel-top">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-
-        <div class="hero-new-panel-body">
-          <div class="hero-stat-card">
-            <strong>4</strong>
-            <span>Live systems</span>
-          </div>
-
-          <div class="hero-stat-card">
-            <strong>1 hub</strong>
-            <span>Clear navigation</span>
-          </div>
-
-          <div class="hero-stat-card hero-stat-wide">
-            <strong>Start with one tool. Expand only when needed.</strong>
-            <span>Cleaner than a bloated all-in-one workspace</span>
-          </div>
-
-          <div class="hero-mini-grid">
-            <div class="hero-mini-app">MultiStream</div>
-            <div class="hero-mini-app">Pantry</div>
-            <div class="hero-mini-app">CalmFrame</div>
-            <div class="hero-mini-app">ADHD Work</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="section">
-  <div class="trust-grid">
-    <div class="trust-card">
-      <h3>Focused, not bloated</h3>
-      <p>Each command system is designed around one real problem, so the experience stays clean and useful.</p>
-    </div>
-    <div class="trust-card">
-      <h3>Built for real work</h3>
-      <p>Track what matters, spot what is overdue, and make decisions from one visible source of truth.</p>
-    </div>
-    <div class="trust-card">
-      <h3>Made to reduce friction</h3>
-      <p>Clear layouts, practical workflows, and simple actions that help you move without second-guessing.</p>
-    </div>
-    <div class="trust-card">
-      <h3>Grow your stack over time</h3>
-      <p>Start with one tool that solves today’s problem, then add others as your needs expand.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="section-head">
-    <div>
-      <h2>Explore the tools</h2>
-      <p>Choose the system that solves your current problem.</p>
-    </div>
-  </div>
-
-  <div class="apps-grid">
-    <div class="tool-card">
-      <div class="tag">Live now</div>
-      <h3>MultiStream Command System</h3>
-      <p>
-        Track clients, invoices, expenses, and projects from one clear dashboard.
-      </p>
-
-      <div class="action-row" style="margin-top:14px;">
-        <a class="btn btn-primary" href="multistream.html">
-          View app page
-        </a>
-        <a class="btn btn-secondary"
-           href="https://freelance-command-center-opal.vercel.app/"
-           target="_blank"
-           rel="noopener">
-          Open app
-        </a>
-      </div>
-    </div>
-
-    <div class="tool-card">
-      <div class="tag">Live now</div>
-      <h3>Prepper Pantry Command</h3>
-      <p>
-        Organise pantry stock, track expiry dates, reduce waste, and plan restocking with more clarity.
-      </p>
-
-      <div class="action-row" style="margin-top:14px;">
-        <a class="btn btn-primary" href="pantry.html">
-          View app page
-        </a>
-        <a class="btn btn-secondary"
-           href="https://prepper-pantry-command.vercel.app/"
-           target="_blank"
-           rel="noopener">
-          Open app
-        </a>
-      </div>
-    </div>
-
-    <div class="tool-card">
-      <div class="tag">Live now</div>
-      <h3>CalmFrame</h3>
-      <p>
-        Track thoughts, manage triggers, and use simple calming tools to regain clarity and control.
-      </p>
-
-      <div class="action-row" style="margin-top:14px;">
-        <a class="btn btn-primary" href="calmframe.html">
-          View app page
-        </a>
-        <a class="btn btn-secondary"
-           href="https://calmframe.vercel.app/"
-           target="_blank"
-           rel="noopener">
-          Open app
-        </a>
-      </div>
-    </div>
-
-    <div class="tool-card">
-      <div class="tag">Live now</div>
-      <h3>ADHD Advantage at Work</h3>
-      <p>
-        Support focus, planning, meeting prep, and energy-aware work structure with a calmer workflow.
-      </p>
-
-      <div class="action-row" style="margin-top:14px;">
-        <a class="btn btn-primary" href="adhd-work.html">
-          View app page
-        </a>
-        <a class="btn btn-secondary"
-           href="https://adhd-work-app.vercel.app/"
-           target="_blank"
-           rel="noopener">
-          Open app
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="features" class="section">
-  <div class="section-head">
-    <div>
-      <h2>Core features</h2>
-      <p>These are the parts of the product users can understand quickly and get value from immediately.</p>
-    </div>
-  </div>
-
-  <div class="features-grid">
-    <div class="feature-card">
-      <h3>Dashboard overview</h3>
-      <p>See revenue, expenses, active work, and important signals at a glance.</p>
-    </div>
-    <div class="feature-card">
-      <h3>Income stream tracking</h3>
-      <p>Organise multiple streams in one view so you can compare and manage them clearly.</p>
-    </div>
-    <div class="feature-card">
-      <h3>Inventory clarity</h3>
-      <p>Keep household or business essentials visible in one place instead of scattered lists.</p>
-    </div>
-    <div class="feature-card">
-      <h3>Guided support flows</h3>
-      <p>Use clear check-ins, reframing, weekly resets, and task-unpacking tools to stay more grounded and consistent.</p>
-    </div>
-  </div>
-</section>
-
-<section id="how" class="section">
-  <div class="section-head">
-    <div>
-      <h2>How it works</h2>
-      <p>A simple flow designed to feel clear from the first click.</p>
-    </div>
-  </div>
-
-  <div class="steps-grid">
-    <div class="step-card">
-      <span>1</span>
-      <h3>Open the command system</h3>
-      <p>Start inside a focused dashboard that shows your work, home stock, money, or priorities in one place.</p>
-    </div>
-    <div class="step-card">
-      <span>2</span>
-      <h3>Track what matters</h3>
-      <p>Add the information that is usually scattered so your workflow becomes visible.</p>
-    </div>
-    <div class="step-card">
-      <span>3</span>
-      <h3>Act with clarity</h3>
-      <p>Use the system to decide what needs attention now and what can wait.</p>
-    </div>
-  </div>
-</section>
-
-<section id="tools" class="section">
-  <div class="section-head">
-    <div>
-      <h2>The ClarityStacked tool direction</h2>
-      <p>ClarityStacked is a growing collection of focused standalone systems rather than one bloated all-in-one platform.</p>
-    </div>
-  </div>
-
-<div class="tools-grid">
-  <div class="tool-card">
-    <div class="tag">Current approach</div>
-    <h3>Focused standalone systems</h3>
-    <p>Each tool is built around one clear problem so the experience stays simpler, faster, and easier to use.</p>
-  </div>
-
-  <div class="tool-card">
-    <div class="tag">Scalable</div>
-    <h3>Grow your stack over time</h3>
-    <p>Start with one tool, then add more as your needs expand without forcing everything into one bloated workspace.</p>
-  </div>
-
-  <div class="tool-card">
-    <div class="tag">Low friction</div>
-    <h3>Made for real-life use</h3>
-    <p>Clear layouts, practical flows, and focused actions help users move faster with less overwhelm.</p>
-  </div>
-
-  <div class="tool-card">
-    <div class="tag">Coming next</div>
-    <h3>More command systems ahead</h3>
-    <p>New apps can be added into the same structure easily, with their own page, preview, and launch flow.</p>
-  </div>
-</div>
-</section>
-
-<section class="section">
-  <div class="section-head">
-    <div>
-      <h2>Simple pricing direction</h2>
-      <p>Use the core experience first, then upgrade only if you need more depth.</p>
-    </div>
-  </div>
-
-  <div class="apps-grid">
-    <div class="tool-card">
-      <div class="tag">Free</div>
-      <h3>Core access</h3>
-      <p>Start with the essential version of each tool and use the main workflow without extra friction.</p>
-      <div class="feature-list" style="margin-top:14px;">
-        <div><strong>✓</strong> Core dashboards and workflows</div>
-        <div><strong>✓</strong> Simple everyday use</div>
-        <div><strong>✓</strong> Good for getting started fast</div>
-      </div>
-    </div>
-
-    <div class="tool-card">
-      <div class="tag">Premium</div>
-      <h3>Deeper support</h3>
-      <p>Unlock more advanced features, longer history, stronger insights, and a richer working experience.</p>
-      <div class="feature-list" style="margin-top:14px;">
-        <div><strong>✓</strong> Deeper insights and tracking</div>
-        <div><strong>✓</strong> More advanced features</div>
-        <div><strong>✓</strong> Better fit for regular users</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="section-head">
-    <div>
-      <h2>How access works</h2>
-      <p>Start simple, then unlock more as you need it.</p>
-    </div>
-  </div>
-
-  <div class="tools-grid">
-    <div class="tool-card">
-      <div class="tag">Free</div>
-      <h3>Start using tools immediately</h3>
-      <p>
-        Each app is usable on its own with core features available right away. No setup, no friction.
-      </p>
-    </div>
-
-    <div class="tool-card">
-      <div class="tag">Upgrade later</div>
-      <h3>Unlock deeper features</h3>
-      <p>
-        Premium versions add more insights, tracking depth, and advanced tools as your needs grow.
-      </p>
-    </div>
-
-    <div class="tool-card">
-      <div class="tag">Flexible</div>
-      <h3>No all-in-one lock-in</h3>
-      <p>
-        Use only the tools you need. Add more over time without being forced into one bloated system.
-      </p>
-    </div>
-  </div>
-</section>
-
-<section class="section final-cta">
-  <h2>Start with the tool that solves today’s problem</h2>
-  <p>
-    ClarityStacked helps you move from chaos to clarity with focused systems you can actually use.
-    Begin with MultiStream, jump into Prepper Pantry, open CalmFrame, or use ADHD Advantage at Work for calmer professional support.
-  </p>
-
-  <div class="cta-row" style="justify-content:center;">
-    <a class="btn btn-primary" href="https://freelance-command-center-opal.vercel.app/" target="_blank" rel="noopener">
-      Open MultiStream
-    </a>
-    <a class="btn btn-secondary" href="https://prepper-pantry-command.vercel.app/" target="_blank" rel="noopener">
-      Open Pantry
-    </a>
-    <a class="btn btn-secondary" href="https://calmframe.vercel.app/" target="_blank" rel="noopener">
-      Open CalmFrame
-    </a>
-    <a class="btn btn-secondary" href="https://adhd-work-app.vercel.app/" target="_blank" rel="noopener">
-      Open ADHD Work
-    </a>
-  </div>
-</section>
-
-    <footer>
-      <div>© <span id="year"></span> ClarityStacked</div>
-      <div>Calm structure • Real-life transformation</div>
-    </footer>
-  </div>
-
-<div class="mobile-app-bar">
-  <a href="index.html">Home</a>
-  <a href="multistream.html">MultiStream</a>
-  <a href="pantry.html">Pantry</a>
-  <a href="calmframe.html">CalmFrame</a>
-</div>
-
-<script src="js/app.js"></script>
-</body>
-</html> I think the css caused the issue. I removed and it was a mess. what shoukd I do. don't want too many mistake with css again. first reason and help me understand.  also if research is needed go ahead. 
+ 
