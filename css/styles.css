@@ -826,38 +826,39 @@
       body{ padding-bottom:88px; }
     }
 
-    @media (max-width:640px){
-      .hero h1{ font-size:clamp(34px, 10vw, 48px); }
+@media (max-width:640px){
+  .hero h1{ font-size:clamp(34px, 10vw, 48px); }
 
-      .hero p.lead,
-      .product-intro p,
-      .visual-copy p,
-      .trust-card p,
-      .feature-card p,
-      .tool-card p,
-      .step-card p{
-        font-size:15px;
-      }
+  .hero p.lead,
+  .product-intro p,
+  .visual-copy p,
+  .trust-card p,
+  .feature-card p,
+  .tool-card p,
+  .step-card p{
+    font-size:15px;
+  }
 
-      .live-preview{ height:430px; }
+  .live-preview{ height:430px; }
 
-      .hero .preview-shell{
-        max-width:100%;
-      }
+  .hero .preview-shell{
+    max-width:100%;
+  }
 
-      .hero .live-preview{
-        width:100%;
-        height:680px;
-      }
+  .hero .live-preview{
+    width:100%;
+    height:680px;
+  }
 
-      .browser-url{ font-size:12px; }
-      .final-cta h2{ font-size:28px; }
-      .product-intro h3{ font-size:28px; }
+  .browser-url{ font-size:12px; }
+  .final-cta h2{ font-size:28px; }
+  .product-intro h3{ font-size:28px; }
 
-      .mobile-app-bar a{
-        font-size:11px;
-        padding:10px 5px;
-      }
+  .mobile-app-bar a{
+    font-size:11px;
+    padding:10px 5px;
+  }
+}
 
 .apps-grid{
   display:grid;
@@ -869,16 +870,33 @@
 @media (max-width:768px){
   .apps-grid{
     grid-template-columns:1fr;
+  }
+}
 
 .apps-grid .tool-card{
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .apps-grid .tool-card:hover{
-  transform: translateY(-4px);
-  box-shadow: 0 18px 40px rgba(15,23,42,0.12);
+  transform:translateY(-4px);
+  box-shadow:0 18px 40px rgba(15,23,42,0.12);
+}
 
-    .card-link{
+.apps-grid .tool-card{
+  display:flex;
+  flex-direction:column;
+  height:100%;
+}
+
+.apps-grid .tool-card p{
+  margin-bottom:18px;
+}
+
+.apps-grid .action-row{
+  margin-top:auto !important;
+}
+
+.card-link{
   text-decoration:none;
   color:inherit;
   display:flex;
@@ -887,6 +905,18 @@
 
 .card-link:hover{
   text-decoration:none;
+}
+
+.app-rail a.active{
+  background:rgba(255,255,255,0.58);
+  color:var(--text-strong);
+  box-shadow:0 8px 20px rgba(15,23,42,0.06);
+}
+
+.mobile-app-bar a.active{
+  background:linear-gradient(135deg, rgba(24,197,181,0.28), rgba(91,141,239,0.28));
+  color:var(--text-strong);
+}
 
 /* ===== Step 35: topbar + sidebar redesign ===== */
 
@@ -1015,6 +1045,3 @@
     display:none;
   }
 }
-}
-
-
