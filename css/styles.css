@@ -895,5 +895,187 @@ footer{
   .mobile-app-bar a{
     font-size:11px;
     padding:10px 5px;
+
+    /* =========================
+   HARD MOBILE FIX
+   Put this at the VERY END
+   ========================= */
+
+@media screen and (max-width: 920px){
+
+  .app-rail{
+    display:none !important;
+    visibility:hidden !important;
+    opacity:0 !important;
+    pointer-events:none !important;
+  }
+
+  .wrap{
+    max-width:100% !important;
+    margin:0 auto !important;
+    padding:0 14px 96px !important;
+  }
+
+  .topbar{
+    display:flex !important;
+    align-items:center !important;
+    justify-content:space-between !important;
+    gap:12px !important;
+    flex-wrap:nowrap !important;
+    margin:12px 0 18px !important;
+    padding:12px 14px !important;
+    border-radius:20px !important;
+  }
+
+  .brand{
+    min-width:0 !important;
+    flex:1 1 auto !important;
+  }
+
+  .logo-full{
+    height:28px !important;
+    width:auto !important;
+    max-width:150px !important;
+  }
+
+  .topbar .btn{
+    width:auto !important;
+    min-width:120px !important;
+    flex:0 0 auto !important;
+  }
+
+  .hero{
+    overflow:hidden !important;
+  }
+
+  .hero-stack{
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:stretch !important;
+    gap:18px !important;
+    padding:18px 14px 18px !important;
+  }
+
+  .hero-copy{
+    width:100% !important;
+    max-width:100% !important;
+  }
+
+  .hero h1{
+    font-size:clamp(34px, 10vw, 46px) !important;
+    line-height:1.02 !important;
+    letter-spacing:-1.2px !important;
+    max-width:100% !important;
+    word-break:break-word !important;
+    overflow-wrap:anywhere !important;
+  }
+
+  .hero p.lead{
+    font-size:15px !important;
+    line-height:1.65 !important;
+    max-width:100% !important;
+  }
+
+  .cta-row{
+    display:flex !important;
+    flex-direction:column !important;
+    gap:10px !important;
+  }
+
+  .cta-row .btn{
+    width:100% !important;
+  }
+
+  .preview-shell{
+    width:100% !important;
+    max-width:100% !important;
+    margin:0 !important;
+    border-radius:22px !important;
+    overflow:hidden !important;
+  }
+
+  .browser-bar{
+    min-height:48px !important;
+    padding:0 10px !important;
+  }
+
+  .browser-url{
+    font-size:12px !important;
+    padding:8px 10px !important;
+  }
+
+  .live-preview{
+    display:block !important;
+    width:100% !important;
+    height:420px !important;
+    border:0 !important;
+  }
+
+  .section{
+    padding:16px !important;
+    border-radius:22px !important;
+  }
+
+  .section-head{
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:flex-start !important;
+    gap:10px !important;
+  }
+
+  .section-head h2{
+    font-size:28px !important;
+  }
+
+  .features-grid,
+  .tools-grid,
+  .steps-grid{
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    gap:14px !important;
+  }
+
+  .feature-card,
+  .tool-card,
+  .step-card,
+  .trust-card{
+    padding:18px !important;
+  }
+
+  footer{
+    padding:22px 0 8px !important;
+    flex-direction:column !important;
+    align-items:flex-start !important;
+  }
+
+  .mobile-app-bar{
+    position:fixed !important;
+    left:0 !important;
+    right:0 !important;
+    bottom:0 !important;
+    display:grid !important;
+    grid-template-columns:repeat(4,1fr) !important;
+    gap:6px !important;
+    padding:10px !important;
+    background:rgba(255,255,255,0.96) !important;
+    border-top:1px solid rgba(15,23,42,0.08) !important;
+    box-shadow:0 -8px 24px rgba(15,23,42,0.06) !important;
+    backdrop-filter:blur(10px) !important;
+    z-index:999 !important;
+  }
+
+  .mobile-app-bar a{
+    text-align:center !important;
+    padding:10px 6px !important;
+    border-radius:12px !important;
+    font-size:11px !important;
+    font-weight:800 !important;
+    background:linear-gradient(135deg, rgba(24,197,181,0.12), rgba(91,141,239,0.12)) !important;
+  }
+
+  body{
+    padding-bottom:84px !important;
   }
 }
+  
+
