@@ -887,6 +887,133 @@
 
 .card-link:hover{
   text-decoration:none;
+
+/* ===== Step 35: topbar + sidebar redesign ===== */
+
+.topbar{
+  position:sticky;
+  top:14px;
+  z-index:60;
+  grid-template-columns:auto 1fr auto;
+  align-items:center;
+  gap:18px;
+  margin:18px 0 20px;
+  padding:16px 18px;
+  border:1px solid rgba(255,255,255,0.34);
+  border-radius:28px;
+  background:linear-gradient(180deg, rgba(255,255,255,0.72), rgba(255,255,255,0.50));
+  box-shadow:0 18px 44px rgba(91,141,239,0.10);
+  backdrop-filter:blur(14px);
+}
+
+.nav-wrap{
+  display:flex;
+  justify-content:center;
+}
+
+.nav{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:0;
+  border:none;
+  background:transparent;
+  box-shadow:none;
+  flex-wrap:wrap;
+}
+
+.nav a{
+  padding:12px 16px;
+  border-radius:14px;
+  font-size:15px;
+  font-weight:800;
+  color:#486078;
+  transition:background .18s ease, color .18s ease, transform .18s ease, box-shadow .18s ease;
+}
+
+.nav a:hover{
+  background:rgba(255,255,255,0.58);
+  color:var(--text-strong);
+  transform:translateY(-1px);
+}
+
+.nav a.active{
+  background:linear-gradient(135deg, rgba(24,197,181,0.18), rgba(91,141,239,0.18));
+  color:var(--text-strong);
+  box-shadow:0 10px 24px rgba(91,141,239,0.12);
+}
+
+.app-rail{
+  left:18px;
+  top:120px;
+  width:210px;
+  padding:16px 14px;
+  border-radius:28px;
+  background:linear-gradient(180deg, rgba(255,255,255,0.76), rgba(255,255,255,0.48));
+  border:1px solid rgba(255,255,255,0.34);
+  box-shadow:0 18px 44px rgba(91,141,239,0.10);
+  backdrop-filter:blur(14px);
+}
+
+.app-rail-title{
+  padding:8px 10px 14px;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.12em;
+  color:#708397;
+}
+
+.app-rail a{
+  display:flex;
+  align-items:center;
+  min-height:46px;
+  padding:12px 14px;
+  margin-bottom:6px;
+  border-radius:16px;
+  font-size:15px;
+  font-weight:800;
+  color:#36506a;
+  transition:background .18s ease, color .18s ease, transform .18s ease, box-shadow .18s ease;
+}
+
+.app-rail a:hover{
+  background:rgba(255,255,255,0.62);
+  color:var(--text-strong);
+  transform:translateX(2px);
+}
+
+.app-rail a.active{
+  background:linear-gradient(135deg, rgba(24,197,181,0.18), rgba(91,141,239,0.18));
+  color:var(--text-strong);
+  box-shadow:0 10px 24px rgba(91,141,239,0.12);
+}
+
+.btn{
+  min-height:50px;
+  padding:0 20px;
+  font-size:15px;
+  font-weight:800;
+}
+
+@media (min-width:1200px){
+  .wrap{
+    padding-left:250px;
+  }
+}
+
+@media (max-width:920px){
+  .topbar{
+    position:relative;
+    top:auto;
+    margin:14px 0 18px;
+    padding:14px;
+    border-radius:22px;
+  }
+
+  .nav{
+    display:none;
+  }
 }
 }
 
