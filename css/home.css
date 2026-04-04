@@ -22,6 +22,8 @@ body{
   max-width: 1600px;
 }
 
+
+
 @media (min-width:1200px){
   .wrap{
     max-width: 1480px;
@@ -422,6 +424,33 @@ body{
   .features-grid,
   .tools-grid{
     grid-template-columns: repeat(2,1fr);
+  }
+}
+
+@media (max-width:1280px){
+  .topbar{
+    grid-template-columns:auto minmax(0,1fr) auto;
+    gap:10px;
+  }
+
+  .nav-wrap{
+    overflow:hidden;
+  }
+
+  .nav{
+    justify-content:flex-start;
+    padding:6px;
+  }
+
+  .nav a{
+    padding:9px 10px;
+    font-size:13px;
+  }
+
+  .topbar .btn{
+    min-height:44px;
+    padding:0 16px;
+    font-size:14px;
   }
 }
 
