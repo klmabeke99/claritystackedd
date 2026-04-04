@@ -75,53 +75,58 @@ body{
 }
 
 /* homepage topbar */
+
 .topbar{
   position:sticky;
   top:10px;
   z-index:60;
   display:grid;
-  grid-template-columns:auto minmax(0,1fr) auto;
+  grid-template-columns:180px minmax(0,1fr) 150px;
   align-items:center;
-  gap:12px;
+  gap:14px;
   margin:10px 0 22px;
-  padding:10px 12px;
+  padding:12px 14px;
   border:1px solid var(--home-border);
   border-radius:22px;
   background:rgba(255,255,255,0.82);
   box-shadow:var(--home-shadow-sm);
   backdrop-filter:blur(8px);
 }
+
 .logo-full{
-  height:34px;
+  height:32px;
 }
 
 .nav-wrap{
-  min-width: 0;
+  min-width:0;
+  overflow:hidden;
 }
 
 .nav{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  padding: 8px;
-  border: 1px solid #e7eef5;
-  background: #f8fbff;
-  border-radius: 18px;
-  box-shadow: none;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  scrollbar-width: none;
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  gap:4px;
+  width:100%;
+  padding:6px;
+  border:1px solid #e7eef5;
+  background:#f8fbff;
+  border-radius:18px;
+  box-shadow:none;
+  flex-wrap:nowrap;
+  overflow-x:auto;
+  scrollbar-width:none;
 }
 
 .nav::-webkit-scrollbar{
   display:none;
 }
+
 .nav a{
   flex:0 0 auto;
-  padding:10px 12px;
+  padding:10px 10px;
   border-radius:12px;
-  font-size:14px;
+  font-size:13px;
   font-weight:800;
   color:#4d6278;
   white-space:nowrap;
@@ -129,8 +134,15 @@ body{
 }
 
 .nav a:hover{
-  background: #edf5fb;
-  color: var(--home-text);
+  background:#edf5fb;
+  color:var(--home-text);
+}
+
+.topbar .btn{
+  min-height:44px;
+  width:100%;
+  padding:0 14px;
+  font-size:14px;
 }
 
 /* homepage hero */
@@ -427,32 +439,6 @@ body{
   }
 }
 
-@media (max-width:1280px){
-  .topbar{
-    grid-template-columns:auto minmax(0,1fr) auto;
-    gap:10px;
-  }
-
-  .nav-wrap{
-    overflow:hidden;
-  }
-
-  .nav{
-    justify-content:flex-start;
-    padding:6px;
-  }
-
-  .nav a{
-    padding:9px 10px;
-    font-size:13px;
-  }
-
-  .topbar .btn{
-    min-height:44px;
-    padding:0 16px;
-    font-size:14px;
-  }
-}
 
 @media (max-width:920px){
   .app-rail{display:none;}
