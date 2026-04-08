@@ -92,29 +92,39 @@
       z-index:1;
     }
 
-    .topbar{
-      position:sticky;
-      top:10px;
-      z-index:60;
-      display:grid;
-      grid-template-columns:minmax(220px, 290px) minmax(0,1fr) 150px;
-      align-items:center;
-      gap:18px;
-      margin:0 0 28px;
-      padding:14px 18px;
-      border:1px solid var(--border);
-      border-radius:0 0 22px 22px;
-      background:rgba(245,239,231,0.92);
-      box-shadow:0 8px 22px rgba(20,32,51,0.04);
-      backdrop-filter:blur(10px);
-    }
+   .topbar{
+  position:sticky;
+  top:10px;
+  z-index:60;
+  display:grid;
+  grid-template-columns:minmax(170px, 220px) minmax(0,1fr) 150px;
+  align-items:center;
+  gap:14px;
+  margin:0 0 28px;
+  padding:14px 18px;
+  border:1px solid var(--border);
+  border-radius:0 0 22px 22px;
+  background:rgba(245,239,231,0.92);
+  box-shadow:0 8px 22px rgba(20,32,51,0.04);
+  backdrop-filter:blur(10px);
+}
 
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:14px;
-      min-width:0;
-    }
+.brand{
+  display:flex;
+  align-items:center;
+  min-width:0;
+}
+
+.brand-wordmark{
+  display:inline-block;
+  font-family:'Sora',sans-serif;
+  font-size:24px;
+  font-weight:800;
+  letter-spacing:-0.04em;
+  line-height:1;
+  color:var(--navy);
+  white-space:nowrap;
+}
 
     .logo-full{
       height:42px;
@@ -641,7 +651,7 @@
     @media (max-width:640px){
       .hero-copy{
         padding:8px 0 0;
-      }
+      } 
 
       .hero-copy h1{
         font-size:clamp(36px, 12vw, 50px);
@@ -663,8 +673,19 @@
       .mobile-app-bar a{
         font-size:11px;
         padding:10px 6px;
+        
       }
-    }
+
+      @media (max-width:920px){
+  .topbar{
+    grid-template-columns:1fr auto;
+  }
+
+  .brand-wordmark{
+    font-size:20px;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -672,9 +693,9 @@
 
   <div class="wrap">
     <header class="topbar">
-      <a class="brand" href="index.html">
-        <img src="assets/logo-full.svg" alt="ClarityStacked" class="logo-full">
-      </a>
+    <a class="brand" href="index.html">
+  <span class="brand-wordmark">ClarityStacked</span>
+</a>
 
       <div class="nav-wrap">
         <nav class="nav">
