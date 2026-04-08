@@ -606,10 +606,17 @@
       }
     }
 
-   @media (max-width:920px){
+ @media (max-width:920px){
+  .wrap{
+    padding:14px 18px 98px;
+    max-width:100%;
+  }
+
   .topbar{
     grid-template-columns:1fr auto;
     gap:12px;
+    padding:12px;
+    border-radius:20px;
   }
 
   .nav-wrap{
@@ -620,100 +627,112 @@
     font-size:20px;
   }
 
-      .nav-wrap{display:none;}
-
-      .apps-grid,
-      .trust-grid,
-      .features-grid,
-      .tools-grid,
-      .steps-grid{
-        grid-template-columns:1fr;
-      }
-
-      .hero-shell{
-        padding:20px;
-      }
-
-      .hero-actions,
-      .action-row{
-        flex-direction:column;
-      }
-
-      .btn{width:100%;}
-      .section{padding:20px;}
-
-      .mobile-app-bar{
-        position:fixed;
-        bottom:0;
-        left:0;
-        right:0;
-        display:grid;
-        grid-template-columns:repeat(4,1fr);
-        gap:8px;
-        padding:12px;
-        background:rgba(247,241,234,0.96);
-        border-top:1px solid rgba(20,32,51,0.08);
-        box-shadow:0 -8px 24px rgba(20,32,51,0.06);
-        backdrop-filter:blur(10px);
-        z-index:100;
-      }
-
-      .mobile-app-bar a{
-        text-align:center;
-        padding:12px 8px;
-        border-radius:14px;
-        background:#f3e7d4;
-        border:1px solid #decdb5;
-        font-weight:800;
-        font-size:12px;
-        color:var(--navy);
-      }
-
-      .mobile-app-bar a:first-child{
-        background:linear-gradient(180deg, #ffbe33, #f5a000);
-        color:#1f1607;
-        border-color:#e2a53a;
-      }
-    }
-
-    @media (max-width:640px){
-      .hero-copy{
-        padding:8px 0 0;
-      } 
-
-      .hero-copy h1{
-        font-size:clamp(36px, 12vw, 50px);
-        max-width:9.5ch;
-      }
-
-      .hero-lead,
-      .trust-card p,
-      .feature-card p,
-      .tool-card p,
-      .step-card p{
-        font-size:15px;
-      }
-
-      .final-cta h2{
-        font-size:30px;
-      }
-
-      .mobile-app-bar a{
-        font-size:11px;
-        padding:10px 6px;
-        
-      }
-
-      @media (max-width:920px){
-  .topbar{
-    grid-template-columns:1fr auto;
+  .topbar .btn{
+    width:auto;
+    min-height:42px;
+    padding:0 14px;
+    font-size:13px;
   }
 
-  .brand-wordmark{
-    font-size:20px;
+  .apps-grid,
+  .trust-grid,
+  .features-grid,
+  .tools-grid,
+  .steps-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero-shell{
+    padding:20px;
+  }
+
+  .hero-actions,
+  .action-row{
+    flex-direction:column;
+  }
+
+  .hero-actions .btn,
+  .action-row .btn,
+  .section .btn,
+  .final-cta .btn{
+    width:100%;
+  }
+
+  .section{
+    padding:20px;
+  }
+
+  .mobile-app-bar{
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:8px;
+    padding:12px;
+    background:rgba(247,241,234,0.96);
+    border-top:1px solid rgba(20,32,51,0.08);
+    box-shadow:0 -8px 24px rgba(20,32,51,0.06);
+    backdrop-filter:blur(10px);
+    z-index:100;
+  }
+
+  .mobile-app-bar a{
+    text-align:center;
+    padding:12px 8px;
+    border-radius:14px;
+    background:#f3e7d4;
+    border:1px solid #decdb5;
+    font-weight:800;
+    font-size:12px;
+    color:var(--navy);
+  }
+
+  .mobile-app-bar a:first-child{
+    background:linear-gradient(180deg, #ffbe33, #f5a000);
+    color:#1f1607;
+    border-color:#e2a53a;
   }
 }
 
+@media (max-width:640px){
+  .hero-copy{
+    padding:8px 0 0;
+  }
+
+  .hero-copy h1{
+    font-size:clamp(36px, 12vw, 50px);
+    max-width:9.5ch;
+  }
+
+  .hero-lead,
+  .trust-card p,
+  .feature-card p,
+  .tool-card p,
+  .step-card p{
+    font-size:15px;
+  }
+
+  .final-cta h2{
+    font-size:30px;
+  }
+
+  .mobile-app-bar a{
+    font-size:11px;
+    padding:10px 6px;
+  }
+
+  .brand-wordmark{
+    font-size:18px;
+  }
+
+  .topbar .btn{
+    min-height:40px;
+    padding:0 12px;
+    font-size:12px;
+  }
+}
   </style>
 </head>
 <body>
