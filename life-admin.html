@@ -15,11 +15,16 @@
   <style>
     :root{
       --bg:#efe7dc;
+      --bg-2:#f6f0e8;
       --panel:#fbf8f3;
+      --panel-2:#ffffff;
+      --panel-soft:#f3ede5;
       --border:#ddd1c0;
+      --border-2:#e9dfd1;
       --text:#142033;
       --text-strong:#061128;
       --muted:#576579;
+      --muted-2:#768396;
       --navy:#07112f;
       --gold:#f5a000;
       --gold-2:#ffb21f;
@@ -27,35 +32,58 @@
       --shadow-md:0 18px 40px rgba(24,30,43,0.07);
       --shadow-lg:0 28px 70px rgba(24,30,43,0.10);
       --radius-xl:32px;
+      --radius-lg:24px;
+      --radius-md:18px;
       --max:1520px;
     }
 
     *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+
     body{
       margin:0;
       font-family:'Inter',system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
-      background:linear-gradient(180deg,#efe7dc,#f4eee7);
       color:var(--text);
+      background:
+        radial-gradient(1200px 500px at 0% 0%, rgba(255,255,255,0.45), transparent 58%),
+        radial-gradient(900px 400px at 100% 0%, rgba(255,255,255,0.25), transparent 60%),
+        linear-gradient(180deg,#efe7dc 0%, #f4eee7 100%);
+      line-height:1.55;
       padding-bottom:84px;
+    }
+
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+
+    .noise{
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      opacity:.02;
+      mix-blend-mode:multiply;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
     }
 
     .wrap{
       max-width:var(--max);
       margin:0 auto;
       padding:18px 28px 48px;
+      position:relative;
+      z-index:1;
     }
 
-    /* Sidebar */
     .app-rail{
       position:fixed;
       left:16px;
       top:92px;
       width:210px;
+      z-index:40;
       padding:14px;
       border-radius:24px;
       background:rgba(245,239,231,0.92);
       border:1px solid var(--border);
-      box-shadow:var(--shadow-md);
+      box-shadow:0 8px 22px rgba(20,32,51,0.04);
+      backdrop-filter:blur(10px);
     }
 
     .app-rail-title{
@@ -63,206 +91,553 @@
       font-weight:800;
       letter-spacing:.16em;
       text-transform:uppercase;
-      color:#7a8b9d;
+      color:var(--muted-2);
       padding:6px 8px 12px;
     }
 
     .app-rail a{
+      min-height:46px;
       display:flex;
       align-items:center;
       padding:10px 12px;
       border-radius:16px;
+      font-size:14px;
       font-weight:700;
       color:#334254;
+      transition:all .18s ease;
+    }
+
+    .app-rail a:hover{
+      background:#f4ead8;
+      color:var(--text-strong);
     }
 
     .app-rail a.active{
       background:#efe4ce;
       border:1px solid #dcc8a6;
+      color:var(--text-strong);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.75);
     }
 
-    /* Topbar */
     .topbar{
+      position:sticky;
+      top:10px;
+      z-index:60;
       display:flex;
-      justify-content:space-between;
       align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      margin:0 0 24px;
       padding:14px 18px;
-      border-radius:24px;
       border:1px solid var(--border);
+      border-radius:24px;
       background:rgba(245,239,231,0.92);
-      margin-bottom:24px;
+      box-shadow:0 8px 22px rgba(20,32,51,0.04);
+      backdrop-filter:blur(10px);
+      flex-wrap:wrap;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      min-width:0;
     }
 
     .brand-wordmark{
+      display:inline-block;
       font-family:'Sora',sans-serif;
       font-size:24px;
+      letter-spacing:-0.04em;
+      line-height:1;
+      white-space:nowrap;
+    }
+
+    .brand-light{
+      font-weight:600;
+      color:#5f6f82;
+    }
+
+    .brand-bold{
+      font-weight:800;
+      background:linear-gradient(180deg, #1b2a41, #07112f);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
     }
 
     .btn{
-      padding:0 20px;
-      height:50px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:52px;
+      padding:0 22px;
       border-radius:16px;
       border:1px solid #d7c8b2;
       background:#fffdfa;
+      color:var(--text-strong);
       font-weight:700;
-      display:flex;
-      align-items:center;
+      font-size:15px;
+      white-space:nowrap;
+      box-shadow:var(--shadow-sm);
+      transition:transform .16s ease, box-shadow .16s ease;
+    }
+
+    .btn:hover{
+      transform:translateY(-1px);
+      box-shadow:0 14px 28px rgba(20,32,51,0.08);
     }
 
     .btn-primary{
-      background:linear-gradient(180deg,var(--gold-2),var(--gold));
+      background:linear-gradient(180deg, var(--gold-2), var(--gold));
+      border-color:#e2a53a;
       color:#1f1607;
     }
 
-    /* Hero */
     .hero{
+      margin-top:8px;
       border:1px solid var(--border);
       border-radius:var(--radius-xl);
-      padding:34px;
-      background:rgba(255,255,255,0.5);
+      background:linear-gradient(180deg, rgba(255,255,255,0.45), rgba(255,255,255,0.25));
       box-shadow:var(--shadow-md);
+      overflow:hidden;
+      position:relative;
+      backdrop-filter:blur(8px);
     }
 
-    h1{
-      font-family:'Sora';
-      font-size:clamp(44px,5vw,64px);
+    .hero-stack{
+      display:flex;
+      flex-direction:column;
+      gap:24px;
+      align-items:stretch;
+      padding:34px;
+      position:relative;
+      z-index:2;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      min-height:36px;
+      padding:0 14px;
+      border-radius:999px;
+      border:1px solid #dfcfba;
+      background:#f7f0e6;
+      color:#3b4757;
+      font-size:13px;
+      font-weight:700;
+      margin-bottom:16px;
+    }
+
+    .eyebrow-dot{
+      width:8px;
+      height:8px;
+      border-radius:999px;
+      background:var(--gold);
+    }
+
+    .hero h1{
       margin:0 0 16px;
+      font-family:'Sora',sans-serif;
+      font-size:clamp(46px,4.6vw,72px);
+      line-height:1.03;
+      letter-spacing:-2px;
+      max-width:12ch;
+      color:var(--navy);
     }
 
-    .lead{
+    .hero p.lead{
+      margin:0 0 22px;
+      max-width:68ch;
       color:var(--muted);
       font-size:18px;
-      margin-bottom:20px;
+      line-height:1.75;
+    }
+
+    .cta-row{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
     }
 
     .preview-shell{
-      margin-top:20px;
-      border-radius:24px;
-      overflow:hidden;
+      width:100%;
       border:1px solid var(--border);
+      border-radius:28px;
+      overflow:hidden;
+      background:#fcfaf6;
+      box-shadow:var(--shadow-sm);
     }
 
     .browser-bar{
-      padding:12px;
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-height:56px;
+      padding:0 14px;
       background:#f5efe7;
-      border-bottom:1px solid var(--border);
+      border-bottom:1px solid var(--border-2);
     }
 
-    iframe{
+    .browser-url{
+      min-width:0;
+      flex:1;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
+      font-size:13px;
+      font-weight:700;
+      color:#53697f;
+    }
+
+    .live-preview{
       width:100%;
-      height:600px;
+      height:620px;
       border:0;
+      display:block;
+      background:#fff;
     }
 
     .section{
       margin-top:24px;
-      padding:24px;
-      border-radius:24px;
-      background:#fff;
       border:1px solid var(--border);
+      border-radius:28px;
+      background:rgba(255,255,255,0.55);
+      padding:26px;
+      box-shadow:var(--shadow-sm);
+    }
+
+    .section-head{
+      margin-bottom:18px;
+    }
+
+    .section-head h2{
+      margin:0 0 6px;
+      font-size:21px;
+      letter-spacing:-0.03em;
+      color:var(--navy);
+    }
+
+    .section-head p{
+      margin:0;
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.7;
     }
 
     .features-grid{
       display:grid;
       grid-template-columns:repeat(4,1fr);
-      gap:16px;
+      gap:18px;
     }
 
     .feature-card{
-      padding:20px;
-      border-radius:18px;
-      background:#fbf8f3;
-      border:1px solid var(--border);
+      border:1px solid #dfd4c6;
+      border-radius:22px;
+      background:#fcfaf6;
+      padding:24px;
+      box-shadow:var(--shadow-sm);
     }
 
-    @media(max-width:920px){
-      .app-rail{display:none;}
-      .wrap{padding:14px;}
-      .features-grid{grid-template-columns:1fr;}
-      iframe{height:420px;}
+    .feature-card h3{
+      margin:0 0 8px;
+      font-size:18px;
+      line-height:1.35;
+      color:var(--navy);
+      letter-spacing:-0.02em;
+    }
+
+    .feature-card p{
+      margin:0;
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.75;
+    }
+
+    footer{
+      padding:24px 0 42px;
+      color:#5c6673;
+      font-size:13px;
+      font-weight:700;
+      display:flex;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+
+    .mobile-app-bar{
+      display:none;
+    }
+
+    @media (min-width:1200px){
+      .wrap{
+        padding-left:268px;
+        padding-right:28px;
+      }
+    }
+
+    @media (max-width:1180px){
+      .features-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .live-preview{
+        height:580px;
+      }
+
+      .hero h1{
+        max-width:11ch;
+      }
+    }
+
+    @media (max-width:920px){
+      .app-rail{
+        display:none !important;
+      }
+
+      .wrap{
+        max-width:100%;
+        margin:0 auto;
+        padding:14px 14px 96px;
+      }
+
+      .topbar{
+        gap:12px;
+        flex-wrap:nowrap;
+        margin:0 0 18px;
+        padding:12px 14px;
+        border-radius:20px;
+      }
+
+      .brand{
+        min-width:0;
+        flex:1 1 auto;
+      }
+
+      .brand-wordmark{
+        font-size:20px;
+      }
+
+      .topbar .btn{
+        width:auto;
+        min-width:120px;
+        min-height:42px;
+        flex:0 0 auto;
+        padding:0 14px;
+        font-size:13px;
+      }
+
+      .hero-stack{
+        padding:18px 14px 18px;
+        gap:18px;
+      }
+
+      .hero h1{
+        font-size:clamp(34px, 10vw, 46px);
+        line-height:1.02;
+        letter-spacing:-1.2px;
+        max-width:100%;
+        overflow-wrap:anywhere;
+      }
+
+      .hero p.lead{
+        font-size:15px;
+        line-height:1.65;
+        max-width:100%;
+      }
+
+      .cta-row{
+        flex-direction:column;
+      }
+
+      .cta-row .btn{
+        width:100%;
+      }
+
+      .preview-shell{
+        border-radius:22px;
+      }
+
+      .browser-bar{
+        min-height:48px;
+        padding:0 10px;
+      }
+
+      .live-preview{
+        height:420px;
+      }
+
+      .section{
+        padding:16px;
+        border-radius:22px;
+      }
+
+      .section-head h2{
+        font-size:28px;
+      }
+
+      .features-grid{
+        grid-template-columns:1fr;
+        gap:14px;
+      }
+
+      footer{
+        padding:22px 0 8px;
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      .mobile-app-bar{
+        position:fixed;
+        left:0;
+        right:0;
+        bottom:0;
+        display:grid;
+        grid-template-columns:repeat(4,1fr);
+        gap:8px;
+        padding:12px;
+        background:rgba(247,241,234,0.96);
+        border-top:1px solid rgba(20,32,51,0.08);
+        box-shadow:0 -8px 24px rgba(20,32,51,0.06);
+        backdrop-filter:blur(10px);
+        z-index:999;
+      }
+
+      .mobile-app-bar a{
+        text-align:center;
+        padding:10px 6px;
+        border-radius:14px;
+        font-size:11px;
+        font-weight:800;
+        background:#f3e7d4;
+        border:1px solid #decdb5;
+        color:var(--navy);
+      }
+
+      .mobile-app-bar a.active{
+        background:linear-gradient(180deg, #ffbe33, #f5a000);
+        color:#1f1607;
+        border-color:#e2a53a;
+      }
     }
   </style>
 </head>
 
 <body>
+  <div class="noise"></div>
 
-<nav class="app-rail">
-  <div class="app-rail-title">Command Systems</div>
-  <a href="index.html">Home</a>
-  <a href="multistream.html">MultiStream</a>
-  <a href="pantry.html">Prepper Pantry</a>
-  <a href="calmframe.html">CalmFrame</a>
-  <a href="decision-helper.html">Decision Helper</a>
-  <a href="life-admin.html" class="active">Life Admin OS</a>
-</nav>
+  <nav class="app-rail">
+    <div class="app-rail-title">Command Systems</div>
+    <a href="index.html">Home</a>
+    <a href="multistream.html">MultiStream</a>
+    <a href="pantry.html">Prepper Pantry</a>
+    <a href="calmframe.html">CalmFrame</a>
+    <a href="decision-helper.html">Decision Helper</a>
+    <a href="life-admin.html" class="active">Life Admin OS</a>
+  </nav>
 
-<div class="wrap">
+  <div class="wrap">
+    <header class="topbar">
+      <a class="brand" href="index.html">
+        <span class="brand-wordmark">
+          <span class="brand-light">Clarity</span><span class="brand-bold">Stacked</span>
+        </span>
+      </a>
 
-<header class="topbar">
-  <div class="brand-wordmark">ClarityStacked</div>
-  <a class="btn btn-primary"
-     href="https://life-admin-os-zeta.vercel.app/"
-     target="_blank">Open app</a>
-</header>
+      <a class="btn btn-primary"
+         href="https://life-admin-os-zeta.vercel.app/"
+         target="_blank"
+         rel="noopener">
+        Open app
+      </a>
+    </header>
 
-<section class="hero">
+    <section class="hero">
+      <div class="hero-stack">
+        <div class="hero-copy">
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            Live now • Personal admin command system
+          </div>
 
-  <h1>One place to manage bills, tasks, and subscriptions</h1>
+          <h1>One place to manage bills, tasks, and subscriptions</h1>
 
-  <p class="lead">
-    Life Admin OS helps you stay on top of everything behind the scenes — from bills and subscriptions to everyday tasks — without mental overload.
-  </p>
+          <p class="lead">
+            Life Admin OS helps you stay on top of everything behind the scenes — from bills and subscriptions to everyday tasks — without mental overload.
+          </p>
 
-  <div class="preview-shell">
-    <div class="browser-bar">life-admin-os-zeta.vercel.app</div>
+          <div class="cta-row">
+            <a class="btn btn-primary"
+               href="https://life-admin-os-zeta.vercel.app/"
+               target="_blank"
+               rel="noopener">
+              Open the app
+            </a>
+          </div>
+        </div>
 
-    <iframe
-      src="https://life-admin-os-zeta.vercel.app/"
-      loading="lazy">
-    </iframe>
+        <div class="preview-shell">
+          <div class="browser-bar">
+            <div class="browser-url">life-admin-os-zeta.vercel.app</div>
+          </div>
+
+          <iframe
+            class="live-preview"
+            src="https://life-admin-os-zeta.vercel.app/"
+            title="Life Admin OS preview"
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+            sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox">
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <h2>Core features</h2>
+          <p>Simple tools for staying on top of household admin without the mental clutter.</p>
+        </div>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>Bill tracking</h3>
+          <p>Keep all upcoming and paid bills visible in one place.</p>
+        </div>
+
+        <div class="feature-card">
+          <h3>Subscriptions overview</h3>
+          <p>See recurring payments clearly and avoid hidden costs.</p>
+        </div>
+
+        <div class="feature-card">
+          <h3>Task management</h3>
+          <p>Track what needs to be done without scattered notes.</p>
+        </div>
+
+        <div class="feature-card">
+          <h3>Clear dashboard</h3>
+          <p>Get a simple overview of your life admin at a glance.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="year"></span> ClarityStacked</div>
+      <div>Calm structure • Real-life transformation</div>
+    </footer>
   </div>
 
-</section>
-
-<section class="section">
-
-  <h2>Core features</h2>
-
-  <div class="features-grid">
-
-    <div class="feature-card">
-      <h3>Bill tracking</h3>
-      <p>Keep all upcoming and paid bills visible in one place.</p>
-    </div>
-
-    <div class="feature-card">
-      <h3>Subscriptions overview</h3>
-      <p>See recurring payments clearly and avoid hidden costs.</p>
-    </div>
-
-    <div class="feature-card">
-      <h3>Task management</h3>
-      <p>Track what needs to be done without scattered notes.</p>
-    </div>
-
-    <div class="feature-card">
-      <h3>Clear dashboard</h3>
-      <p>Get a simple overview of your life admin at a glance.</p>
-    </div>
-
+  <div class="mobile-app-bar">
+    <a href="index.html">Home</a>
+    <a href="multistream.html">MultiStream</a>
+    <a href="pantry.html">Pantry</a>
+    <a href="life-admin.html" class="active">Life Admin</a>
   </div>
 
-</section>
-
-<footer style="margin-top:24px;">
-  © <span id="year"></span> ClarityStacked
-</footer>
-
-</div>
-
-<script>
-document.getElementById('year').textContent = new Date().getFullYear();
-</script>
-
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
