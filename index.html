@@ -216,12 +216,18 @@
       border-radius:14px;
     }
 
-   .hero-cover{
+ .hero-cover{
   width:100vw;
   margin-left:calc(50% - 50vw);
   margin-right:calc(50% - 50vw);
   margin-top:8px;
   margin-bottom:36px;
+  overflow:hidden;
+}
+
+.hero-cover-frame{
+  position:relative;
+  width:100%;
 }
 
 .hero-cover img{
@@ -230,6 +236,50 @@
   display:block;
   border-radius:0;
   box-shadow:none;
+}
+
+.signal{
+  position:absolute;
+  width:10px;
+  height:10px;
+  border-radius:999px;
+  background:#f5a000;
+  box-shadow:0 0 18px rgba(245,160,0,.65);
+  opacity:0;
+  z-index:2;
+}
+
+.signal-1{ animation:signalOne 5.8s linear infinite; }
+.signal-2{ animation:signalTwo 6.4s linear infinite; animation-delay:1.2s; }
+.signal-3{ animation:signalThree 7s linear infinite; animation-delay:2s; }
+.signal-4{ animation:signalFour 6.8s linear infinite; animation-delay:3s; }
+
+@keyframes signalOne{
+  0%{ left:18%; top:29%; opacity:0; }
+  12%{ opacity:1; }
+  80%{ opacity:1; }
+  100%{ left:49%; top:48%; opacity:0; }
+}
+
+@keyframes signalTwo{
+  0%{ left:82%; top:29%; opacity:0; }
+  12%{ opacity:1; }
+  80%{ opacity:1; }
+  100%{ left:51%; top:48%; opacity:0; }
+}
+
+@keyframes signalThree{
+  0%{ left:22%; top:71%; opacity:0; }
+  12%{ opacity:1; }
+  80%{ opacity:1; }
+  100%{ left:49%; top:52%; opacity:0; }
+}
+
+@keyframes signalFour{
+  0%{ left:78%; top:71%; opacity:0; }
+  12%{ opacity:1; }
+  80%{ opacity:1; }
+  100%{ left:51%; top:52%; opacity:0; }
 }
     .hero{
       margin:8px 0 26px;
@@ -649,46 +699,6 @@
     font-size:13px;
   }
 
-  .stack-hero-shell{
-  padding:24px 18px;
-  border-radius:28px;
-}
-
-.stack-hero-copy{
-  margin-bottom:22px;
-}
-
-.stack-hero-copy h1{
-  font-size:clamp(36px, 11vw, 54px);
-}
-
-.stack-visual{
-  min-height:auto;
-  display:grid;
-  gap:14px;
-}
-
-.hub-card,
-.orbit-card{
-  position:relative;
-  inset:auto;
-  width:100%;
-  transform:none;
-}
-
-.hub-card{
-  order:-1;
-  padding:26px 22px;
-}
-
-.hub-card h2{
-  font-size:30px;
-}
-
-.orbit-card{
-  min-height:auto;
-}
-
   /* IMPORTANT HERO FIX */
   .hero-shell{
     padding:20px;
@@ -791,11 +801,13 @@
     color:var(--navy);
   }
 
-  .mobile-app-bar a:first-child{
-    background:linear-gradient(180deg, #ffbe33, #f5a000);
-    color:#1f1607;
-    border-color:#e2a53a;
-  }
+ .mobile-app-bar a:first-child{
+  background:linear-gradient(180deg, #ffbe33, #f5a000);
+  color:#1f1607;
+  border-color:#e2a53a;
+}
+
+}
 
 
 @media (max-width:640px){
@@ -860,15 +872,22 @@
 </nav>
       </div>
 
-      <a class="btn btn-secondary" href="multistream.html">View app page</a>
+   <a class="btn btn-secondary" href="multistream.html">View app page</a>
     </header>
 
-    <section class="hero-cover">
-    <img 
-    src="assets/images/claritystacked-ecosystem-hero.png"
-    alt="ClarityStacked ecosystem showing six connected command systems"
-    >
-   </section>
+  <section class="hero-cover">
+  <div class="hero-cover-frame">
+  <img 
+      src="assets/images/claritystacked-ecosystem-hero.png"
+      alt="ClarityStacked ecosystem showing six connected command systems"
+      >
+
+    <span class="signal signal-1"></span>
+    <span class="signal signal-2"></span>
+    <span class="signal signal-3"></span>
+    <span class="signal signal-4"></span>
+   </div>
+  </section>
 
     <section class="hero">
       <div class="hero-shell">
