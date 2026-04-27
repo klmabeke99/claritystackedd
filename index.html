@@ -284,6 +284,26 @@
   80%{ opacity:1; }
   100%{ left:51%; top:52%; opacity:0; }
 }
+
+.hero-hotspot{
+  position:absolute;
+  z-index:5;
+  display:block;
+}
+
+.hero-hotspot-primary{
+  left:35.8%;
+  top:34.7%;
+  width:14.8%;
+  height:5.2%;
+}
+
+.hero-hotspot-secondary{
+  left:52%;
+  top:34.7%;
+  width:13.2%;
+  height:5.2%;
+}
     .hero{
       margin:8px 0 26px;
     }
@@ -855,6 +875,33 @@
     background:#f6efe6;
   }
 }
+
+  @media (min-width:1400px){
+  :root{
+    --max:1500px;
+  }
+
+  .section{
+    padding:34px;
+  }
+
+  .trust-grid,
+  .features-grid,
+  .tools-grid{
+    gap:24px;
+  }
+
+  .apps-grid{
+    gap:24px;
+  }
+
+  .trust-card,
+  .feature-card,
+  .tool-card,
+  .step-card{
+    padding:32px;
+  }
+}
   </style>
 </head>
 <body>
@@ -883,78 +930,24 @@
    <a class="btn btn-secondary" href="multistream.html">View app page</a>
     </header>
 
-  <section class="hero-cover">
+<section class="hero-cover">
   <div class="hero-cover-frame">
-  <img 
+    <img 
       src="assets/images/claritystacked-ecosystem-hero.png"
       alt="ClarityStacked ecosystem showing six connected command systems"
-      >
+    >
+
+    <a class="hero-hotspot hero-hotspot-primary" href="#tools" aria-label="Explore the stack"></a>
+    <a class="hero-hotspot hero-hotspot-secondary" href="#how" aria-label="See how it works"></a>
 
     <span class="signal signal-1"></span>
     <span class="signal signal-2"></span>
     <span class="signal signal-3"></span>
     <span class="signal signal-4"></span>
-   </div>
-  </section>
+  </div>
+</section>
 
-    <section class="hero">
-      <div class="hero-shell">
-        <div class="hero-grid">
-          <div class="hero-copy">
-            <div class="hero-badge">ClarityStacked</div>
-
-            <h1>Stop juggling systems. Start working with clarity.</h1>
-
-            <p class="hero-lead">
-              ClarityStacked is a growing library of focused command systems designed to reduce overwhelm and help you act with more clarity.
-            </p>
-
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="multistream.html">Explore MultiStream</a>
-              <a class="btn btn-secondary" href="#features">See how it works</a>
-            </div>
-
-            <div class="hero-meta">
-              <span>Multi-app system</span>
-              <span>Focused tools</span>
-              <span>Built for clarity</span>
-            </div>
-          </div>
-
-          <div class="hero-visual">
-            <div class="summary-panel">
-              <div class="summary-title">Today at a glance</div>
-
-              <div class="summary-list">
-                <div class="summary-item">
-                  <span>Live systems</span>
-                  <strong>6</strong>
-                </div>
-
-                <div class="summary-item">
-                  <span>Central hub</span>
-                  <strong>1</strong>
-                </div>
-
-                <div class="summary-item">
-                  <span>Focused direction</span>
-                  <strong>Clear</strong>
-                </div>
-              </div>
-            </div>
-
-            <div class="why-panel">
-              <div class="summary-title">Why it works</div>
-              <p>
-                ClarityStacked turns scattered workflows into one cleaner, calmer structure that is easier to understand, easier to use, and easier to grow over time.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
+   <section class="section">
       <div class="trust-grid">
         <div class="trust-card">
           <h3>Focused, not bloated</h3>
