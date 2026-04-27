@@ -216,207 +216,21 @@
       border-radius:14px;
     }
 
-    .stack-hero{
-  margin:8px 0 26px;
+   .hero-cover{
+  width:100vw;
+  margin-left:calc(50% - 50vw);
+  margin-right:calc(50% - 50vw);
+  margin-top:8px;
+  margin-bottom:36px;
 }
 
-.stack-hero-shell{
-  position:relative;
-  overflow:hidden;
-  border:1px solid var(--border);
-  border-radius:38px;
-  background:
-    radial-gradient(700px 340px at 50% 20%, rgba(255,255,255,0.85), transparent 68%),
-    linear-gradient(180deg, rgba(255,255,255,0.58), rgba(255,255,255,0.24));
-  padding:42px 34px 38px;
-  box-shadow:var(--shadow-lg);
-}
-
-.stack-hero-copy{
-  text-align:center;
-  max-width:760px;
-  margin:0 auto 32px;
-}
-
-.stack-hero-copy h1{
-  margin:0 0 14px;
-  font-family:'Sora',sans-serif;
-  font-size:clamp(42px, 5.8vw, 82px);
-  line-height:1;
-  letter-spacing:-0.06em;
-  color:var(--navy);
-}
-
-.stack-hero-copy p{
-  margin:0 auto 24px;
-  max-width:62ch;
-  color:var(--muted);
-  font-size:17px;
-  line-height:1.75;
-}
-
-.stack-actions{
-  justify-content:center;
-  margin-bottom:0;
-}
-
-.stack-visual{
-  position:relative;
-  min-height:560px;
-  max-width:1040px;
-  margin:0 auto;
-}
-
-.hub-card,
-.orbit-card{
-  position:absolute;
-  border:1px solid rgba(221,209,192,0.85);
-  background:rgba(255,253,249,0.86);
-  backdrop-filter:blur(12px);
-  box-shadow:0 22px 48px rgba(20,32,51,0.10);
-}
-
-.hub-card{
-  left:50%;
-  top:50%;
-  width:min(430px, 82vw);
-  transform:translate(-50%, -50%);
-  border-radius:34px;
-  padding:34px;
-  text-align:center;
-  z-index:3;
-}
-
-.hub-kicker{
-  margin-bottom:12px;
-  color:#60728a;
-  font-size:12px;
-  font-weight:900;
-  letter-spacing:.26em;
-  text-transform:uppercase;
-}
-
-.hub-card h2{
-  margin:0 0 12px;
-  font-family:'Sora',sans-serif;
-  font-size:38px;
-  line-height:1.05;
-  letter-spacing:-0.05em;
-  color:var(--navy);
-}
-
-.hub-card p{
-  margin:0;
-  color:var(--muted);
-  line-height:1.7;
-}
-
-.hub-bars{
-  display:grid;
-  gap:10px;
-  margin-top:22px;
-}
-
-.hub-bars i{
+.hero-cover img{
+  width:100%;
+  height:auto;
   display:block;
-  height:14px;
-  border-radius:999px;
-  background:#efe6d8;
+  border-radius:0;
+  box-shadow:none;
 }
-
-.hub-bars i:nth-child(2){
-  width:76%;
-  margin:auto;
-  background:#e4edf4;
-}
-
-.hub-bars i:nth-child(3){
-  width:58%;
-  margin:auto;
-  background:#f1e8c9;
-}
-
-.orbit-card{
-  width:250px;
-  min-height:118px;
-  border-radius:26px;
-  padding:22px;
-  z-index:2;
-}
-
-.orbit-card span{
-  display:block;
-  margin-bottom:12px;
-  color:var(--navy);
-  font-size:18px;
-  font-weight:900;
-  letter-spacing:-0.03em;
-}
-
-.orbit-card strong{
-  display:block;
-  color:var(--muted);
-  font-size:13px;
-  line-height:1.5;
-}
-
-.orbit-card::after{
-  content:"";
-  position:absolute;
-  inset:auto 22px 18px 22px;
-  height:10px;
-  border-radius:999px;
-  opacity:.75;
-}
-
-.pantry{
-  left:6%;
-  top:8%;
-  background:#f4f0dc;
-}
-
-.pantry::after{background:#c8d6b9;}
-
-.multistream{
-  right:6%;
-  top:8%;
-  background:#fff1d4;
-}
-
-.multistream::after{background:#f5a000;}
-
-.calm{
-  left:0;
-  top:42%;
-  background:#e8f0f4;
-}
-
-.calm::after{background:#c7dbe6;}
-
-.adhd{
-  right:0;
-  top:42%;
-  background:#ede8f4;
-}
-
-.adhd::after{background:#d6c9ea;}
-
-.life{
-  left:14%;
-  bottom:4%;
-  background:#f5eadc;
-}
-
-.life::after{background:#dcc8a6;}
-
-.decision{
-  right:14%;
-  bottom:4%;
-  background:#e8edf1;
-}
-
-.decision::after{background:#9fb0bf;}
-
     .hero{
       margin:8px 0 26px;
     }
@@ -1049,66 +863,12 @@
       <a class="btn btn-secondary" href="multistream.html">View app page</a>
     </header>
 
-   <section class="stack-hero">
-  <div class="stack-hero-shell">
-    <div class="stack-hero-copy">
-      <div class="hero-badge">The ClarityStacked ecosystem</div>
-      <h1>Six systems. One stack. Total clarity.</h1>
-      <p>
-        A connected library of focused tools for money, home, focus, life admin, calm support, and better decisions.
-      </p>
-
-      <div class="hero-actions stack-actions">
-        <a class="btn btn-primary" href="#tools">Explore the stack</a>
-        <a class="btn btn-secondary" href="#how">See how it works</a>
-      </div>
-    </div>
-
-    <div class="stack-visual">
-      <div class="orbit-card pantry">
-        <span>Prepper Pantry</span>
-        <strong>Stock • Expiry • Restock</strong>
-      </div>
-
-      <div class="orbit-card multistream">
-        <span>MultiStream</span>
-        <strong>Income • Invoices • Reports</strong>
-      </div>
-
-      <div class="orbit-card calm">
-        <span>CalmFrame</span>
-        <strong>Reset • Reflect • Regain calm</strong>
-      </div>
-
-      <div class="hub-card">
-        <div class="hub-kicker">ClarityStacked</div>
-        <h2>Command Hub</h2>
-        <p>One calm place to choose the system that solves today’s problem.</p>
-
-        <div class="hub-bars">
-          <i></i>
-          <i></i>
-          <i></i>
-        </div>
-      </div>
-
-      <div class="orbit-card adhd">
-        <span>ADHD Work</span>
-        <strong>Focus • Prep • Workflow</strong>
-      </div>
-
-      <div class="orbit-card life">
-        <span>Life Admin OS</span>
-        <strong>Bills • Tasks • Subscriptions</strong>
-      </div>
-
-      <div class="orbit-card decision">
-        <span>Decision Helper</span>
-        <strong>Compare • Score • Choose</strong>
-      </div>
-    </div>
-  </div>
-</section> 
+    <section class="hero-cover">
+    <img 
+    src="assets/images/claritystacked-ecosystem-hero.png"
+    alt="ClarityStacked ecosystem showing six connected command systems"
+    >
+   </section>
 
     <section class="hero">
       <div class="hero-shell">
