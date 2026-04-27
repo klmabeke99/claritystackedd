@@ -230,7 +230,7 @@
 .hero-cover-frame{
   position:relative;
   width:100%;
-  max-width:1600px;
+  max-width:none;
 }
 
 .hero-cover img{
@@ -864,11 +864,13 @@
     font-size:18px;
   }
 
-  .topbar .btn{
-    min-height:40px;
-    padding:0 12px;
-    font-size:12px;
-  }
+.topbar .btn{
+  min-height:40px;
+  padding:0 12px;
+  font-size:12px;
+}
+
+}
 
 @media (min-width:1600px){
   .hero-cover{
@@ -876,30 +878,32 @@
   }
 }
 
-  @media (min-width:1400px){
+@media (min-width:1400px){
   :root{
-    --max:1500px;
+    --max:1560px;
+  }
+
+  .wrap{
+    max-width:var(--max);
   }
 
   .section{
-    padding:34px;
+    padding:38px;
   }
 
   .trust-grid,
   .features-grid,
-  .tools-grid{
-    gap:24px;
-  }
-
-  .apps-grid{
-    gap:24px;
+  .tools-grid,
+  .apps-grid,
+  .steps-grid{
+    gap:28px;
   }
 
   .trust-card,
   .feature-card,
   .tool-card,
   .step-card{
-    padding:32px;
+    padding:34px;
   }
 }
   </style>
