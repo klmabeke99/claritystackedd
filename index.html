@@ -221,7 +221,7 @@
   margin-left:calc(50% - 50vw);
   margin-right:calc(50% - 50vw);
   margin-top:8px;
-  margin-bottom:36px;
+  margin-bottom:24px;
   overflow:hidden;
   display:flex;
   justify-content:center;
@@ -230,17 +230,19 @@
 .hero-cover-frame{
   position:relative;
   width:100%;
-  max-width:none;
+  height:clamp(620px, 78vh, 850px);
+  overflow:hidden;
 }
 
 .hero-cover img{
   width:100%;
-  height:auto;
+  height:100%;
+  object-fit:cover;
+  object-position:center top;
   display:block;
   border-radius:0;
   box-shadow:none;
 }
-
 .signal{
   position:absolute;
   width:10px;
@@ -698,6 +700,15 @@
   .wrap{
     padding:14px 18px 98px;
     max-width:100%;
+  }
+
+   .hero-cover-frame{
+    height:auto;
+  }
+
+  .hero-cover img{
+    height:auto;
+    object-fit:contain;
   }
 
   .topbar{
