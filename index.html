@@ -224,92 +224,124 @@ body{
       border-radius:14px;
     }
 
-.hero-cover{
-  position:relative;
-  left:50%;
-  transform:translateX(-50%);
-  width:100vw;
-  max-width:100vw;
-  margin-top:8px;
-  margin-bottom:36px;
+.ecosystem-hero{
+  margin:8px 0 36px;
+  padding:48px 24px 34px;
+  border-radius:34px;
+  background:linear-gradient(180deg, rgba(255,255,255,.58), rgba(255,255,255,.22));
   overflow:hidden;
 }
 
-.hero-cover-frame{
+.ecosystem-copy{
+  text-align:center;
+  max-width:850px;
+  margin:0 auto 32px;
+}
+
+.ecosystem-copy h1{
+  margin:0 0 14px;
+  font-family:'Sora',sans-serif;
+  font-size:clamp(42px, 6vw, 86px);
+  line-height:.98;
+  letter-spacing:-.06em;
+  color:var(--navy);
+}
+
+.ecosystem-copy p{
+  margin:0 auto;
+  max-width:64ch;
+  color:var(--muted);
+  font-size:17px;
+  line-height:1.7;
+}
+
+.ecosystem-map{
   position:relative;
-  width:100%;
+  max-width:1200px;
+  height:620px;
+  margin:0 auto;
 }
 
-.hero-cover img{
-  width:100%;
-  height:auto;
-  display:block;
-  border-radius:0;
-  box-shadow:none;
-}
-.signal{
+.ecosystem-lines{
   position:absolute;
-  width:10px;
-  height:10px;
-  border-radius:999px;
-  background:#f5a000;
-  box-shadow:0 0 18px rgba(245,160,0,.65);
-  opacity:0;
+  inset:0;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+  z-index:1;
+}
+
+.line{
+  fill:none;
+  stroke-width:3;
+  stroke-linecap:round;
+  stroke-dasharray:10 16;
+  animation:flowLine 4.8s linear infinite;
+}
+
+.green{stroke:#7aa66a;}
+.blue{stroke:#7fb8d6;}
+.gold{stroke:#d59a32;}
+.orange{stroke:#f5a000;}
+.purple{stroke:#9b7ad9;}
+.sky{stroke:#5aa7d8;}
+
+@keyframes flowLine{
+  from{stroke-dashoffset:0;}
+  to{stroke-dashoffset:-140;}
+}
+
+.eco-card,
+.eco-hub{
+  position:absolute;
   z-index:2;
+  background:rgba(255,253,249,.92);
+  border:1px solid #dfd4c6;
+  box-shadow:0 20px 44px rgba(20,32,51,.08);
 }
 
-.signal-1{ animation:signalOne 5.8s linear infinite; }
-.signal-2{ animation:signalTwo 6.4s linear infinite; animation-delay:1.2s; }
-.signal-3{ animation:signalThree 7s linear infinite; animation-delay:2s; }
-.signal-4{ animation:signalFour 6.8s linear infinite; animation-delay:3s; }
-
-@keyframes signalOne{
-  0%{ left:18%; top:29%; opacity:0; }
-  12%{ opacity:1; }
-  80%{ opacity:1; }
-  100%{ left:49%; top:48%; opacity:0; }
+.eco-card{
+  width:260px;
+  padding:22px;
+  border-radius:24px;
 }
 
-@keyframes signalTwo{
-  0%{ left:82%; top:29%; opacity:0; }
-  12%{ opacity:1; }
-  80%{ opacity:1; }
-  100%{ left:51%; top:48%; opacity:0; }
+.eco-card h3,
+.eco-hub h2{
+  margin:0 0 8px;
+  color:var(--navy);
+  letter-spacing:-.03em;
 }
 
-@keyframes signalThree{
-  0%{ left:22%; top:71%; opacity:0; }
-  12%{ opacity:1; }
-  80%{ opacity:1; }
-  100%{ left:49%; top:52%; opacity:0; }
+.eco-card p,
+.eco-hub p{
+  margin:0;
+  color:var(--muted);
+  font-weight:700;
+  font-size:14px;
 }
 
-@keyframes signalFour{
-  0%{ left:78%; top:71%; opacity:0; }
-  12%{ opacity:1; }
-  80%{ opacity:1; }
-  100%{ left:51%; top:52%; opacity:0; }
+.eco-hub{
+  left:50%;
+  top:50%;
+  width:420px;
+  padding:38px;
+  border-radius:32px;
+  text-align:center;
+  transform:translate(-50%, -50%);
 }
 
-.hero-hotspot{
-  position:absolute;
-  z-index:5;
-  display:block;
+.eco-hub h2{
+  font-size:38px;
 }
 
-.hero-hotspot-primary{
-  left:35.8%;
-  top:34.7%;
-  width:14.8%;
-  height:5.2%;
-}
+.pantry{left:4%; top:6%;}
+.calmframe{left:0; top:39%;}
+.lifeadmin{left:7%; bottom:3%;}
 
-.hero-hotspot-secondary{
-  left:52%;
-  top:34.7%;
-  width:13.2%;
-  height:5.2%;
-}
+.multistream{right:4%; top:6%;}
+.adhd{right:0; top:39%;}
+.decision{right:7%; bottom:3%;}
     .hero{
       margin:8px 0 26px;
     }
@@ -737,6 +769,37 @@ body{
     font-size:13px;
   }
 
+   .ecosystem-hero{
+  padding:28px 18px;
+}
+
+.ecosystem-map{
+  height:auto;
+  display:grid;
+  gap:14px;
+}
+
+.ecosystem-lines{
+  display:none;
+}
+
+.eco-card,
+.eco-hub{
+  position:relative;
+  inset:auto;
+  width:100%;
+  transform:none;
+}
+
+.eco-hub{
+  order:-1;
+  padding:28px 22px;
+}
+
+.eco-hub h2{
+  font-size:30px;
+}
+
   /* IMPORTANT HERO FIX */
   .hero-shell{
     padding:20px;
@@ -949,20 +1012,57 @@ body{
    <a class="btn btn-secondary" href="multistream.html">View app page</a>
     </header>
 
-<section class="hero-cover">
-  <div class="hero-cover-frame">
-    <img 
-      src="assets/images/claritystacked-ecosystem-hero.png"
-      alt="ClarityStacked ecosystem showing six connected command systems"
-    >
+<section class="ecosystem-hero">
+  <div class="ecosystem-copy">
+    <div class="hero-badge">The ClarityStacked Ecosystem</div>
+    <h1>Six systems. One stack. Total clarity.</h1>
+    <p>A connected library of focused tools for money, home, focus, life admin, calm support, and better decisions.</p>
+  </div>
 
-    <a class="hero-hotspot hero-hotspot-primary" href="#tools" aria-label="Explore the stack"></a>
-    <a class="hero-hotspot hero-hotspot-secondary" href="#how" aria-label="See how it works"></a>
+  <div class="ecosystem-map">
+    <svg class="ecosystem-lines" viewBox="0 0 1200 620" preserveAspectRatio="none">
+      <path class="line green" d="M250 150 C420 210, 460 250, 600 310" />
+      <path class="line blue" d="M220 330 C380 330, 460 320, 600 310" />
+      <path class="line gold" d="M270 500 C420 430, 470 380, 600 310" />
+      <path class="line orange" d="M950 150 C780 210, 740 250, 600 310" />
+      <path class="line purple" d="M980 330 C820 330, 740 320, 600 310" />
+      <path class="line sky" d="M930 500 C780 430, 730 380, 600 310" />
+    </svg>
 
-    <span class="signal signal-1"></span>
-    <span class="signal signal-2"></span>
-    <span class="signal signal-3"></span>
-    <span class="signal signal-4"></span>
+    <div class="eco-card pantry">
+      <h3>Prepper Pantry</h3>
+      <p>Stock • Expiry • Restock</p>
+    </div>
+
+    <div class="eco-card calmframe">
+      <h3>CalmFrame</h3>
+      <p>Reset • Reflect • Regain calm</p>
+    </div>
+
+    <div class="eco-card lifeadmin">
+      <h3>Life Admin OS</h3>
+      <p>Bills • Tasks • Subscriptions</p>
+    </div>
+
+    <div class="eco-hub">
+      <h2>Command Hub</h2>
+      <p>Choose the system that solves today’s problem.</p>
+    </div>
+
+    <div class="eco-card multistream">
+      <h3>MultiStream</h3>
+      <p>Income • Invoices • Reports</p>
+    </div>
+
+    <div class="eco-card adhd">
+      <h3>ADHD Work</h3>
+      <p>Focus • Prep • Workflow</p>
+    </div>
+
+    <div class="eco-card decision">
+      <h3>Decision Helper</h3>
+      <p>Compare • Score • Choose</p>
+    </div>
   </div>
 </section>
 
