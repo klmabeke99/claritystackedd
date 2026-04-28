@@ -224,36 +224,30 @@ body{
       border-radius:14px;
     }
 
+/* ---------- ECOSYSTEM HERO (IMAGE-BASED) ---------- */
+
 .ecosystem-hero{
   margin:8px 0 36px;
-  padding:44px 24px 42px;
-  border-radius:0;
+  padding:42px 20px;
   background:
-    radial-gradient(800px 420px at 50% 42%, rgba(255,255,255,.88), transparent 70%),
+    radial-gradient(900px 500px at 50% 45%, rgba(255,255,255,.85), transparent 70%),
     linear-gradient(180deg,#fff8ee 0%, #f6efe6 100%);
   overflow:hidden;
 }
 
 .ecosystem-copy{
   text-align:center;
-  max-width:880px;
-  margin:0 auto 28px;
-}
-
-.ecosystem-copy .hero-badge{
-  justify-content:center;
-  border:1px solid #dcc8a6;
-  background:rgba(255,253,249,.72);
-  color:#4f6078;
+  max-width:860px;
+  margin:0 auto 30px;
 }
 
 .ecosystem-copy h1{
   margin:0 0 16px;
   font-family:'Sora',sans-serif;
-  font-size:clamp(46px,6.2vw,86px);
+  font-size:clamp(44px,6vw,84px);
   line-height:.98;
   letter-spacing:-.06em;
-  color:var(--navy);
+  color:#07112f;
 }
 
 .ecosystem-copy h1 span{
@@ -262,173 +256,102 @@ body{
 
 .ecosystem-copy p{
   margin:0 auto;
-  max-width:64ch;
-  color:var(--muted);
+  max-width:62ch;
   font-size:17px;
   line-height:1.7;
+  color:#5f6d7f;
 }
 
-.ecosystem-map{
+
+/* IMAGE CONTAINER */
+
+.ecosystem-visual{
   position:relative;
-  max-width:1280px;
-  height:620px;
+  max-width:1400px;
   margin:0 auto;
 }
 
-.ecosystem-lines{
-  position:absolute;
-  inset:0;
+.ecosystem-visual img{
   width:100%;
-  height:100%;
-  pointer-events:none;
-  z-index:1;
+  display:block;
+  border-radius:0;
 }
 
-.line{
-  fill:none;
-  stroke-width:3;
-  stroke-linecap:round;
-  stroke-dasharray:10 16;
-  animation:flowLine 5s linear infinite;
-}
 
-.green{stroke:#7aa66a;}
-.blue{stroke:#7fb8d6;}
-.gold{stroke:#d59a32;}
-.orange{stroke:#f5a000;}
-.purple{stroke:#9b7ad9;}
-.sky{stroke:#5aa7d8;}
+/* -------- animated signal dots -------- */
 
-@keyframes flowLine{
-  from{stroke-dashoffset:0;}
-  to{stroke-dashoffset:-140;}
-}
-
-.eco-card,
-.eco-hub{
+.signal{
   position:absolute;
-  z-index:2;
-  background:rgba(255,253,249,.94);
-  border:1px solid #dfd4c6;
-  box-shadow:0 24px 52px rgba(20,32,51,.09);
-}
-
-.eco-card{
-  width:260px;
-  border-radius:24px;
-  padding:18px;
-}
-
-.eco-card h3{
-  margin:0 0 6px;
-  color:var(--navy);
-  font-size:18px;
-  letter-spacing:-.03em;
-}
-
-.eco-card p{
-  margin:0 0 14px;
-  color:var(--muted);
-  font-weight:800;
-  font-size:13px;
-}
-
-.mini-ui{
-  display:grid;
-  gap:8px;
-}
-
-.mini-row{
-  height:34px;
-  border-radius:10px;
-  background:#fff;
-  border:1px solid #eadfce;
-}
-
-.mini-bar{
-  height:8px;
+  width:10px;
+  height:10px;
   border-radius:999px;
   background:#f5a000;
-  opacity:.75;
+  box-shadow:0 0 18px rgba(245,160,0,.6);
+  opacity:0;
 }
 
-.eco-hub{
-  left:50%;
-  top:50%;
-  width:470px;
-  padding:28px;
-  border-radius:30px;
-  transform:translate(-50%,-50%);
+/* left upper -> hub */
+.signal1{
+ animation:flow1 6s linear infinite;
 }
 
-.eco-hub small{
-  display:block;
-  margin-bottom:8px;
-  font-weight:900;
-  color:#60728a;
+/* right upper -> hub */
+.signal2{
+ animation:flow2 6.5s linear infinite;
+ animation-delay:1s;
 }
 
-.eco-hub h2{
-  margin:0 0 8px;
-  color:var(--navy);
-  font-size:34px;
-  letter-spacing:-.04em;
+/* lower left -> hub */
+.signal3{
+ animation:flow3 6.2s linear infinite;
+ animation-delay:2s;
 }
 
-.eco-hub p{
-  margin:0;
-  color:var(--muted);
-  font-weight:700;
-  font-size:14px;
+/* lower right -> hub */
+.signal4{
+ animation:flow4 7s linear infinite;
+ animation-delay:3s;
 }
 
-.hub-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:12px;
-  margin-top:18px;
+
+@keyframes flow1{
+0%{left:22%; top:34%; opacity:0;}
+12%{opacity:1;}
+85%{opacity:1;}
+100%{left:49%; top:50%; opacity:0;}
 }
 
-.hub-grid div{
-  padding:14px;
-  border-radius:16px;
-  background:#f7f0e6;
-  border:1px solid #eadfce;
+@keyframes flow2{
+0%{left:78%; top:34%; opacity:0;}
+12%{opacity:1;}
+85%{opacity:1;}
+100%{left:51%; top:50%; opacity:0;}
 }
 
-.hub-grid strong{
-  display:block;
-  color:var(--navy);
-  font-size:24px;
-  line-height:1;
+@keyframes flow3{
+0%{left:26%; top:72%; opacity:0;}
+12%{opacity:1;}
+85%{opacity:1;}
+100%{left:49%; top:54%; opacity:0;}
 }
 
-.hub-grid span{
-  display:block;
-  margin-top:6px;
-  color:var(--muted);
-  font-size:11px;
-  font-weight:800;
+@keyframes flow4{
+0%{left:74%; top:72%; opacity:0;}
+12%{opacity:1;}
+85%{opacity:1;}
+100%{left:51%; top:54%; opacity:0;}
 }
+ .hero{
+ margin:8px 0 26px;
+ }
 
-.pantry{left:3%; top:4%;}
-.calm{left:0; top:38%;}
-.life{left:5%; bottom:2%;}
-
-.multistream{right:3%; top:4%;}
-.adhd{right:0; top:38%;}
-.decision{right:5%; bottom:2%;}
-    .hero{
-      margin:8px 0 26px;
-    }
-
-    .hero-shell{
-      border:1px solid var(--border);
-      border-radius:34px;
-      background:linear-gradient(180deg, rgba(255,255,255,0.45), rgba(255,255,255,0.25));
-      padding:30px;
-      box-shadow:var(--shadow-md);
-    }
+ .hero-shell{
+   border:1px solid var(--border);
+   border-radius:34px;
+   background:linear-gradient(180deg, rgba(255,255,255,0.45), rgba(255,255,255,0.25));
+   padding:30px;
+   box-shadow:var(--shadow-md);
+   }
 
     .hero-grid{
       display:grid;
@@ -808,88 +731,6 @@ body{
       }
     }
 
- @media (max-width:920px){
-  .wrap{
-    padding:14px 18px 98px;
-    max-width:100%;
-  }
-
-  body{
-  position:relative;
-  width:100%;
-}
-
-.wrap,
-.ecosystem-hero,
-.ecosystem-map,
-.section{
-  max-width:100%;
-  overflow:hidden;
-}
-
-.ecosystem-copy h1{
-  font-size:clamp(34px, 11vw, 48px);
-  max-width:100%;
-}
-
-.eco-card,
-.eco-hub{
-  max-width:100%;
-}
-
-  .topbar{
-    grid-template-columns:1fr auto;
-    gap:12px;
-    padding:12px;
-    border-radius:20px;
-  }
-
-  .nav-wrap{
-    display:none;
-  }
-
-  .brand-wordmark{
-    font-size:20px;
-  }
-  
-  .topbar .btn{
-    width:auto;
-    min-height:42px;
-    padding:0 14px;
-    font-size:13px;
-  }
-
-.ecosystem-hero{
-  padding:28px 18px;
-}
-
-.ecosystem-map{
-  height:auto;
-  display:grid;
-  gap:14px;
-}
-
-.ecosystem-lines{
-  display:none;
-}
-
-.eco-card,
-.eco-hub{
-  position:relative;
-  inset:auto;
-  width:100%;
-  transform:none;
-}
-
-.eco-hub{
-  order:-1;
-}
-
-.hub-grid{
-  grid-template-columns:1fr;
-}
-
-
   /* IMPORTANT HERO FIX */
   .hero-shell{
     padding:20px;
@@ -1000,7 +841,6 @@ body{
 
 }
 
-
 @media (max-width:640px){
   .hero-copy{
     padding:0;
@@ -1031,13 +871,6 @@ body{
   .brand-wordmark{
     font-size:18px;
   }
-
-.topbar .btn{
-  min-height:40px;
-  padding:0 12px;
-  font-size:12px;
-}
-
 }
 @media (min-width:1400px){
   :root{
@@ -1069,72 +902,121 @@ body{
 }
 
 @media (max-width:920px){
-  html,
-  body{
-    width:100%;
-    max-width:100%;
-    overflow-x:hidden !important;
-  }
-
   .wrap{
-    width:100%;
-    max-width:100%;
     padding:14px 12px 98px;
-    overflow-x:hidden !important;
-  }
-
-  .topbar{
-    display:flex !important;
-    width:100%;
     max-width:100%;
     overflow:hidden;
   }
 
-  .topbar .btn{
-    display:none !important;
+  .topbar{
+    grid-template-columns:1fr auto;
+    gap:12px;
+    padding:12px;
+    border-radius:20px;
   }
 
   .nav-wrap{
-    display:none !important;
-  }
-
-  .ecosystem-hero,
-  .ecosystem-map,
-  .section{
-    width:100%;
-    max-width:100%;
-    overflow:hidden !important;
-  }
-
-  .ecosystem-map{
-    height:auto;
-    display:grid;
-    gap:14px;
-  }
-
-  .ecosystem-lines{
     display:none;
   }
 
-  .eco-card,
-  .eco-hub{
-    position:relative !important;
-    inset:auto !important;
-    left:auto !important;
-    right:auto !important;
-    top:auto !important;
-    bottom:auto !important;
-    transform:none !important;
-    width:100% !important;
-    max-width:100% !important;
+  .brand-wordmark{
+    font-size:18px;
   }
 
-  .hub-grid{
-    grid-template-columns:1fr !important;
+  .topbar .btn{
+    width:auto;
+    min-height:40px;
+    padding:0 12px;
+    font-size:12px;
+  }
+
+  .ecosystem-hero{
+    padding:26px 12px;
+    overflow:hidden;
+  }
+
+  .ecosystem-copy h1{
+    font-size:clamp(34px,10vw,48px);
+    line-height:1;
+  }
+
+  .ecosystem-copy p{
+    font-size:15px;
+  }
+
+  .ecosystem-visual{
+    margin-top:14px;
+    max-width:100%;
+    overflow:hidden;
+  }
+
+  .ecosystem-visual img{
+    width:100%;
+    max-width:100%;
+  }
+
+  .signal{
+    width:7px;
+    height:7px;
+  }
+
+  .apps-grid,
+  .trust-grid,
+  .features-grid,
+  .tools-grid,
+  .steps-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero-actions,
+  .action-row{
+    flex-direction:column;
+  }
+
+  .hero-actions .btn,
+  .action-row .btn,
+  .section .btn,
+  .final-cta .btn{
+    width:100%;
+  }
+
+  .section{
+    padding:20px;
+  }
+
+  .mobile-app-bar{
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:8px;
+    padding:12px;
+    background:rgba(247,241,234,0.96);
+    border-top:1px solid rgba(20,32,51,0.08);
+    box-shadow:0 -8px 24px rgba(20,32,51,0.06);
+    backdrop-filter:blur(10px);
+    z-index:100;
+  }
+
+  .mobile-app-bar a{
+    text-align:center;
+    padding:12px 8px;
+    border-radius:14px;
+    background:#f3e7d4;
+    border:1px solid #decdb5;
+    font-weight:800;
+    font-size:12px;
+    color:var(--navy);
+  }
+
+  .mobile-app-bar a:first-child{
+    background:linear-gradient(180deg, #ffbe33, #f5a000);
+    color:#1f1607;
+    border-color:#e2a53a;
   }
 }
-
-  </style>
 </head>
 <body>
   <div class="noise"></div>
@@ -1163,71 +1045,35 @@ body{
     </header>
 
 <section class="ecosystem-hero">
-  <div class="ecosystem-copy">
-    <div class="hero-badge">✦ The ClarityStacked Ecosystem</div>
-    <h1>Six systems. One stack.<br>Total <span>clarity.</span></h1>
-    <p>A connected library of focused tools for money, home, focus, life admin, calm support, and better decisions.</p>
-  </div>
 
-  <div class="ecosystem-map">
-    <svg class="ecosystem-lines" viewBox="0 0 1200 620" preserveAspectRatio="none">
-      <path class="line green" d="M250 120 C390 150, 430 235, 560 300" />
-      <path class="line blue" d="M210 310 C370 310, 445 310, 560 310" />
-      <path class="line gold" d="M260 500 C380 440, 440 380, 560 320" />
-      <path class="line orange" d="M950 120 C810 150, 770 235, 640 300" />
-      <path class="line purple" d="M990 310 C830 310, 755 310, 640 310" />
-      <path class="line sky" d="M940 500 C820 440, 760 380, 640 320" />
-    </svg>
+<div class="ecosystem-copy">
+<div class="hero-badge">✦ THE CLARITYSTACKED ECOSYSTEM</div>
 
-    <div class="eco-card pantry">
-      <h3>Prepper Pantry</h3>
-      <p>Stock • Expiry • Restock</p>
-      <div class="mini-ui"><div class="mini-row"></div><div class="mini-bar"></div></div>
-    </div>
+<h1>
+Six systems. One stack.<br>
+Total <span>clarity.</span>
+</h1>
 
-    <div class="eco-card calm">
-      <h3>CalmFrame</h3>
-      <p>Reset • Reflect • Regain calm</p>
-      <div class="mini-ui"><div class="mini-row"></div><div class="mini-bar"></div></div>
-    </div>
+<p>
+A connected library of focused tools for money, home, focus,
+life admin, calm support, and better decisions.
+</p>
+</div>
 
-    <div class="eco-card life">
-      <h3>Life Admin OS</h3>
-      <p>Bills • Tasks • Subscriptions</p>
-      <div class="mini-ui"><div class="mini-row"></div><div class="mini-row"></div></div>
-    </div>
 
-    <div class="eco-hub">
-      <small>ClarityStacked</small>
-      <h2>Command Hub</h2>
-      <p>Good morning, let’s bring clarity to today.</p>
-      <div class="hub-grid">
-        <div><strong>6</strong><span>Active systems</span></div>
-        <div><strong>3</strong><span>Today’s focus</span></div>
-        <div><strong>92%</strong><span>Overall clarity</span></div>
-      </div>
-    </div>
+<div class="ecosystem-visual">
 
-    <div class="eco-card multistream">
-      <h3>MultiStream</h3>
-      <p>Income • Invoices • Reports</p>
-      <div class="mini-ui"><div class="mini-row"></div><div class="mini-bar"></div></div>
-    </div>
+<img src="assets/claritystacked-ecosystem-hero.png"
+alt="ClarityStacked ecosystem">
 
-    <div class="eco-card adhd">
-      <h3>ADHD Work</h3>
-      <p>Focus • Prep • Workflow</p>
-      <div class="mini-ui"><div class="mini-row"></div><div class="mini-bar"></div></div>
-    </div>
+<div class="signal signal1"></div>
+<div class="signal signal2"></div>
+<div class="signal signal3"></div>
+<div class="signal signal4"></div>
 
-    <div class="eco-card decision">
-      <h3>Decision Helper</h3>
-      <p>Compare • Score • Choose</p>
-      <div class="mini-ui"><div class="mini-row"></div><div class="mini-bar"></div></div>
-    </div>
-  </div>
+</div>
+
 </section>
-
    <section class="section">
       <div class="trust-grid">
         <div class="trust-card">
