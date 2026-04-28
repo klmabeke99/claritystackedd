@@ -226,25 +226,38 @@ body{
 
 .ecosystem-hero{
   margin:8px 0 36px;
-  padding:48px 24px 34px;
-  border-radius:34px;
-  background:linear-gradient(180deg, rgba(255,255,255,.58), rgba(255,255,255,.22));
+  padding:44px 24px 42px;
+  border-radius:0;
+  background:
+    radial-gradient(800px 420px at 50% 42%, rgba(255,255,255,.88), transparent 70%),
+    linear-gradient(180deg,#fff8ee 0%, #f6efe6 100%);
   overflow:hidden;
 }
 
 .ecosystem-copy{
   text-align:center;
-  max-width:850px;
-  margin:0 auto 32px;
+  max-width:880px;
+  margin:0 auto 28px;
+}
+
+.ecosystem-copy .hero-badge{
+  justify-content:center;
+  border:1px solid #dcc8a6;
+  background:rgba(255,253,249,.72);
+  color:#4f6078;
 }
 
 .ecosystem-copy h1{
-  margin:0 0 14px;
+  margin:0 0 16px;
   font-family:'Sora',sans-serif;
-  font-size:clamp(42px, 6vw, 86px);
+  font-size:clamp(46px,6.2vw,86px);
   line-height:.98;
   letter-spacing:-.06em;
   color:var(--navy);
+}
+
+.ecosystem-copy h1 span{
+  color:#c58a14;
 }
 
 .ecosystem-copy p{
@@ -257,7 +270,7 @@ body{
 
 .ecosystem-map{
   position:relative;
-  max-width:1200px;
+  max-width:1280px;
   height:620px;
   margin:0 auto;
 }
@@ -276,7 +289,7 @@ body{
   stroke-width:3;
   stroke-linecap:round;
   stroke-dasharray:10 16;
-  animation:flowLine 4.8s linear infinite;
+  animation:flowLine 5s linear infinite;
 }
 
 .green{stroke:#7aa66a;}
@@ -295,25 +308,73 @@ body{
 .eco-hub{
   position:absolute;
   z-index:2;
-  background:rgba(255,253,249,.92);
+  background:rgba(255,253,249,.94);
   border:1px solid #dfd4c6;
-  box-shadow:0 20px 44px rgba(20,32,51,.08);
+  box-shadow:0 24px 52px rgba(20,32,51,.09);
 }
 
 .eco-card{
   width:260px;
-  padding:22px;
   border-radius:24px;
+  padding:18px;
 }
 
-.eco-card h3,
-.eco-hub h2{
-  margin:0 0 8px;
+.eco-card h3{
+  margin:0 0 6px;
   color:var(--navy);
+  font-size:18px;
   letter-spacing:-.03em;
 }
 
-.eco-card p,
+.eco-card p{
+  margin:0 0 14px;
+  color:var(--muted);
+  font-weight:800;
+  font-size:13px;
+}
+
+.mini-ui{
+  display:grid;
+  gap:8px;
+}
+
+.mini-row{
+  height:34px;
+  border-radius:10px;
+  background:#fff;
+  border:1px solid #eadfce;
+}
+
+.mini-bar{
+  height:8px;
+  border-radius:999px;
+  background:#f5a000;
+  opacity:.75;
+}
+
+.eco-hub{
+  left:50%;
+  top:50%;
+  width:470px;
+  padding:28px;
+  border-radius:30px;
+  transform:translate(-50%,-50%);
+}
+
+.eco-hub small{
+  display:block;
+  margin-bottom:8px;
+  font-weight:900;
+  color:#60728a;
+}
+
+.eco-hub h2{
+  margin:0 0 8px;
+  color:var(--navy);
+  font-size:34px;
+  letter-spacing:-.04em;
+}
+
 .eco-hub p{
   margin:0;
   color:var(--muted);
@@ -321,27 +382,42 @@ body{
   font-size:14px;
 }
 
-.eco-hub{
-  left:50%;
-  top:50%;
-  width:420px;
-  padding:38px;
-  border-radius:32px;
-  text-align:center;
-  transform:translate(-50%, -50%);
+.hub-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin-top:18px;
 }
 
-.eco-hub h2{
-  font-size:38px;
+.hub-grid div{
+  padding:14px;
+  border-radius:16px;
+  background:#f7f0e6;
+  border:1px solid #eadfce;
 }
 
-.pantry{left:4%; top:6%;}
-.calmframe{left:0; top:39%;}
-.lifeadmin{left:7%; bottom:3%;}
+.hub-grid strong{
+  display:block;
+  color:var(--navy);
+  font-size:24px;
+  line-height:1;
+}
 
-.multistream{right:4%; top:6%;}
-.adhd{right:0; top:39%;}
-.decision{right:7%; bottom:3%;}
+.hub-grid span{
+  display:block;
+  margin-top:6px;
+  color:var(--muted);
+  font-size:11px;
+  font-weight:800;
+}
+
+.pantry{left:3%; top:4%;}
+.calm{left:0; top:38%;}
+.life{left:5%; bottom:2%;}
+
+.multistream{right:3%; top:4%;}
+.adhd{right:0; top:38%;}
+.decision{right:5%; bottom:2%;}
     .hero{
       margin:8px 0 26px;
     }
@@ -790,108 +866,6 @@ body{
   grid-template-columns:1fr;
 }
 
-.line{
-  fill:none;
-  stroke-width:3;
-  stroke-linecap:round;
-  stroke-dasharray:10 16;
-  animation:flowLine 4.8s linear infinite;
-}
-
-.green{stroke:#79a96b;}
-.blue{stroke:#77b9d9;}
-.gold{stroke:#d69b31;}
-.orange{stroke:#f5a000;}
-.purple{stroke:#9878d8;}
-.sky{stroke:#4fa8dc;}
-
-@keyframes flowLine{
-  from{stroke-dashoffset:0;}
-  to{stroke-dashoffset:-140;}
-}
-
-.eco-card,
-.eco-hub{
-  position:absolute;
-  z-index:2;
-  background:rgba(255,253,249,.94);
-  border:1px solid #dfd4c6;
-  box-shadow:0 20px 44px rgba(20,32,51,.08);
-}
-
-.eco-card{
-  width:260px;
-  min-height:120px;
-  border-radius:24px;
-  padding:22px;
-}
-
-.eco-card h3,
-.eco-hub h2{
-  margin:0 0 8px;
-  color:var(--navy);
-  letter-spacing:-.03em;
-}
-
-.eco-card p,
-.eco-hub p{
-  margin:0;
-  color:var(--muted);
-  font-weight:700;
-  font-size:14px;
-}
-
-.eco-hub{
-  left:50%;
-  top:50%;
-  width:460px;
-  padding:30px;
-  border-radius:30px;
-  transform:translate(-50%,-50%);
-}
-
-.eco-hub small{
-  font-weight:900;
-  color:#60728a;
-}
-
-.eco-hub h2{
-  font-size:34px;
-}
-
-.hub-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:12px;
-  margin-top:20px;
-}
-
-.hub-grid div{
-  padding:16px;
-  border-radius:16px;
-  background:#f7f0e6;
-}
-
-.hub-grid strong{
-  display:block;
-  color:var(--navy);
-  font-size:24px;
-}
-
-.hub-grid span{
-  display:block;
-  color:var(--muted);
-  font-size:12px;
-  font-weight:700;
-}
-
-.pantry{left:4%; top:5%;}
-.calm{left:0; top:38%;}
-.life{left:6%; bottom:3%;}
-
-.multistream{right:4%; top:5%;}
-.adhd{right:0; top:38%;}
-.decision{right:6%; bottom:3%;}
 
   /* IMPORTANT HERO FIX */
   .hero-shell{
@@ -1107,17 +1081,31 @@ body{
 
   <div class="ecosystem-map">
     <svg class="ecosystem-lines" viewBox="0 0 1200 620" preserveAspectRatio="none">
-      <path class="line green" d="M240 120 C360 150, 430 230, 560 300" />
-      <path class="line blue" d="M200 310 C350 310, 440 310, 560 310" />
-      <path class="line gold" d="M250 500 C370 440, 430 380, 560 320" />
-      <path class="line orange" d="M960 120 C840 150, 770 230, 640 300" />
-      <path class="line purple" d="M1000 310 C850 310, 760 310, 640 310" />
-      <path class="line sky" d="M950 500 C830 440, 770 380, 640 320" />
+      <path class="line green" d="M250 120 C390 150, 430 235, 560 300" />
+      <path class="line blue" d="M210 310 C370 310, 445 310, 560 310" />
+      <path class="line gold" d="M260 500 C380 440, 440 380, 560 320" />
+      <path class="line orange" d="M950 120 C810 150, 770 235, 640 300" />
+      <path class="line purple" d="M990 310 C830 310, 755 310, 640 310" />
+      <path class="line sky" d="M940 500 C820 440, 760 380, 640 320" />
     </svg>
 
-    <div class="eco-card pantry"><h3>Prepper Pantry</h3><p>Stock • Expiry • Restock</p></div>
-    <div class="eco-card calm"><h3>CalmFrame</h3><p>Reset • Reflect • Regain calm</p></div>
-    <div class="eco-card life"><h3>Life Admin OS</h3><p>Bills • Tasks • Subscriptions</p></div>
+    <div class="eco-card pantry">
+      <h3>Prepper Pantry</h3>
+      <p>Stock • Expiry • Restock</p>
+      <div class="mini-ui"><div class="mini-row"></div><div class="mini-bar"></div></div>
+    </div>
+
+    <div class="eco-card calm">
+      <h3>CalmFrame</h3>
+      <p>Reset • Reflect • Regain calm</p>
+      <div class="mini-ui"><div class="mini-row"></div><div class="mini-bar"></div></div>
+    </div>
+
+    <div class="eco-card life">
+      <h3>Life Admin OS</h3>
+      <p>Bills • Tasks • Subscriptions</p>
+      <div class="mini-ui"><div class="mini-row"></div><div class="mini-row"></div></div>
+    </div>
 
     <div class="eco-hub">
       <small>ClarityStacked</small>
@@ -1130,9 +1118,23 @@ body{
       </div>
     </div>
 
-    <div class="eco-card multistream"><h3>MultiStream</h3><p>Income • Invoices • Reports</p></div>
-    <div class="eco-card adhd"><h3>ADHD Work</h3><p>Focus • Prep • Workflow</p></div>
-    <div class="eco-card decision"><h3>Decision Helper</h3><p>Compare • Score • Choose</p></div>
+    <div class="eco-card multistream">
+      <h3>MultiStream</h3>
+      <p>Income • Invoices • Reports</p>
+      <div class="mini-ui"><div class="mini-row"></div><div class="mini-bar"></div></div>
+    </div>
+
+    <div class="eco-card adhd">
+      <h3>ADHD Work</h3>
+      <p>Focus • Prep • Workflow</p>
+      <div class="mini-ui"><div class="mini-row"></div><div class="mini-bar"></div></div>
+    </div>
+
+    <div class="eco-card decision">
+      <h3>Decision Helper</h3>
+      <p>Compare • Score • Choose</p>
+      <div class="mini-ui"><div class="mini-row"></div><div class="mini-bar"></div></div>
+    </div>
   </div>
 </section>
 
