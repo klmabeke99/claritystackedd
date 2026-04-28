@@ -1066,7 +1066,72 @@ body{
   .step-card{
     padding:34px;
   }
+
+  @media (max-width:920px){
+  html,
+  body{
+    width:100%;
+    max-width:100%;
+    overflow-x:hidden !important;
+  }
+
+  .wrap{
+    width:100%;
+    max-width:100%;
+    padding:14px 14px 98px;
+    overflow:hidden;
+  }
+
+  .topbar{
+    width:100%;
+    max-width:100%;
+    grid-template-columns:1fr;
+    overflow:hidden;
+  }
+
+  .topbar .btn{
+    display:none;
+  }
+
+  .brand{
+    width:100%;
+    min-width:0;
+  }
+
+  .brand-wordmark{
+    font-size:18px;
+    max-width:100%;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+
+  .ecosystem-hero,
+  .ecosystem-map,
+  .section,
+  .apps-grid,
+  .trust-grid,
+  .features-grid,
+  .tools-grid,
+  .steps-grid{
+    width:100%;
+    max-width:100%;
+    overflow:hidden;
+  }
+
+  .eco-card,
+  .eco-hub{
+    width:100%;
+    max-width:100%;
+  }
+
+  .ecosystem-copy h1{
+    font-size:clamp(34px, 11vw, 48px);
+    letter-spacing:-0.05em;
+    max-width:100%;
+  }
 }
+
+
   </style>
 </head>
 <body>
