@@ -830,7 +830,33 @@ body{
     max-width:100%;
   }
 }
+.qr-card{
+  max-width:460px;
+  margin:80px auto;
+  padding:32px;
+  text-align:center;
 
+  background:#fbf8f3;
+  border:1px solid #ddd1c0;
+  border-radius:28px;
+
+  /* add these */
+  box-sizing:border-box;
+}
+
+#qrcode{
+  display:flex;
+  justify-content:center;
+  margin-top:20px;
+}
+
+/* THIS fixes edge spacing on smaller screens */
+@media (max-width:768px){
+  .qr-card{
+    margin:60px 24px;   /* pushes it in from left/right */
+    padding:28px;
+  }
+}
 </style>
 </head>
 <body>
