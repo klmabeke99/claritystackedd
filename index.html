@@ -738,15 +738,6 @@ body{
     max-width:100%;
   }
 
-   .hero-cover-frame{
-    height:auto;
-  }
-
-  .hero-cover img{
-    height:auto;
-    object-fit:contain;
-  }
-
   .topbar{
     grid-template-columns:1fr auto;
     gap:12px;
@@ -769,7 +760,7 @@ body{
     font-size:13px;
   }
 
-   .ecosystem-hero{
+.ecosystem-hero{
   padding:28px 18px;
 }
 
@@ -793,12 +784,114 @@ body{
 
 .eco-hub{
   order:-1;
-  padding:28px 22px;
+}
+
+.hub-grid{
+  grid-template-columns:1fr;
+}
+
+.line{
+  fill:none;
+  stroke-width:3;
+  stroke-linecap:round;
+  stroke-dasharray:10 16;
+  animation:flowLine 4.8s linear infinite;
+}
+
+.green{stroke:#79a96b;}
+.blue{stroke:#77b9d9;}
+.gold{stroke:#d69b31;}
+.orange{stroke:#f5a000;}
+.purple{stroke:#9878d8;}
+.sky{stroke:#4fa8dc;}
+
+@keyframes flowLine{
+  from{stroke-dashoffset:0;}
+  to{stroke-dashoffset:-140;}
+}
+
+.eco-card,
+.eco-hub{
+  position:absolute;
+  z-index:2;
+  background:rgba(255,253,249,.94);
+  border:1px solid #dfd4c6;
+  box-shadow:0 20px 44px rgba(20,32,51,.08);
+}
+
+.eco-card{
+  width:260px;
+  min-height:120px;
+  border-radius:24px;
+  padding:22px;
+}
+
+.eco-card h3,
+.eco-hub h2{
+  margin:0 0 8px;
+  color:var(--navy);
+  letter-spacing:-.03em;
+}
+
+.eco-card p,
+.eco-hub p{
+  margin:0;
+  color:var(--muted);
+  font-weight:700;
+  font-size:14px;
+}
+
+.eco-hub{
+  left:50%;
+  top:50%;
+  width:460px;
+  padding:30px;
+  border-radius:30px;
+  transform:translate(-50%,-50%);
+}
+
+.eco-hub small{
+  font-weight:900;
+  color:#60728a;
 }
 
 .eco-hub h2{
-  font-size:30px;
+  font-size:34px;
 }
+
+.hub-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin-top:20px;
+}
+
+.hub-grid div{
+  padding:16px;
+  border-radius:16px;
+  background:#f7f0e6;
+}
+
+.hub-grid strong{
+  display:block;
+  color:var(--navy);
+  font-size:24px;
+}
+
+.hub-grid span{
+  display:block;
+  color:var(--muted);
+  font-size:12px;
+  font-weight:700;
+}
+
+.pantry{left:4%; top:5%;}
+.calm{left:0; top:38%;}
+.life{left:6%; bottom:3%;}
+
+.multistream{right:4%; top:5%;}
+.adhd{right:0; top:38%;}
+.decision{right:6%; bottom:3%;}
 
   /* IMPORTANT HERO FIX */
   .hero-shell{
@@ -949,13 +1042,6 @@ body{
 }
 
 }
-
-@media (min-width:1600px){
-  .hero-cover{
-    background:#f6efe6;
-  }
-}
-
 @media (min-width:1400px){
   :root{
     --max:1560px;
@@ -1014,55 +1100,39 @@ body{
 
 <section class="ecosystem-hero">
   <div class="ecosystem-copy">
-    <div class="hero-badge">The ClarityStacked Ecosystem</div>
-    <h1>Six systems. One stack. Total clarity.</h1>
+    <div class="hero-badge">✦ The ClarityStacked Ecosystem</div>
+    <h1>Six systems. One stack.<br>Total <span>clarity.</span></h1>
     <p>A connected library of focused tools for money, home, focus, life admin, calm support, and better decisions.</p>
   </div>
 
   <div class="ecosystem-map">
     <svg class="ecosystem-lines" viewBox="0 0 1200 620" preserveAspectRatio="none">
-      <path class="line green" d="M250 150 C420 210, 460 250, 600 310" />
-      <path class="line blue" d="M220 330 C380 330, 460 320, 600 310" />
-      <path class="line gold" d="M270 500 C420 430, 470 380, 600 310" />
-      <path class="line orange" d="M950 150 C780 210, 740 250, 600 310" />
-      <path class="line purple" d="M980 330 C820 330, 740 320, 600 310" />
-      <path class="line sky" d="M930 500 C780 430, 730 380, 600 310" />
+      <path class="line green" d="M240 120 C360 150, 430 230, 560 300" />
+      <path class="line blue" d="M200 310 C350 310, 440 310, 560 310" />
+      <path class="line gold" d="M250 500 C370 440, 430 380, 560 320" />
+      <path class="line orange" d="M960 120 C840 150, 770 230, 640 300" />
+      <path class="line purple" d="M1000 310 C850 310, 760 310, 640 310" />
+      <path class="line sky" d="M950 500 C830 440, 770 380, 640 320" />
     </svg>
 
-    <div class="eco-card pantry">
-      <h3>Prepper Pantry</h3>
-      <p>Stock • Expiry • Restock</p>
-    </div>
-
-    <div class="eco-card calmframe">
-      <h3>CalmFrame</h3>
-      <p>Reset • Reflect • Regain calm</p>
-    </div>
-
-    <div class="eco-card lifeadmin">
-      <h3>Life Admin OS</h3>
-      <p>Bills • Tasks • Subscriptions</p>
-    </div>
+    <div class="eco-card pantry"><h3>Prepper Pantry</h3><p>Stock • Expiry • Restock</p></div>
+    <div class="eco-card calm"><h3>CalmFrame</h3><p>Reset • Reflect • Regain calm</p></div>
+    <div class="eco-card life"><h3>Life Admin OS</h3><p>Bills • Tasks • Subscriptions</p></div>
 
     <div class="eco-hub">
+      <small>ClarityStacked</small>
       <h2>Command Hub</h2>
-      <p>Choose the system that solves today’s problem.</p>
+      <p>Good morning, let’s bring clarity to today.</p>
+      <div class="hub-grid">
+        <div><strong>6</strong><span>Active systems</span></div>
+        <div><strong>3</strong><span>Today’s focus</span></div>
+        <div><strong>92%</strong><span>Overall clarity</span></div>
+      </div>
     </div>
 
-    <div class="eco-card multistream">
-      <h3>MultiStream</h3>
-      <p>Income • Invoices • Reports</p>
-    </div>
-
-    <div class="eco-card adhd">
-      <h3>ADHD Work</h3>
-      <p>Focus • Prep • Workflow</p>
-    </div>
-
-    <div class="eco-card decision">
-      <h3>Decision Helper</h3>
-      <p>Compare • Score • Choose</p>
-    </div>
+    <div class="eco-card multistream"><h3>MultiStream</h3><p>Income • Invoices • Reports</p></div>
+    <div class="eco-card adhd"><h3>ADHD Work</h3><p>Focus • Prep • Workflow</p></div>
+    <div class="eco-card decision"><h3>Decision Helper</h3><p>Compare • Score • Choose</p></div>
   </div>
 </section>
 
