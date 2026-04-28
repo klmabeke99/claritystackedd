@@ -1131,6 +1131,80 @@ body{
   }
 }
 
+@media (max-width:920px){
+  html,
+  body{
+    width:100%;
+    max-width:100%;
+    overflow-x:hidden !important;
+  }
+
+  .wrap{
+    width:100%;
+    max-width:100%;
+    padding-left:12px;
+    padding-right:12px;
+    overflow-x:hidden !important;
+  }
+
+  .topbar{
+    grid-template-columns:1fr !important;
+    width:100%;
+    max-width:100%;
+  }
+
+  .topbar .btn{
+    display:none !important;
+  }
+
+  .ecosystem-hero{
+    width:100%;
+    max-width:100%;
+    margin-left:0;
+    margin-right:0;
+    padding:26px 14px;
+    overflow:hidden !important;
+  }
+
+  .ecosystem-copy,
+  .ecosystem-map,
+  .eco-card,
+  .eco-hub,
+  .section{
+    width:100%;
+    max-width:100%;
+    overflow:hidden;
+  }
+
+  .ecosystem-copy .hero-badge{
+    width:100%;
+    white-space:normal;
+    text-align:center;
+    justify-content:center;
+    letter-spacing:.18em;
+  }
+
+  .ecosystem-copy h1{
+    font-size:clamp(38px, 13vw, 52px);
+    line-height:1;
+    letter-spacing:-0.06em;
+  }
+
+  .eco-card,
+  .eco-hub{
+    position:relative !important;
+    left:auto !important;
+    right:auto !important;
+    top:auto !important;
+    bottom:auto !important;
+    transform:none !important;
+  }
+
+  .hub-grid{
+    grid-template-columns:1fr !important;
+  }
+}
+
 
   </style>
 </head>
