@@ -1125,15 +1125,24 @@ alt="ClarityStacked ecosystem">
     </footer>
   </div>
 
-<div class="mobile-app-bar">
+  <div class="mobile-app-bar">
   <a href="index.html">Home</a>
   <a href="multistream.html">MultiStream</a>
   <a href="pantry.html">Pantry</a>
   <a href="decision-helper.html">Decision</a>
-</div>
+ </div>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+<!-- Put this RIGHT ABOVE </body> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<script>
+new QRCode(document.getElementById("qrcode"), {
+  text: "https://www.claritystacked.com",
+  width: 220,
+  height: 220
+});
+</script>
+
+</script>  
 </body>
 </html>
