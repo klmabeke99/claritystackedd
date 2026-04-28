@@ -777,6 +777,60 @@ body{
   }
 }
 
+/* STOP MOBILE SIDEWAYS SCROLL */
+html,
+body{
+  width:100%;
+  max-width:100%;
+  overflow-x:hidden;
+}
+
+.wrap,
+.topbar,
+.ecosystem-hero,
+.section,
+.ecosystem-visual,
+.apps-grid,
+.trust-grid,
+.features-grid,
+.tools-grid,
+.steps-grid{
+  max-width:100%;
+}
+
+@media (max-width:920px){
+
+  .wrap{
+    width:100%;
+    padding-left:12px;
+    padding-right:12px;
+    overflow:hidden;
+  }
+
+  .ecosystem-hero,
+  .section{
+    width:100%;
+    overflow:hidden;
+  }
+
+  .ecosystem-visual img{
+    width:100%;
+    max-width:100%;
+    height:auto;
+  }
+
+  .topbar{
+    width:100%;
+    max-width:100%;
+  }
+
+  .btn,
+  .action-row a,
+  .hero-actions a{
+    max-width:100%;
+  }
+}
+
 </style>
 </head>
 <body>
