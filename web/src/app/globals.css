@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #07112f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #ffffff;
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes slideShow {
+  0%, 18% {
+    transform: translateX(0%);
+  }
+  22%, 38% {
+    transform: translateX(-100%);
+  }
+  42%, 58% {
+    transform: translateX(-200%);
+  }
+  62%, 78% {
+    transform: translateX(-300%);
+  }
+  82%, 100% {
+    transform: translateX(-400%);
+  }
+}
+
+.dashboard-slider {
+  animation: slideShow 24s infinite ease-in-out;
+}
