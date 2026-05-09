@@ -1,3 +1,7 @@
+"use client";
+
+import { useState } from "react";
+
 const apps = [
   {
     name: "MultiStream Command",
@@ -142,6 +146,8 @@ function AppPreviewSlide({ app }: { app: (typeof apps)[number] }) {
 }
 
 export default function Home() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
     <main className="min-h-screen overflow-hidden bg-white text-[#07112f]">
       <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur-xl">
@@ -164,15 +170,55 @@ export default function Home() {
           </nav>
 
           <div className="hidden gap-3 sm:flex">
-            <a
-              href="#apps"
-              className="rounded-2xl bg-[#07112f] px-6 py-3 text-base font-black text-white shadow-xl shadow-slate-900/15 transition hover:-translate-y-0.5"
-            >
-              Explore Apps
-            </a>
-          </div>
+          <a
+           href="#apps"
+          className="rounded-2xl bg-[#07112f] px-6 py-3 text-base font-black text-white shadow-xl shadow-slate-900/15 transition hover:-translate-y-0.5"
+          >
+          Explore Apps
+          </a>
         </div>
-      </header>
+
+       <button
+      type="button"
+      onClick={() => setMobileMenuOpen((open) => !open)}
+     className="grid h-12 w-12 place-items-center rounded-2xl border border-slate-200 bg-white text-2xl font-black text-[#07112f] shadow-sm lg:hidden"
+     aria-label="Open mobile menu"
+      >
+    {mobileMenuOpen ? "×" : "☰"}
+       </button>
+        </div>
+
+{mobileMenuOpen && (
+  <div className="border-t border-slate-200 bg-white px-5 py-5 lg:hidden">
+    <nav className="grid gap-3 text-base font-black text-slate-700">
+      {[
+        ["Products", "#apps"],
+        ["Solutions", "#systems"],
+        ["Resources", "#resources"],
+        ["Pricing", "#pricing"],
+        ["About", "#about"],
+      ].map(([label, href]) => (
+        <a
+          key={label}
+          href={href}
+          onClick={() => setMobileMenuOpen(false)}
+          className="rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4"
+        >
+          {label}
+        </a>
+      ))}
+
+      <a
+        href="#apps"
+        onClick={() => setMobileMenuOpen(false)}
+        className="rounded-2xl bg-[#07112f] px-5 py-4 text-center text-white"
+      >
+        Explore Apps
+      </a>
+    </nav>
+  </div>
+)}
+</header>
 
       <section className="relative">
         <div className="absolute right-[-140px] top-20 h-[440px] w-[440px] rounded-full bg-orange-200/50 blur-3xl" />
