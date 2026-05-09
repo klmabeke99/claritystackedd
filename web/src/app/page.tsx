@@ -55,11 +55,13 @@ const apps = [
   },
 ];
 
+const slides = apps;
+
 function AppPreviewSlide({ app }: { app: (typeof apps)[number] }) {
   return (
-    <div className="min-w-full shrink-0 px-2">
+    <div className="min-w-full px-2">
       <div className="overflow-hidden rounded-[34px] border border-slate-200 bg-[#07112f] p-3 shadow-[0_34px_90px_rgba(7,17,47,0.22)]">
-        <div className="flex items-center justify-between gap-4 px-5 py-4 text-white">
+        <div className="flex items-center justify-between gap-4 border-b border-white/10 px-4 py-4 text-white">
           <div>
             <p className="text-base font-black text-orange-400">
               CLARITYSTACKED
@@ -79,16 +81,20 @@ function AppPreviewSlide({ app }: { app: (typeof apps)[number] }) {
           </a>
         </div>
 
-        <a href={app.link} target="_blank" rel="noreferrer" className="block">
-          <div className="overflow-hidden rounded-[24px] bg-white">
-            <div className="flex aspect-[16/10] w-full items-center justify-center bg-white">
-              <img
-                src={app.preview}
-                alt={`${app.name} screenshot preview`}
-                className="h-full w-full object-contain object-center"
-                draggable="false"
-              />
-            </div>
+        <a
+          href={app.link}
+          target="_blank"
+          rel="noreferrer"
+          className="block"
+        >
+          <div className="relative aspect-[16/10] overflow-hidden rounded-b-[26px] bg-white">
+            <img
+              src={app.preview}
+              alt={`${app.name} screenshot preview`}
+              className="h-full w-full object-cover object-top transition duration-700 hover:scale-[1.03]"
+            />
+
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#07112f]/10 via-transparent to-white/0" />
           </div>
         </a>
       </div>
@@ -98,7 +104,7 @@ function AppPreviewSlide({ app }: { app: (typeof apps)[number] }) {
 
 export default function Home() {
   return (
-    <main className="min-h-screen w-full overflow-x-hidden bg-white text-[#07112f]">
+    <main className="min-h-screen overflow-hidden bg-white text-[#07112f]">
       <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4">
           <div className="flex items-center gap-3">
@@ -133,18 +139,18 @@ export default function Home() {
         <div className="absolute right-[-140px] top-20 h-[440px] w-[440px] rounded-full bg-orange-200/50 blur-3xl" />
         <div className="absolute left-[-160px] top-56 h-[420px] w-[420px] rounded-full bg-blue-100/80 blur-3xl" />
 
-        <div className="relative mx-auto grid max-w-[1500px] items-center gap-14 px-5 py-16 lg:grid-cols-[0.72fr_1.28fr] lg:py-24">
-          <div className="mx-auto max-w-xl lg:mx-0">
+        <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-5 py-16 lg:grid-cols-[0.8fr_1.2fr] lg:py-24">
+          <div>
             <p className="text-sm font-black uppercase tracking-[0.32em] text-orange-500">
               ● Command systems for real life
             </p>
 
-            <h1 className="mt-6 text-6xl font-black leading-[0.92] tracking-[-0.06em] sm:text-7xl lg:text-8xl">
+            <h1 className="mt-6 max-w-2xl text-6xl font-black leading-[0.92] tracking-[-0.06em] sm:text-7xl lg:text-8xl">
               One stack. <br />
               Total clarity<span className="text-orange-500">.</span>
             </h1>
 
-            <p className="mt-7 text-xl leading-9 text-slate-600">
+            <p className="mt-7 max-w-xl text-xl leading-9 text-slate-600">
               ClarityStacked brings focused command systems for money, food,
               decisions, focus, and life admin into one powerful ecosystem.
             </p>
@@ -183,9 +189,9 @@ export default function Home() {
           </div>
 
           <div className="relative min-w-0">
-            <div className="relative w-full overflow-hidden rounded-[38px]">
-              <div className="dashboard-slider">
-                {apps.map((app) => (
+            <div className="relative overflow-hidden rounded-[36px]">
+              <div className="flex dashboard-slider">
+                {slides.map((app) => (
                   <AppPreviewSlide key={app.name} app={app} />
                 ))}
               </div>
@@ -216,7 +222,7 @@ export default function Home() {
           {apps.map((app) => (
             <article
               key={app.name}
-              className="group flex min-h-[300px] flex-col justify-between rounded-[32px] border border-slate-200 bg-white p-8 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-slate-900/10"
+              className="group flex min-h-[280px] flex-col justify-between rounded-[32px] border border-slate-200 bg-white p-8 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-slate-900/10"
             >
               <div>
                 <div
