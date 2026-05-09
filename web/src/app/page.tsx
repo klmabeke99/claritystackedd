@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import FadeIn from "./components/FadeIn";
 
 const apps = [
   {
@@ -289,6 +290,7 @@ export default function Home() {
         </div>
       </section>
 
+      <FadeIn>
       <section id="apps" className="mx-auto max-w-7xl px-5 py-16">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-sm font-black uppercase tracking-[0.3em] text-orange-500">
@@ -332,7 +334,9 @@ export default function Home() {
           ))}
         </div>
       </section>
+      </FadeIn>
 
+      <FadeIn>
       <section id="comparison" className="mx-auto max-w-7xl px-5 py-16">
   <div className="mx-auto max-w-3xl text-center">
     <p className="text-sm font-black uppercase tracking-[0.3em] text-orange-500">
@@ -410,7 +414,8 @@ export default function Home() {
     </div>
   </div>
 </section>
-
+</FadeIn>
+      <FadeIn>
       <section id="systems" className="mx-auto max-w-7xl px-5 py-16">
         <div className="rounded-[36px] bg-slate-50 p-8 md:p-12">
           <p className="text-sm font-black uppercase tracking-[0.3em] text-orange-500">
@@ -436,7 +441,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+      </FadeIn>
 
+       <FadeIn>
       <section id="resources" className="mx-auto max-w-7xl px-5 py-16">
         <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
           <div>
@@ -465,7 +472,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+      </FadeIn>
 
+       <FadeIn>
       <section id="pricing" className="mx-auto max-w-7xl px-5 py-16">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-sm font-black uppercase tracking-[0.3em] text-orange-500">
@@ -494,7 +503,9 @@ export default function Home() {
           ))}
         </div>
       </section>
+      </FadeIn>
 
+     <FadeIn>
       <section id="about" className="mx-auto max-w-7xl px-5 py-16">
         <div className="relative overflow-hidden rounded-[36px] bg-[#07112f] p-8 text-white shadow-2xl shadow-slate-900/20 md:p-12">
           <div className="absolute right-[-80px] top-[-80px] h-64 w-64 rounded-full bg-orange-400/30 blur-3xl" />
@@ -515,6 +526,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      </FadeIn>
 
       <section className="mx-auto max-w-7xl px-5 pb-20">
         <div className="relative overflow-hidden rounded-[32px] bg-[#07112f] px-8 py-12 text-white shadow-2xl shadow-slate-900/20 md:px-12">
