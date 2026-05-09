@@ -57,6 +57,50 @@ const apps = [
 
 const slides = apps;
 
+const solutions = [
+  "Money clarity",
+  "Food readiness",
+  "Mental calm",
+  "Decision support",
+  "Life organisation",
+  "Focus systems",
+];
+
+const resources = [
+  "Product walkthroughs",
+  "Founder build notes",
+  "LinkedIn carousel guides",
+  "Workflow examples",
+];
+
+const pricingOptions = [
+  {
+    title: "Start Free",
+    description:
+      "Explore the ecosystem and open each product to begin using the core tools.",
+  },
+  {
+    title: "Upgrade by App",
+    description:
+      "Each product can grow with premium features, AI support, reports, and saved systems.",
+  },
+  {
+    title: "Future Bundle",
+    description:
+      "A ClarityStacked ecosystem bundle can bring multiple command systems together later.",
+  },
+];
+
+function getInternalLink(appName: string) {
+  if (appName === "MultiStream Command") return "/multistream";
+  if (appName === "Prepper Pantry") return "/prepper-pantry";
+  if (appName === "CalmFrame") return "/calmframe";
+  if (appName === "Decision Helper") return "/decision-helper";
+  if (appName === "Life Admin OS") return "/life-admin";
+  if (appName === "ADHD Work") return "/adhd-work";
+  return "/";
+}
+
 function AppPreviewSlide({ app }: { app: (typeof apps)[number] }) {
   return (
     <div className="min-w-full px-2">
@@ -81,12 +125,7 @@ function AppPreviewSlide({ app }: { app: (typeof apps)[number] }) {
           </a>
         </div>
 
-        <a
-          href={app.link}
-          target="_blank"
-          rel="noreferrer"
-          className="block"
-        >
+        <a href={app.link} target="_blank" rel="noreferrer" className="block">
           <div className="relative aspect-[16/10] overflow-hidden rounded-b-[26px] bg-white">
             <img
               src={app.preview}
@@ -124,14 +163,14 @@ export default function Home() {
             <a href="#about">About</a>
           </nav>
 
-         <div className="hidden gap-3 sm:flex">
-        <a
-        href="#apps"
-       className="rounded-2xl bg-[#07112f] px-6 py-3 text-base font-black text-white shadow-xl shadow-slate-900/15 transition hover:-translate-y-0.5"
-        >
-      Explore Apps
-     </a>
-    </div>
+          <div className="hidden gap-3 sm:flex">
+            <a
+              href="#apps"
+              className="rounded-2xl bg-[#07112f] px-6 py-3 text-base font-black text-white shadow-xl shadow-slate-900/15 transition hover:-translate-y-0.5"
+            >
+              Explore Apps
+            </a>
+          </div>
         </div>
       </header>
 
@@ -236,29 +275,120 @@ export default function Home() {
                 </p>
               </div>
 
-        <a
-  className="mt-7 inline-block text-base font-black text-blue-600"
-  href={
-    app.name === "MultiStream Command"
-      ? "/multistream"
-      : app.name === "Prepper Pantry"
-      ? "/prepper-pantry"
-      : app.name === "CalmFrame"
-      ? "/calmframe"
-      : app.name === "Decision Helper"
-      ? "/decision-helper"
-      : app.name === "Life Admin OS"
-      ? "/life-admin"
-      : app.name === "ADHD Work"
-      ? "/adhd-work"
-      : app.link
-  }
-  target="_self"
->
-  Explore →
-</a>
+              <a
+                className="mt-7 inline-block text-base font-black text-blue-600"
+                href={getInternalLink(app.name)}
+                target="_self"
+              >
+                Explore →
+              </a>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section id="systems" className="mx-auto max-w-7xl px-5 py-16">
+        <div className="rounded-[36px] bg-slate-50 p-8 md:p-12">
+          <p className="text-sm font-black uppercase tracking-[0.3em] text-orange-500">
+            ● Solutions
+          </p>
+          <h2 className="mt-4 max-w-3xl text-4xl font-black tracking-tight sm:text-6xl">
+            Built around the everyday chaos people actually face.
+          </h2>
+
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {solutions.map((solution) => (
+              <div
+                key={solution}
+                className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
+              >
+                <p className="text-xl font-black">{solution}</p>
+                <p className="mt-3 text-base leading-7 text-slate-600">
+                  A focused command system designed to reduce scattered
+                  decisions and help you take the next clear step.
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="resources" className="mx-auto max-w-7xl px-5 py-16">
+        <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
+          <div>
+            <p className="text-sm font-black uppercase tracking-[0.3em] text-orange-500">
+              ● Resources
+            </p>
+            <h2 className="mt-4 text-4xl font-black tracking-tight sm:text-6xl">
+              Learn the systems behind the tools.
+            </h2>
+            <p className="mt-5 text-lg leading-8 text-slate-600">
+              Resources will include product walkthroughs, build notes,
+              workflow examples, and practical guides for using command systems
+              in real life.
+            </p>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-2">
+            {resources.map((resource) => (
+              <div
+                key={resource}
+                className="rounded-3xl border border-slate-200 bg-white p-6 text-lg font-black shadow-sm"
+              >
+                ◉ {resource}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="pricing" className="mx-auto max-w-7xl px-5 py-16">
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="text-sm font-black uppercase tracking-[0.3em] text-orange-500">
+            ● Pricing
+          </p>
+          <h2 className="mt-4 text-4xl font-black tracking-tight sm:text-6xl">
+            Start simple. Upgrade when you need more.
+          </h2>
+          <p className="mt-5 text-lg leading-8 text-slate-600">
+            Pricing can stay flexible while each product grows. For now,
+            ClarityStacked helps users discover the right system first.
+          </p>
+        </div>
+
+        <div className="mt-12 grid gap-6 lg:grid-cols-3">
+          {pricingOptions.map((option) => (
+            <div
+              key={option.title}
+              className="rounded-[32px] border border-slate-200 bg-white p-8 shadow-sm"
+            >
+              <h3 className="text-2xl font-black">{option.title}</h3>
+              <p className="mt-4 text-base leading-7 text-slate-600">
+                {option.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="about" className="mx-auto max-w-7xl px-5 py-16">
+        <div className="relative overflow-hidden rounded-[36px] bg-[#07112f] p-8 text-white shadow-2xl shadow-slate-900/20 md:p-12">
+          <div className="absolute right-[-80px] top-[-80px] h-64 w-64 rounded-full bg-orange-400/30 blur-3xl" />
+
+          <div className="relative max-w-4xl">
+            <p className="text-sm font-black uppercase tracking-[0.3em] text-orange-400">
+              ● About ClarityStacked
+            </p>
+            <h2 className="mt-4 text-4xl font-black tracking-tight sm:text-6xl">
+              ClarityStacked exists to turn scattered life systems into calm,
+              usable command centres.
+            </h2>
+            <p className="mt-6 text-lg leading-8 text-slate-300">
+              The mission is simple: build practical tools that help people
+              manage money, food, focus, admin, decisions, and mental clarity
+              without feeling overwhelmed by complicated software.
+            </p>
+          </div>
         </div>
       </section>
 
