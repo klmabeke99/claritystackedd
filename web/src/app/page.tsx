@@ -236,14 +236,27 @@ export default function Home() {
                 </p>
               </div>
 
-              <a
-                className="mt-7 inline-block text-base font-black text-blue-600"
-                href={app.link}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Explore →
-              </a>
+        <a
+  className="mt-7 inline-block text-base font-black text-blue-600"
+  href={
+    app.name === "MultiStream Command"
+      ? "/multistream"
+      : app.name === "Prepper Pantry"
+      ? "/prepper-pantry"
+      : app.name === "CalmFrame"
+      ? "/calmframe"
+      : app.name === "Decision Helper"
+      ? "/decision-helper"
+      : app.name === "Life Admin OS"
+      ? "/life-admin"
+      : app.name === "ADHD Work"
+      ? "/adhd-work"
+      : app.link
+  }
+  target="_self"
+>
+  Explore →
+</a>
             </article>
           ))}
         </div>
