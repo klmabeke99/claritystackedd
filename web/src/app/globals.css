@@ -60,8 +60,18 @@ body {
   }
 }
 
-
-
 .dashboard-slider {
   animation: slideShow 42s infinite ease-in-out;
+}
+
+@media (max-width: 640px) {
+  .dashboard-slider {
+    animation: none;
+    width: 100%;
+    transform: translateX(0%) !important;
+  }
+
+  .dashboard-slider > div {
+    width: 100%;
+  }
 }

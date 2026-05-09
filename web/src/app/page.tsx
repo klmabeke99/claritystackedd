@@ -59,7 +59,7 @@ const slides = apps;
 
 function AppPreviewSlide({ app }: { app: (typeof apps)[number] }) {
   return (
-    <div className="min-w-full px-2">
+    <div className="w-full shrink-0 px-2">
       <div className="overflow-hidden rounded-[34px] border border-slate-200 bg-[#07112f] p-3 shadow-[0_34px_90px_rgba(7,17,47,0.22)]">
         <div className="flex items-center justify-between gap-4 border-b border-white/10 px-4 py-4 text-white">
           <div>
@@ -88,17 +88,16 @@ function AppPreviewSlide({ app }: { app: (typeof apps)[number] }) {
           className="block"
         >
           <div className="relative overflow-hidden rounded-b-[26px] bg-white">
-         <div className="h-[260px] overflow-hidden sm:h-[420px] lg:h-[560px]">
-        <img
-      src={app.preview}
-      alt={`${app.name} screenshot preview`}
-      className="block h-full w-full object-cover object-top transition duration-700 hover:scale-[1.02]"
-      draggable="false"
-      />
+         <div className="flex h-[260px] w-full items-center justify-center overflow-hidden bg-white sm:h-[420px] lg:h-[520px]">
+         <img
+        src={app.preview}
+       alt={`${app.name} screenshot preview`}
+       className="block max-h-full max-w-full object-contain object-center"
+       draggable="false"
+       />
+     </div>
+    </div>
 
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#07112f]/10 via-transparent to-white/0" />
-  </div>
-</div>
         </a>
       </div>
     </div>
@@ -193,7 +192,7 @@ export default function Home() {
 
           <div className="relative min-w-0">
             <div className="relative overflow-hidden rounded-[36px]">
-              <div className="flex dashboard-slider">
+             <div className="dashboard-slider flex w-[600%]">
                 {slides.map((app) => (
                   <AppPreviewSlide key={app.name} app={app} />
                 ))}
