@@ -5,7 +5,41 @@ type ProductPageProps = {
   app: (typeof apps)[keyof typeof apps];
 };
 
+const accentStyles = {
+  violet: {
+    soft: "bg-violet-100 text-violet-700",
+    glow: "bg-violet-200/60",
+    text: "text-violet-600",
+  },
+  green: {
+    soft: "bg-green-100 text-green-700",
+    glow: "bg-green-200/60",
+    text: "text-green-600",
+  },
+  orange: {
+    soft: "bg-orange-100 text-orange-700",
+    glow: "bg-orange-200/60",
+    text: "${accent.text}",
+  },
+  blue: {
+    soft: "bg-blue-100 text-blue-700",
+    glow: "bg-blue-200/60",
+    text: "text-blue-600",
+  },
+  pink: {
+    soft: "bg-pink-100 text-pink-700",
+    glow: "bg-pink-200/60",
+    text: "text-pink-600",
+  },
+  cyan: {
+    soft: "bg-cyan-100 text-cyan-700",
+    glow: "bg-cyan-200/60",
+    text: "text-cyan-600",
+  },
+} as const;
+
 export default function ProductPageTemplate({ app }: ProductPageProps) {
+const accent = accentStyles[app.accent];
   return (
     <main className="min-h-screen overflow-hidden bg-white text-[#07112f]">
       <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur-xl">
@@ -15,7 +49,7 @@ export default function ProductPageTemplate({ app }: ProductPageProps) {
               S
             </div>
             <p className="text-xl font-black tracking-tight sm:text-2xl">
-              CLARITY<span className="text-orange-500">STACKED</span>
+              CLARITY<span className="${accent.text}">STACKED</span>
             </p>
           </Link>
 
@@ -30,21 +64,25 @@ export default function ProductPageTemplate({ app }: ProductPageProps) {
 
       <section className="relative">
         <div className="absolute right-[-120px] top-20 h-[380px] w-[380px] rounded-full bg-orange-200/50 blur-3xl" />
-        <div className="absolute left-[-140px] top-56 h-[360px] w-[360px] rounded-full bg-blue-100/80 blur-3xl" />
+       <div
+        className={`absolute left-[-140px] top-56 h-[360px] w-[360px] rounded-full blur-3xl ${accent.glow}`}
+         />
 
         <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-5 py-16 lg:grid-cols-[0.85fr_1.15fr] lg:py-24">
           <div>
-            <div className="grid h-16 w-16 place-items-center rounded-3xl bg-orange-100 text-3xl text-orange-700">
-              {app.icon}
-            </div>
+            <div
+            className={`grid h-16 w-16 place-items-center rounded-3xl text-3xl ${accent.soft}`}
+             >
+             {app.icon}
+             </div>
 
-            <p className="mt-6 text-sm font-black uppercase tracking-[0.32em] text-orange-500">
+            <p className="mt-6 text-sm font-black uppercase tracking-[0.32em] ${accent.text}">
               ● ClarityStacked product
             </p>
 
             <h1 className="mt-5 max-w-2xl text-5xl font-black leading-[0.95] tracking-[-0.05em] sm:text-6xl lg:text-7xl">
               {app.name}
-              <span className="text-orange-500">.</span>
+              <span className="${accent.text}">.</span>
             </h1>
 
             <p className="mt-6 max-w-xl text-2xl font-black leading-9 text-slate-800">
@@ -99,7 +137,7 @@ export default function ProductPageTemplate({ app }: ProductPageProps) {
 
       <section className="mx-auto max-w-7xl px-5 pb-20">
         <div className="rounded-[36px] border border-slate-200 bg-slate-50 p-6 shadow-sm sm:p-8 md:p-10">
-          <p className="text-sm font-black uppercase tracking-[0.3em] text-orange-500">
+          <p className="text-sm font-black uppercase tracking-[0.3em] ${accent.text}">
             ● What it helps with
           </p>
 
@@ -146,7 +184,7 @@ export default function ProductPageTemplate({ app }: ProductPageProps) {
         </div>
 
         <div className="rounded-[36px] border border-slate-200 bg-white p-8 shadow-sm md:p-10">
-          <p className="text-sm font-black uppercase tracking-[0.3em] text-orange-500">
+          <p className="text-sm font-black uppercase tracking-[0.3em] ${accent.text}">
             ● Why it matters
           </p>
 
