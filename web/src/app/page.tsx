@@ -124,14 +124,14 @@ export default function Home() {
             <a href="#about">About</a>
           </nav>
 
-          <div className="hidden gap-3 sm:flex">
-            <button className="rounded-2xl border border-slate-300 px-6 py-3 text-base font-black">
-              Log in
-            </button>
-            <button className="rounded-2xl bg-[#07112f] px-6 py-3 text-base font-black text-white shadow-xl shadow-slate-900/15">
-              Get Started
-            </button>
-          </div>
+         <div className="hidden gap-3 sm:flex">
+        <a
+        href="#apps"
+       className="rounded-2xl bg-[#07112f] px-6 py-3 text-base font-black text-white shadow-xl shadow-slate-900/15 transition hover:-translate-y-0.5"
+        >
+      Explore Apps
+     </a>
+    </div>
         </div>
       </header>
 
