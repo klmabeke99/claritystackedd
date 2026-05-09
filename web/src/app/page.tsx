@@ -147,9 +147,9 @@ export default function Home() {
       <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4">
           <div className="flex items-center gap-3">
-            <div className="grid h-12 w-12 place-items-center rounded-2xl bg-orange-500 text-xl font-black text-white shadow-lg shadow-orange-500/20">
-              S
-            </div>
+            <div className="grid h-12 w-12 place-items-center rounded-2xl bg-orange-500 text-sm font-black text-white shadow-lg shadow-orange-500/20">
+             CS
+           </div>
             <p className="text-2xl font-black tracking-tight">
               CLARITY<span className="text-orange-500">STACKED</span>
             </p>
@@ -412,6 +412,57 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <footer className="border-t border-slate-200 bg-slate-50">
+  <div className="mx-auto grid max-w-7xl gap-10 px-5 py-12 md:grid-cols-[1.2fr_0.8fr_0.8fr]">
+    <div>
+      <div className="flex items-center gap-3">
+        <div className="grid h-11 w-11 place-items-center rounded-2xl bg-orange-500 text-sm font-black text-white shadow-lg shadow-orange-500/20">
+          CS
+        </div>
+        <p className="text-2xl font-black tracking-tight">
+          CLARITY<span className="text-orange-500">STACKED</span>
+        </p>
+      </div>
+
+      <p className="mt-5 max-w-md text-base leading-7 text-slate-600">
+        Command systems for money, food, focus, decisions, mental clarity, and everyday life admin.
+      </p>
+
+      <p className="mt-6 text-sm font-bold text-slate-500">
+        © {new Date().getFullYear()} ClarityStacked. All rights reserved.
+      </p>
+    </div>
+
+    <div>
+      <h3 className="text-sm font-black uppercase tracking-[0.25em] text-slate-500">
+        Ecosystem
+      </h3>
+
+      <div className="mt-5 grid gap-3 text-base font-bold text-slate-700">
+        <a href="#apps">Products</a>
+        <a href="#systems">Solutions</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#about">About</a>
+      </div>
+    </div>
+
+    <div>
+      <h3 className="text-sm font-black uppercase tracking-[0.25em] text-slate-500">
+        Products
+      </h3>
+
+      <div className="mt-5 grid gap-3 text-base font-bold text-slate-700">
+        <a href="/multistream">MultiStream</a>
+        <a href="/prepper-pantry">Prepper Pantry</a>
+        <a href="/calmframe">CalmFrame</a>
+        <a href="/decision-helper">Decision Helper</a>
+        <a href="/life-admin">Life Admin OS</a>
+        <a href="/adhd-work">ADHD Work</a>
+      </div>
+    </div>
+  </div>
+</footer>
     </main>
   );
 }
