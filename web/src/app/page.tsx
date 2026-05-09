@@ -415,6 +415,58 @@ export default function Home() {
   </div>
 </section>
 </FadeIn>
+
+<FadeIn>
+<section className="mx-auto max-w-7xl px-5 py-16">
+  <div className="relative overflow-hidden rounded-[40px] bg-[#07112f] px-8 py-12 text-white shadow-2xl shadow-slate-900/20 md:px-12 md:py-16">
+    <div className="absolute left-[-100px] top-[-100px] h-72 w-72 rounded-full bg-orange-500/20 blur-3xl" />
+    <div className="absolute bottom-[-120px] right-[-100px] h-72 w-72 rounded-full bg-blue-500/20 blur-3xl" />
+
+    <div className="relative mx-auto max-w-5xl text-center">
+      <p className="text-sm font-black uppercase tracking-[0.35em] text-orange-400">
+        ● Shared ecosystem
+      </p>
+
+      <h2 className="mt-5 text-4xl font-black tracking-tight sm:text-6xl">
+        One ecosystem. <br />
+        Multiple command systems.
+      </h2>
+
+      <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-300">
+        ClarityStacked is designed as a connected ecosystem of focused command
+        systems that reduce overwhelm and help people manage real-life chaos
+        with more clarity, structure, and control.
+      </p>
+
+      <div className="mt-12 grid gap-5 md:grid-cols-3">
+        <div className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur">
+          <p className="text-2xl font-black text-orange-400">Focused</p>
+          <p className="mt-3 text-base leading-7 text-slate-300">
+            Each app solves one clear real-life problem instead of trying to do
+            everything at once.
+          </p>
+        </div>
+
+        <div className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur">
+          <p className="text-2xl font-black text-orange-400">Connected</p>
+          <p className="mt-3 text-base leading-7 text-slate-300">
+            The systems are designed to feel aligned visually, structurally,
+            and philosophically as the ecosystem grows.
+          </p>
+        </div>
+
+        <div className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur">
+          <p className="text-2xl font-black text-orange-400">Practical</p>
+          <p className="mt-3 text-base leading-7 text-slate-300">
+            Every product is built around practical daily clarity instead of
+            complicated productivity theory.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</FadeIn>
       <FadeIn>
       <section id="systems" className="mx-auto max-w-7xl px-5 py-16">
         <div className="rounded-[36px] bg-slate-50 p-8 md:p-12">
