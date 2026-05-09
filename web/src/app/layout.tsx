@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   title: "ClarityStacked",
   description:
     "Command systems for money, food, focus, decisions, and life admin.",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
