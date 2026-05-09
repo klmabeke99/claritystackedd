@@ -333,6 +333,84 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="comparison" className="mx-auto max-w-7xl px-5 py-16">
+  <div className="mx-auto max-w-3xl text-center">
+    <p className="text-sm font-black uppercase tracking-[0.3em] text-orange-500">
+      ● Compare the systems
+    </p>
+    <h2 className="mt-4 text-4xl font-black tracking-tight sm:text-6xl">
+      Choose the system that fits your current chaos.
+    </h2>
+    <p className="mt-5 text-lg leading-8 text-slate-600">
+      Each ClarityStacked app solves a different everyday problem, while staying part of one connected ecosystem.
+    </p>
+  </div>
+
+  <div className="mt-12 overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-sm">
+    <div className="grid grid-cols-1 divide-y divide-slate-200 lg:grid-cols-4 lg:divide-x lg:divide-y-0">
+      {[
+        {
+          product: "MultiStream",
+          solves: "Income and invoice chaos",
+          bestFor: "Freelancers, creators, side hustlers",
+          focus: "Money clarity",
+        },
+        {
+          product: "Prepper Pantry",
+          solves: "Food waste and pantry confusion",
+          bestFor: "Homes, preppers, busy families",
+          focus: "Food readiness",
+        },
+        {
+          product: "CalmFrame",
+          solves: "Mental noise and emotional overwhelm",
+          bestFor: "People needing calmer routines",
+          focus: "Mental clarity",
+        },
+        {
+          product: "Decision Helper",
+          solves: "Overthinking and decision paralysis",
+          bestFor: "Big choices and stuck moments",
+          focus: "Clear decisions",
+        },
+        {
+          product: "Life Admin OS",
+          solves: "Bills, tasks, subscriptions, reminders",
+          bestFor: "Everyday life organisation",
+          focus: "Admin control",
+        },
+        {
+          product: "ADHD Work",
+          solves: "Focus, workday, and task overwhelm",
+          bestFor: "ADHD-friendly work support",
+          focus: "Focus systems",
+        },
+      ].map((item) => (
+        <div key={item.product} className="p-6">
+          <h3 className="text-xl font-black">{item.product}</h3>
+          <p className="mt-4 text-sm font-black uppercase tracking-[0.2em] text-orange-500">
+            Solves
+          </p>
+          <p className="mt-2 text-base leading-7 text-slate-600">
+            {item.solves}
+          </p>
+
+          <p className="mt-5 text-sm font-black uppercase tracking-[0.2em] text-orange-500">
+            Best for
+          </p>
+          <p className="mt-2 text-base leading-7 text-slate-600">
+            {item.bestFor}
+          </p>
+
+          <p className="mt-5 rounded-2xl bg-slate-50 px-4 py-3 text-sm font-black text-slate-800">
+            {item.focus}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
       <section id="systems" className="mx-auto max-w-7xl px-5 py-16">
         <div className="rounded-[36px] bg-slate-50 p-8 md:p-12">
           <p className="text-sm font-black uppercase tracking-[0.3em] text-orange-500">
