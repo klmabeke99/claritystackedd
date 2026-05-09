@@ -106,12 +106,12 @@ export default function Home() {
   return (
     <main className="min-h-screen overflow-hidden bg-white text-[#07112f]">
       <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4">
+      <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-4">
           <div className="flex items-center gap-3">
-            <div className="grid h-12 w-12 place-items-center rounded-2xl bg-orange-500 text-xl font-black text-white shadow-lg shadow-orange-500/20">
+           <div className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-orange-500 text-lg font-black text-white shadow-lg shadow-orange-500/20 sm:h-12 sm:w-12 sm:text-xl">
               S
             </div>
-            <p className="text-2xl font-black tracking-tight">
+            <p className="text-xl font-black tracking-tight sm:text-2xl">
               CLARITY<span className="text-orange-500">STACKED</span>
             </p>
           </div>
