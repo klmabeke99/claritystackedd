@@ -87,15 +87,18 @@ function AppPreviewSlide({ app }: { app: (typeof apps)[number] }) {
           rel="noreferrer"
           className="block"
         >
-          <div className="relative aspect-[16/10] overflow-hidden rounded-b-[26px] bg-white">
-            <img
-              src={app.preview}
-              alt={`${app.name} screenshot preview`}
-              className="h-full w-full object-cover object-top transition duration-700 hover:scale-[1.03]"
-            />
+          <div className="relative overflow-hidden rounded-b-[26px] bg-white">
+         <div className="h-[260px] overflow-hidden sm:h-[420px] lg:h-[560px]">
+        <img
+      src={app.preview}
+      alt={`${app.name} screenshot preview`}
+      className="block h-full w-full object-cover object-top transition duration-700 hover:scale-[1.02]"
+      draggable="false"
+      />
 
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#07112f]/10 via-transparent to-white/0" />
-          </div>
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#07112f]/10 via-transparent to-white/0" />
+  </div>
+</div>
         </a>
       </div>
     </div>
@@ -104,7 +107,7 @@ function AppPreviewSlide({ app }: { app: (typeof apps)[number] }) {
 
 export default function Home() {
   return (
-    <main className="min-h-screen overflow-hidden bg-white text-[#07112f]">
+  <main className="min-h-screen w-full overflow-x-hidden bg-white text-[#07112f]">
       <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4">
           <div className="flex items-center gap-3">

@@ -9,13 +9,15 @@
   box-sizing: border-box;
 }
 
-html {
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
-  overflow-x: hidden;
   background: #ffffff;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
@@ -57,6 +59,8 @@ body {
     transform: translateX(0%);
   }
 }
+
+
 
 .dashboard-slider {
   animation: slideShow 42s infinite ease-in-out;
