@@ -9,7 +9,8 @@ const roboto = Roboto({
 
 export const metadata: Metadata = {
   title: "ClarityStacked",
-  description: "Command systems for money, food, focus, decisions, and life admin.",
+  description:
+    "Command systems for money, food, focus, decisions, and life admin.",
 };
 
 export default function RootLayout({

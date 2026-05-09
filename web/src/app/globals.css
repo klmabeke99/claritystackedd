@@ -12,6 +12,7 @@
 html,
 body {
   width: 100%;
+  max-width: 100%;
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
@@ -20,7 +21,10 @@ body {
   margin: 0;
   background: #ffffff;
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+img {
+  max-width: 100%;
 }
 
 @keyframes slideShow {
@@ -61,17 +65,14 @@ body {
 }
 
 .dashboard-slider {
+  display: flex;
+  width: 100%;
   animation: slideShow 42s infinite ease-in-out;
 }
 
 @media (max-width: 640px) {
   .dashboard-slider {
     animation: none;
-    width: 100%;
     transform: translateX(0%) !important;
-  }
-
-  .dashboard-slider > div {
-    width: 100%;
   }
 }
