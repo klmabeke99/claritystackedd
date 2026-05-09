@@ -6,6 +6,7 @@ const apps = [
     icon: "▦",
     color: "bg-violet-100 text-violet-700",
     link: "https://freelance-command-center-opal.vercel.app/",
+    preview: "/previews/multistream.png",
   },
   {
     name: "Prepper Pantry",
@@ -14,6 +15,7 @@ const apps = [
     icon: "🛒",
     color: "bg-green-100 text-green-700",
     link: "https://prepper-pantry-command.vercel.app/",
+    preview: "/previews/prepper-pantry.png",
   },
   {
     name: "CalmFrame",
@@ -22,6 +24,7 @@ const apps = [
     icon: "⚡",
     color: "bg-orange-100 text-orange-700",
     link: "https://calmframe.vercel.app/",
+    preview: "/previews/calmframe.png",
   },
   {
     name: "Decision Helper",
@@ -30,6 +33,7 @@ const apps = [
     icon: "◇",
     color: "bg-blue-100 text-blue-700",
     link: "https://decision-helper-app-brown.vercel.app/",
+    preview: "/previews/decision-helper.png",
   },
   {
     name: "Life Admin OS",
@@ -38,6 +42,7 @@ const apps = [
     icon: "□",
     color: "bg-pink-100 text-pink-700",
     link: "https://life-admin-os-zeta.vercel.app/",
+    preview: "/previews/life-admin.png",
   },
   {
     name: "ADHD Work",
@@ -46,6 +51,7 @@ const apps = [
     icon: "◎",
     color: "bg-cyan-100 text-cyan-700",
     link: "https://adhd-work-app.vercel.app/",
+    preview: "/previews/adhd-work.png",
   },
 ];
 
@@ -55,27 +61,42 @@ function AppPreviewSlide({ app }: { app: (typeof apps)[number] }) {
   return (
     <div className="min-w-full px-2">
       <div className="overflow-hidden rounded-[34px] border border-slate-200 bg-[#07112f] p-3 shadow-[0_34px_90px_rgba(7,17,47,0.22)]">
-        <div className="flex items-center justify-between border-b border-white/10 px-4 py-3 text-white">
+        <div className="flex items-center justify-between gap-4 border-b border-white/10 px-4 py-4 text-white">
           <div>
-            <p className="text-sm font-black text-orange-400">CLARITYSTACKED</p>
-            <p className="text-xs text-slate-400">{app.name} preview</p>
+            <p className="text-base font-black text-orange-400">
+              CLARITYSTACKED
+            </p>
+            <p className="mt-1 text-sm font-bold text-slate-400">
+              {app.name} preview
+            </p>
           </div>
+
           <a
             href={app.link}
             target="_blank"
-            className="rounded-full bg-white px-4 py-2 text-xs font-black text-[#07112f]"
+            rel="noreferrer"
+            className="shrink-0 rounded-full bg-white px-5 py-3 text-sm font-black text-[#07112f] shadow-lg"
           >
             Open app
           </a>
         </div>
 
-        <div className="relative h-[430px] overflow-hidden rounded-b-[26px] bg-white sm:h-[520px] lg:h-[560px]">
-          <iframe
-            src={app.link}
-            title={`${app.name} preview`}
-            className="h-full w-full border-0"
-          />
-        </div>
+        <a
+          href={app.link}
+          target="_blank"
+          rel="noreferrer"
+          className="block"
+        >
+          <div className="relative aspect-[16/10] overflow-hidden rounded-b-[26px] bg-white">
+            <img
+              src={app.preview}
+              alt={`${app.name} screenshot preview`}
+              className="h-full w-full object-cover object-top transition duration-700 hover:scale-[1.03]"
+            />
+
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#07112f]/10 via-transparent to-white/0" />
+          </div>
+        </a>
       </div>
     </div>
   );
@@ -177,7 +198,7 @@ export default function Home() {
             </div>
 
             <p className="mt-4 text-center text-sm font-bold text-slate-500">
-              Live product previews sliding through the ClarityStacked ecosystem
+              Real product previews from the ClarityStacked ecosystem
             </p>
           </div>
         </div>
@@ -219,6 +240,7 @@ export default function Home() {
                 className="mt-7 inline-block text-base font-black text-blue-600"
                 href={app.link}
                 target="_blank"
+                rel="noreferrer"
               >
                 Explore →
               </a>
@@ -239,7 +261,7 @@ export default function Home() {
               </p>
             </div>
             <a
-              href="#"
+              href="#apps"
               className="rounded-2xl bg-orange-500 px-8 py-4 text-center text-base font-black text-[#07112f] shadow-xl shadow-orange-500/20"
             >
               Start Your Journey →
