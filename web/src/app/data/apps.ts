@@ -2,189 +2,181 @@ export const apps = {
   multistream: {
     name: "MultiStream Command",
     slug: "multistream",
-    tagline: "Take command of multiple income streams.",
+    tagline: "AI-assisted clarity for every income stream.",
     description:
-      "Track income, expenses, invoices, overdue payments, reviews, and reports across multiple streams.",
+      "MultiStream Command helps freelancers, creators, and independent earners track income, expenses, invoices, overdue payments, reviews, and reports with an AI-assisted command system built for financial clarity.",
     icon: "▦",
     accent: "violet",
     preview: "/previews/multistream.png",
     appLink: "https://freelance-command-center-opal.vercel.app/",
-  features: [
-  "Income tracking",
-  "Expense tracking",
-  "Invoice management",
-  "Overdue payment radar",
-  "Client reviews",
-  "Quarterly reports",
-],
-workflow: [
-  "Track income streams",
-  "Monitor invoices and expenses",
-  "Review reports and overdue payments",
-],
-benefits: [
-  "See all income clearly",
-  "Reduce financial chaos",
-  "Make better business decisions",
-],
+    features: [
+      "AI income insights",
+      "Income stream tracking",
+      "Expense monitoring",
+      "Invoice management",
+      "Overdue payment radar",
+      "Quarterly business reports",
+    ],
+    workflow: [
+      "Add income streams, invoices, and expenses",
+      "Let the AI agent identify overdue risks and financial patterns",
+      "Review reports and take clearer business action",
+    ],
+    benefits: [
+      "Understand what you are really earning",
+      "Stop losing track of late payments",
+      "Make better decisions across multiple income sources",
+    ],
   },
 
   prepperPantry: {
     name: "Prepper Pantry",
     slug: "prepper-pantry",
-    tagline: "Know what you have before you need it.",
+    tagline: "AI-assisted food readiness for your home.",
     description:
-      "Manage pantry inventory, expiry dates, meal planning, restock lists, preservation, audit mode, and food readiness.",
+      "Prepper Pantry helps you manage inventory, expiry dates, meal planning, restock lists, preservation, audits, and food readiness with AI-assisted pantry intelligence.",
     icon: "🛒",
     accent: "green",
     preview: "/previews/prepper-pantry.png",
     appLink: "https://prepper-pantry-command.vercel.app/",
     features: [
+      "AI pantry insights",
       "Inventory management",
       "Expiry tracking",
-      "Meal planning",
-      "Restock lists",
-      "Preservation planning",
+      "Meal planning support",
+      "Restock suggestions",
       "Pantry readiness reports",
     ],
-
     workflow: [
-  "Add pantry inventory",
-  "Track expiry dates and storage",
-  "Plan meals and restocks",
-],
-benefits: [
-  "Reduce food waste",
-  "Know what is available instantly",
-  "Stay prepared and organised",
-],
-
+      "Add food items, quantities, storage areas, and expiry dates",
+      "Let the AI agent detect risks, gaps, and meal opportunities",
+      "Use readiness reports to reduce waste and stay prepared",
+    ],
+    benefits: [
+      "Know what food you already have",
+      "Reduce waste from forgotten expiry dates",
+      "Plan meals and restocks with more confidence",
+    ],
   },
 
   calmframe: {
     name: "CalmFrame",
     slug: "calmframe",
-    tagline: "Turn mental noise into calmer next steps.",
+    tagline: "AI-assisted calm for noisy thoughts.",
     description:
-      "Reduce mental noise, reflect clearly, reset focus, track patterns, and create calmer daily routines.",
+      "CalmFrame helps turn mental noise into calmer next steps with reflection tools, check-ins, thought reframing, pattern tracking, and AI-assisted emotional clarity.",
     icon: "⚡",
     accent: "orange",
     preview: "/previews/calmframe.png",
     appLink: "https://calmframe.vercel.app/",
     features: [
+      "AI calm insights",
       "Reflection tools",
       "Anxiety check-ins",
       "Thought reframing",
-      "Calm reset routines",
       "Pattern tracking",
       "Daily clarity dashboard",
     ],
-
     workflow: [
-  "Reflect on thoughts and emotions",
-  "Track patterns and triggers",
-  "Build calmer daily routines",
-],
-benefits: [
-  "Reduce mental overwhelm",
-  "Create calmer routines",
-  "Improve emotional clarity",
-],
-
-    
+      "Check in with your current thoughts and emotional state",
+      "Let the AI agent surface patterns and gentle next steps",
+      "Build calmer routines through repeated reflection",
+    ],
+    benefits: [
+      "Reduce emotional overwhelm",
+      "Understand patterns behind stress",
+      "Create calmer daily routines without complicated tools",
+    ],
   },
 
   decisionHelper: {
     name: "Decision Helper",
     slug: "decision-helper",
-    tagline: "Stop spinning. Start choosing clearly.",
+    tagline: "AI-assisted support for clearer choices.",
     description:
-      "Turn overthinking into structured choices using clear decision frameworks, saved decisions, AI guidance, and practical next steps.",
+      "Decision Helper turns overthinking into structured choices with practical frameworks, saved decisions, trade-off clarity, AI-assisted guidance, and next-step planning.",
     icon: "◇",
     accent: "blue",
     preview: "/previews/decision-helper.png",
     appLink: "https://decision-helper-app-brown.vercel.app/",
     features: [
+      "AI decision guidance",
       "Decision frameworks",
       "Overthinking support",
       "Saved decisions",
-      "Pros and cons clarity",
-      "AI-powered guidance",
+      "Trade-off clarity",
       "Next-step planning",
     ],
-
     workflow: [
-  "Break down difficult decisions",
-  "Compare structured options",
-  "Choose clear next steps",
-],
-benefits: [
-  "Reduce overthinking",
-  "Make clearer decisions",
-  "Feel more confident choosing",
-],
+      "Describe the decision you are stuck on",
+      "Let the AI agent organise options, risks, and trade-offs",
+      "Choose a practical next step instead of staying frozen",
+    ],
+    benefits: [
+      "Reduce decision paralysis",
+      "Compare options more clearly",
+      "Move forward with more confidence",
+    ],
   },
 
   lifeAdmin: {
     name: "Life Admin OS",
     slug: "life-admin",
-    tagline: "Keep everyday admin from becoming everyday stress.",
+    tagline: "AI-assisted control for everyday admin.",
     description:
-      "Organise bills, subscriptions, tasks, reminders, reports, and everyday admin routines in one calm operating system.",
+      "Life Admin OS helps organise bills, subscriptions, tasks, reminders, reports, and everyday routines with AI-assisted admin guidance built to reduce life clutter.",
     icon: "□",
     accent: "pink",
     preview: "/previews/life-admin.png",
     appLink: "https://life-admin-os-zeta.vercel.app/",
     features: [
+      "AI admin insights",
       "Bills tracking",
       "Subscription management",
       "Task organisation",
       "Reminder planning",
       "Reports dashboard",
-      "Admin clarity system",
     ],
-
     workflow: [
-  "Track bills and subscriptions",
-  "Manage tasks and reminders",
-  "Review admin reports",
-],
-benefits: [
-  "Reduce admin stress",
-  "Stay organised daily",
-  "Keep life systems manageable",
-],
+      "Add bills, subscriptions, tasks, and reminders",
+      "Let the AI agent highlight what needs attention",
+      "Use reports and routines to stay ahead of everyday admin",
+    ],
+    benefits: [
+      "Reduce admin stress",
+      "Stop forgetting small but important tasks",
+      "Keep bills, subscriptions, and routines easier to manage",
+    ],
   },
 
   adhdWork: {
     name: "ADHD Work",
     slug: "adhd-work",
-    tagline: "A calmer command system for focus, energy, and workdays.",
+    tagline: "AI-assisted work support for focus and energy.",
     description:
-      "Plan workdays, unpack tasks, prepare meetings, choose work modes, track energy, and recover focus with supportive work systems.",
+      "ADHD Work helps plan workdays, unpack tasks, prepare meetings, choose work modes, track energy, and recover focus with AI-assisted support designed for realistic productivity.",
     icon: "◎",
     accent: "cyan",
     preview: "/previews/adhd-work.png",
     appLink: "https://adhd-work-app.vercel.app/",
     features: [
-      "Workday planning",
+      "AI workday command",
       "Task unpacking",
       "Meeting preparation",
       "Work modes",
       "Energy tracking",
-      "Recovery support",
+      "Focus recovery support",
     ],
-
     workflow: [
-  "Plan focused workdays",
-  "Unpack overwhelming tasks",
-  "Recover focus and energy",
-],
-benefits: [
-  "Reduce work overwhelm",
-  "Improve focus support",
-  "Create calmer productivity systems",
-],
+      "Plan your workday around focus, energy, and task load",
+      "Let the AI agent unpack overwhelming tasks into clearer steps",
+      "Use recovery and work modes to keep moving without burnout",
+    ],
+    benefits: [
+      "Reduce workday overwhelm",
+      "Break stuck tasks into manageable action",
+      "Support focus without forcing unrealistic productivity",
+    ],
   },
 } as const;
 

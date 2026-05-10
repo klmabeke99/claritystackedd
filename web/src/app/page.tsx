@@ -6,8 +6,8 @@ import FadeIn from "./components/FadeIn";
 const apps = [
   {
     name: "MultiStream Command",
-    description:
-      "Track income, expenses, invoices, overdue payments, reviews, and reports across multiple streams.",
+   description:
+  "AI-assisted income clarity for tracking streams, invoices, expenses, overdue payments, reviews, and business reports.",
     icon: "▦",
     color: "bg-violet-100 text-violet-700",
     link: "https://freelance-command-center-opal.vercel.app/",
@@ -16,7 +16,7 @@ const apps = [
   {
     name: "Prepper Pantry",
     description:
-      "Manage pantry inventory, expiry dates, meal planning, restock lists, and food readiness.",
+  "AI-assisted pantry planning for inventory, expiry dates, meals, restocks, preservation, audits, and food readiness.",
     icon: "🛒",
     color: "bg-green-100 text-green-700",
     link: "https://prepper-pantry-command.vercel.app/",
@@ -25,7 +25,7 @@ const apps = [
   {
     name: "CalmFrame",
     description:
-      "Reduce mental noise, reflect clearly, reset focus, and create calmer daily routines.",
+  "AI-assisted calm support for reducing mental noise, reframing thoughts, tracking patterns, and building clearer routines.",
     icon: "⚡",
     color: "bg-orange-100 text-orange-700",
     link: "https://calmframe.vercel.app/",
@@ -33,8 +33,8 @@ const apps = [
   },
   {
     name: "Decision Helper",
-    description:
-      "Turn overthinking into structured choices using clear decision frameworks.",
+   description:
+  "AI-assisted decision support that turns overthinking into structured options, clearer trade-offs, and practical next steps.",
     icon: "◇",
     color: "bg-blue-100 text-blue-700",
     link: "https://decision-helper-app-brown.vercel.app/",
@@ -42,8 +42,8 @@ const apps = [
   },
   {
     name: "Life Admin OS",
-    description:
-      "Organise bills, subscriptions, tasks, reminders, reports, and everyday admin routines.",
+  description:
+  "AI-assisted life admin control for bills, subscriptions, tasks, reminders, reports, and everyday routines.",
     icon: "□",
     color: "bg-pink-100 text-pink-700",
     link: "https://life-admin-os-zeta.vercel.app/",
@@ -51,8 +51,8 @@ const apps = [
   },
   {
     name: "ADHD Work",
-    description:
-      "Plan workdays, unpack tasks, prepare meetings, choose work modes, and recover focus.",
+   description:
+  "AI-assisted work support for planning days, unpacking tasks, preparing meetings, choosing work modes, and recovering focus.",
     icon: "◎",
     color: "bg-cyan-100 text-cyan-700",
     link: "https://adhd-work-app.vercel.app/",
@@ -225,7 +225,7 @@ export default function Home() {
         <div className="absolute right-[-140px] top-20 h-[440px] w-[440px] rounded-full bg-orange-200/50 blur-3xl" />
         <div className="absolute left-[-160px] top-56 h-[420px] w-[420px] rounded-full bg-blue-100/80 blur-3xl" />
 
-        <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-5 py-16 lg:grid-cols-[0.8fr_1.2fr] lg:py-24">
+        <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-5 pb-10 pt-14 lg:grid-cols-[0.8fr_1.2fr] lg:pb-12 lg:pt-20">
           <div>
             <p className="text-sm font-black uppercase tracking-[0.32em] text-orange-500">
               ● Command systems for real life
@@ -291,7 +291,7 @@ export default function Home() {
       </section>
 
       <FadeIn>
-      <section id="apps" className="mx-auto max-w-7xl px-5 py-16">
+     <section id="apps" className="mx-auto max-w-7xl px-5 pb-16 pt-8">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-sm font-black uppercase tracking-[0.3em] text-orange-500">
             ● The ClarityStacked ecosystem
