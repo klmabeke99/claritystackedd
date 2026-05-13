@@ -60,7 +60,7 @@ export default function ResourcesPage() {
         </div>
       </section>
 
-     <section className="mx-auto max-w-7xl px-5 pt-40 pb-20">
+   <section className="mx-auto max-w-7xl px-5 pt-16 pb-20">
         <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="text-sm font-black uppercase tracking-[0.28em] text-orange-500">
