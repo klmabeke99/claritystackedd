@@ -215,12 +215,12 @@ function AppPreviewSlide({ app }: { app: (typeof apps)[number] }) {
       </div>
 
       <a href={app.link} target="_blank" rel="noreferrer" className="block">
-        <div className="relative aspect-[16/11] overflow-hidden rounded-b-[26px] bg-white">
-          <img
-            src={app.preview}
-            alt={`${app.name} screenshot preview`}
-            className="h-full w-full object-contain p-2 transition duration-700 hover:scale-[1.02]"
-          />
+        <div className="relative aspect-[4/3] overflow-hidden rounded-b-[26px] bg-[#07112f]">
+        <img
+        src={app.preview}
+       alt={`${app.name} screenshot preview`}
+       className="h-full w-full object-cover transition duration-700 hover:scale-[1.02]"
+       />
 
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#07112f]/10 via-transparent to-white/0" />
         </div>
