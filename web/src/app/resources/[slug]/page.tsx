@@ -1,10 +1,8 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import SiteHeader from "../../components/SiteHeader";
-import {
-  getResourceBySlug,
-  resources,
-} from "../../data/resources";
+import ResourceCheckoutButton from "../../components/ResourceCheckoutButton";
+import { getResourceBySlug, resources } from "../../data/resources";
 
 export function generateStaticParams() {
   return resources.map((resource) => ({
@@ -14,10 +12,13 @@ export function generateStaticParams() {
 
 export default async function ResourceDetailPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ slug: string }>;
+  searchParams?: Promise<{ payment?: string; session_id?: string }>;
 }) {
   const { slug } = await params;
+  const resolvedSearchParams = searchParams ? await searchParams : {};
 
   const resource = getResourceBySlug(slug);
 
@@ -25,9 +26,12 @@ export default async function ResourceDetailPage({
     notFound();
   }
 
+  const paymentStatus = resolvedSearchParams?.payment;
+
   return (
     <main className="min-h-screen bg-white text-[#07112f]">
-        <SiteHeader />
+      <SiteHeader />
+
       <section className="relative overflow-hidden">
         <div className="absolute right-[-140px] top-16 h-[420px] w-[420px] rounded-full bg-orange-200/50 blur-3xl" />
         <div className="absolute left-[-160px] top-64 h-[420px] w-[420px] rounded-full bg-blue-100/80 blur-3xl" />
@@ -40,6 +44,18 @@ export default async function ResourceDetailPage({
             >
               ← Back to resources
             </Link>
+
+            {paymentStatus === "success" && (
+              <div className="mt-8 rounded-3xl border border-emerald-200 bg-emerald-50 px-6 py-5 text-base font-bold text-emerald-800">
+                Payment received. Your download access is being confirmed.
+              </div>
+            )}
+
+            {paymentStatus === "cancelled" && (
+              <div className="mt-8 rounded-3xl border border-orange-200 bg-orange-50 px-6 py-5 text-base font-bold text-orange-800">
+                Checkout was cancelled. You can try again whenever you’re ready.
+              </div>
+            )}
 
             <p className="mt-10 text-sm font-black uppercase tracking-[0.32em] text-orange-500">
               ● {resource.category}
@@ -70,9 +86,10 @@ export default async function ResourceDetailPage({
             </div>
 
             <div className="mt-12 flex flex-col gap-4 sm:flex-row sm:items-center">
-              <button className="rounded-2xl bg-[#07112f] px-8 py-5 text-lg font-black text-white shadow-2xl shadow-slate-900/20 transition hover:-translate-y-0.5">
-                Get the system — {resource.price}
-              </button>
+              <ResourceCheckoutButton
+                resourceSlug={resource.slug}
+                price={resource.price}
+              />
 
               <button className="rounded-2xl border border-slate-300 bg-white px-8 py-5 text-lg font-black text-[#07112f] shadow-sm transition hover:-translate-y-0.5">
                 Preview workflow
@@ -97,24 +114,24 @@ export default async function ResourceDetailPage({
           </div>
 
           <div>
-  <div className="relative overflow-hidden rounded-[40px] border border-slate-200 bg-[#07112f] p-5 shadow-[0_34px_90px_rgba(7,17,47,0.22)]">
-    <div className="absolute right-[-40px] top-[-40px] h-40 w-40 rounded-full bg-orange-400/20 blur-3xl" />
+            <div className="relative overflow-hidden rounded-[40px] border border-slate-200 bg-[#07112f] p-5 shadow-[0_34px_90px_rgba(7,17,47,0.22)]">
+              <div className="absolute right-[-40px] top-[-40px] h-40 w-40 rounded-full bg-orange-400/20 blur-3xl" />
 
-    <div className="relative aspect-[4/5] overflow-hidden rounded-[30px] border border-white/10 bg-[#101936]">
-      <img
-        src={resource.coverImage}
-        alt={resource.title}
-        className="h-full w-full object-cover"
-      />
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[30px] border border-white/10 bg-[#101936]">
+                <img
+                  src={resource.coverImage}
+                  alt={resource.title}
+                  className="h-full w-full object-cover"
+                />
 
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#07112f]/20 via-transparent to-white/0" />
-    </div>
-  </div>
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#07112f]/20 via-transparent to-white/0" />
+              </div>
+            </div>
 
-  <p className="mt-5 text-center text-sm font-bold text-slate-500">
-    Premium ClarityStacked digital system preview
-  </p>
-</div>
+            <p className="mt-5 text-center text-sm font-bold text-slate-500">
+              Premium ClarityStacked digital system preview
+            </p>
+          </div>
         </div>
       </section>
     </main>
