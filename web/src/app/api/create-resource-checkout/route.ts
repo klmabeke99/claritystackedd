@@ -1,8 +1,13 @@
 import Stripe from "stripe";
 import { NextResponse } from "next/server";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || "");
+const stripeSecretKey = process.env.STRIPE_SECRET_KEY;
 
+if (!stripeSecretKey) {
+  throw new Error("STRIPE_SECRET_KEY is missing.");
+}
+
+const stripe = new Stripe(stripeSecretKey);
 export async function POST(request: Request) {
   try {
     const body = await request.json();
