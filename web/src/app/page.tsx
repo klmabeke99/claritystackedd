@@ -478,8 +478,7 @@ export default function Home() {
 
           <div className="mt-12 overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-sm">
             <div className="grid grid-cols-1 divide-y divide-slate-200 lg:grid-cols-4 lg:divide-x lg:divide-y-0">
-              {[
-                [
+        {[
   {
     product: "SaaS Build OS",
     solves: "Not knowing how to build a SaaS product",
@@ -522,8 +521,7 @@ export default function Home() {
     bestFor: "ADHD-friendly work support",
     focus: "Focus systems",
   },
-]
-              ].map((item) => (
+].map((item) => (
                 <div key={item.product} className="p-6">
                   <h3 className="text-xl font-black">{item.product}</h3>
                   <p className="mt-4 text-sm font-black uppercase tracking-[0.2em] text-orange-500">
