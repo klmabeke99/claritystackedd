@@ -5,6 +5,15 @@ import FadeIn from "./components/FadeIn";
 import { resources as digitalResources } from "./data/resources";
 
 const apps = [
+{
+  name: "SaaS Build OS",
+  description:
+    "AI-guided SaaS building support for turning ideas into structured projects, setup steps, workflows, code implementation, debugging, deployment, and launch.",
+  icon: "SB",
+  color: "bg-blue-100 text-blue-700",
+  link: "https://clarity-content-os.vercel.app/",
+  preview: "/previews/saas-build.png",
+},
   {
     name: "MultiStream Command",
     description:
@@ -96,6 +105,7 @@ const pricingOptions = [
 ];
 
 function getInternalLink(appName: string) {
+   if (appName === "SaaS Build OS") return "/saas-build";
   if (appName === "MultiStream Command") return "/multistream";
   if (appName === "Prepper Pantry") return "/prepper-pantry";
   if (appName === "CalmFrame") return "/calmframe";
@@ -807,6 +817,7 @@ export default function Home() {
             </h3>
 
             <div className="mt-5 grid gap-3 text-base font-bold text-slate-700">
+              <a href="/saas-build">SaaS Build OS</a>
               <a href="/multistream">MultiStream</a>
               <a href="/prepper-pantry">Prepper Pantry</a>
               <a href="/calmframe">CalmFrame</a>
