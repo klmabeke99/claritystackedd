@@ -186,6 +186,41 @@ export default function SaaSBuildPage() {
         </div>
       </section>
 
+      {/* QR CODE */}
+
+<section className="mx-auto max-w-7xl px-5 py-20">
+  <div className="grid gap-10 rounded-[40px] border border-slate-200 bg-slate-50 p-8 shadow-sm lg:grid-cols-[0.8fr_1.2fr] lg:items-center md:p-12">
+    <div>
+      <p className="text-sm font-black uppercase tracking-[0.3em] text-blue-600">
+        ● Scan to open
+      </p>
+
+      <h2 className="mt-4 text-4xl font-black sm:text-6xl">
+        Open SaaS Build OS on any device.
+      </h2>
+
+      <p className="mt-5 text-lg leading-8 text-slate-600">
+        Scan the QR code with your phone or tablet to open the guided SaaS
+        builder instantly.
+      </p>
+    </div>
+
+    <div className="flex justify-center lg:justify-end">
+      <div className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-xl">
+        <img
+          src="/saas-build-qr.png"
+          alt="QR code for SaaS Build OS"
+          className="h-56 w-56 rounded-2xl object-contain"
+        />
+
+        <p className="mt-4 text-center text-sm font-black text-slate-500">
+          Scan to launch SaaS Build OS
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
       {/* CTA */}
 
       <section className="mx-auto max-w-7xl px-5 pb-20">
