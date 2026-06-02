@@ -3,6 +3,27 @@ import Link from "next/link";
 export default function SaaSBuildPage() {
   return (
     <main className="min-h-screen bg-white text-[#07112f]">
+      <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur-xl">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4">
+          <Link href="/" className="flex items-center gap-3">
+            <div className="grid h-12 w-12 place-items-center rounded-2xl bg-orange-500 text-sm font-black text-white shadow-lg shadow-orange-500/20">
+              CS
+            </div>
+
+            <p className="text-2xl font-black tracking-tight">
+              CLARITY<span className="text-orange-500">STACKED</span>
+            </p>
+          </Link>
+
+          <Link
+            href="/"
+            className="rounded-2xl border border-slate-300 bg-white px-6 py-3 text-sm font-black text-[#07112f] shadow-sm"
+          >
+            ← Back home
+          </Link>
+        </div>
+      </header>
+
       {/* HERO */}
 
       <section className="relative overflow-hidden">
