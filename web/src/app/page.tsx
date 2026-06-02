@@ -105,7 +105,7 @@ const pricingOptions = [
 ];
 
 function getInternalLink(appName: string) {
-   if (appName === "SaaS Build OS") return "/saas-build";
+  if (appName === "SaaS Build OS") return "/saas-build";
   if (appName === "MultiStream Command") return "/multistream";
   if (appName === "Prepper Pantry") return "/prepper-pantry";
   if (appName === "CalmFrame") return "/calmframe";
@@ -479,42 +479,50 @@ export default function Home() {
           <div className="mt-12 overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-sm">
             <div className="grid grid-cols-1 divide-y divide-slate-200 lg:grid-cols-4 lg:divide-x lg:divide-y-0">
               {[
-                {
-                  product: "MultiStream",
-                  solves: "Income and invoice chaos",
-                  bestFor: "Freelancers, creators, side hustlers",
-                  focus: "Money clarity",
-                },
-                {
-                  product: "Prepper Pantry",
-                  solves: "Food waste and pantry confusion",
-                  bestFor: "Homes, preppers, busy families",
-                  focus: "Food readiness",
-                },
-                {
-                  product: "CalmFrame",
-                  solves: "Mental noise and emotional overwhelm",
-                  bestFor: "People needing calmer routines",
-                  focus: "Mental clarity",
-                },
-                {
-                  product: "Decision Helper",
-                  solves: "Overthinking and decision paralysis",
-                  bestFor: "Big choices and stuck moments",
-                  focus: "Clear decisions",
-                },
-                {
-                  product: "Life Admin OS",
-                  solves: "Bills, tasks, subscriptions, reminders",
-                  bestFor: "Everyday life organisation",
-                  focus: "Admin control",
-                },
-                {
-                  product: "ADHD Work",
-                  solves: "Focus, workday, and task overwhelm",
-                  bestFor: "ADHD-friendly work support",
-                  focus: "Focus systems",
-                },
+                [
+  {
+    product: "SaaS Build OS",
+    solves: "Not knowing how to build a SaaS product",
+    bestFor: "Founders, beginners, side hustlers",
+    focus: "Launch a SaaS",
+  },
+  {
+    product: "MultiStream",
+    solves: "Income and invoice chaos",
+    bestFor: "Freelancers, creators, side hustlers",
+    focus: "Money clarity",
+  },
+  {
+    product: "Prepper Pantry",
+    solves: "Food waste and pantry confusion",
+    bestFor: "Homes, preppers, busy families",
+    focus: "Food readiness",
+  },
+  {
+    product: "CalmFrame",
+    solves: "Mental noise and emotional overwhelm",
+    bestFor: "People needing calmer routines",
+    focus: "Mental clarity",
+  },
+  {
+    product: "Decision Helper",
+    solves: "Overthinking and decision paralysis",
+    bestFor: "Big choices and stuck moments",
+    focus: "Clear decisions",
+  },
+  {
+    product: "Life Admin OS",
+    solves: "Bills, tasks, subscriptions, reminders",
+    bestFor: "Everyday life organisation",
+    focus: "Admin control",
+  },
+  {
+    product: "ADHD Work",
+    solves: "Focus, workday, and task overwhelm",
+    bestFor: "ADHD-friendly work support",
+    focus: "Focus systems",
+  },
+]
               ].map((item) => (
                 <div key={item.product} className="p-6">
                   <h3 className="text-xl font-black">{item.product}</h3>
@@ -817,7 +825,7 @@ export default function Home() {
             </h3>
 
             <div className="mt-5 grid gap-3 text-base font-bold text-slate-700">
-              <a href="/saas-build">SaaS Build OS</a>
+             <a href="/saas-build">SaaS Build OS</a>
               <a href="/multistream">MultiStream</a>
               <a href="/prepper-pantry">Prepper Pantry</a>
               <a href="/calmframe">CalmFrame</a>
