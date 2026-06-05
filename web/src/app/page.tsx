@@ -370,7 +370,7 @@ export default function Home() {
         )}
       </header>
 
-      <section className="relative">
+    <section className="relative overflow-hidden">
         <div className="absolute right-[-140px] top-20 h-[440px] w-[440px] rounded-full bg-orange-200/50 blur-3xl" />
         <div className="absolute left-[-160px] top-56 h-[420px] w-[420px] rounded-full bg-blue-100/80 blur-3xl" />
 
@@ -423,7 +423,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative min-w-0 lg:-mr-10 xl:-mr-20">
+        <div className="relative min-w-0 lg:-mr-2 xl:-mr-6 2xl:-mr-12">
            <PremiumCarousel
              items={apps}
              label="app preview"
