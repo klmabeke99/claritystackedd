@@ -406,7 +406,9 @@ export default function Home() {
               </a>
             </div>
 
-        <div className="relative min-w-0 lg:-mr-2 xl:-mr-6 2xl:-mr-12">
+           </div>
+
+         <div className="relative min-w-0 lg:-mr-2 xl:-mr-6 2xl:-mr-12">
            <PremiumCarousel
              items={apps}
              label="app preview"
