@@ -406,23 +406,6 @@ export default function Home() {
               </a>
             </div>
 
-            <div className="mt-12 grid grid-cols-2 gap-3 text-sm font-black text-slate-600 sm:grid-cols-4">
-              {[
-                "Built for real life",
-                "Private & secure",
-                "Works across devices",
-                "Always improving",
-              ].map((item) => (
-                <div
-                  key={item}
-                  className="rounded-2xl border border-slate-200 bg-white/80 px-4 py-4 shadow-sm backdrop-blur"
-                >
-                  ✓ {item}
-                </div>
-              ))}
-            </div>
-          </div>
-
         <div className="relative min-w-0 lg:-mr-2 xl:-mr-6 2xl:-mr-12">
            <PremiumCarousel
              items={apps}
@@ -437,6 +420,50 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <FadeIn>
+  <section className="mx-auto max-w-7xl px-5 pb-12">
+    <div className="overflow-hidden rounded-[36px] border border-slate-200 bg-white shadow-sm">
+      <div className="grid md:grid-cols-4">
+        {[
+          {
+            title: "Built for real life",
+            text: "Every product solves a real-world problem people face every day.",
+          },
+          {
+            title: "Private & secure",
+            text: "Designed with privacy, ownership, and control at the centre.",
+          },
+          {
+            title: "Works everywhere",
+            text: "Use across desktop, laptop, tablet, and mobile devices.",
+          },
+          {
+            title: "Always improving",
+            text: "New features, AI enhancements, and ecosystem upgrades added regularly.",
+          },
+        ].map((item) => (
+          <div
+            key={item.title}
+            className="border-b border-slate-200 p-8 last:border-b-0 md:border-b-0 md:border-r md:last:border-r-0"
+          >
+            <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-orange-50 text-2xl">
+              ✓
+            </div>
+
+            <h3 className="text-xl font-black text-[#07112f]">
+              {item.title}
+            </h3>
+
+            <p className="mt-3 text-base leading-7 text-slate-600">
+              {item.text}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</FadeIn>
 
       <FadeIn>
         <section id="apps" className="mx-auto max-w-7xl px-5 pb-16 pt-8">
