@@ -71,12 +71,34 @@ const apps = [
 ];
 
 const solutions = [
-  "Money clarity",
-  "Food readiness",
-  "Mental calm",
-  "Decision support",
-  "Life organisation",
-  "Focus systems",
+  {
+    title: "SaaS building",
+    body: "Turn an idea into a structured SaaS project with guided setup, build steps, AI debugging, deployment support, and launch clarity.",
+  },
+  {
+    title: "Money clarity",
+    body: "Track income streams, invoices, expenses, overdue payments, and business reports without feeling scattered.",
+  },
+  {
+    title: "Food readiness",
+    body: "Organise pantry stock, expiry dates, meals, restocks, preservation, and household food planning in one calm system.",
+  },
+  {
+    title: "Mental calm",
+    body: "Reduce mental noise with guided reflection, pattern tracking, reframing support, and clearer daily routines.",
+  },
+  {
+    title: "Decision support",
+    body: "Move from overthinking to structured choices, clearer trade-offs, and confident next steps.",
+  },
+  {
+    title: "Life organisation",
+    body: "Bring bills, subscriptions, tasks, reminders, and everyday admin into one simple command centre.",
+  },
+  {
+    title: "Focus systems",
+    body: "Plan the day, unpack tasks, choose work modes, prepare for meetings, and recover focus with less overwhelm.",
+  },
 ];
 
 const learningResources = [
@@ -362,12 +384,12 @@ export default function Home() {
               One stack. <br />
               Total clarity<span className="text-orange-500">.</span>
             </h1>
-
-            <p className="mt-7 max-w-xl text-xl leading-9 text-slate-600">
-              ClarityStacked brings focused command systems for money, food,
-              decisions, focus, and life admin into one powerful ecosystem.
-            </p>
-
+             <p className="mt-7 max-w-xl text-xl leading-9 text-slate-600">
+             ClarityStacked combines AI-powered systems for building businesses,
+            managing money, organising life, improving focus, reducing overwhelm,
+           and making better decisions — all inside one connected ecosystem built
+           to bring clarity, control, and momentum.
+           </p>
             <div className="mt-9 flex flex-col gap-4 sm:flex-row">
               <a
                 href="#apps"
@@ -604,32 +626,50 @@ export default function Home() {
       </FadeIn>
 
       <FadeIn>
-        <section id="systems" className="mx-auto max-w-7xl px-5 py-16">
-          <div className="rounded-[36px] bg-slate-50 p-8 md:p-12">
-            <p className="text-sm font-black uppercase tracking-[0.3em] text-orange-500">
-              ● Solutions
-            </p>
-            <h2 className="mt-4 max-w-3xl text-4xl font-black tracking-tight sm:text-6xl">
-              Built around the everyday chaos people actually face.
-            </h2>
+  <section id="systems" className="mx-auto max-w-7xl px-5 py-16">
+    <div className="relative overflow-hidden rounded-[42px] bg-slate-50 p-8 shadow-sm md:p-12">
+      <div className="absolute right-[-120px] top-[-120px] h-80 w-80 rounded-full bg-orange-200/50 blur-3xl" />
+      <div className="absolute left-[-140px] bottom-[-140px] h-80 w-80 rounded-full bg-blue-100/80 blur-3xl" />
 
-            <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {solutions.map((solution) => (
-                <div
-                  key={solution}
-                  className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
-                >
-                  <p className="text-xl font-black">{solution}</p>
-                  <p className="mt-3 text-base leading-7 text-slate-600">
-                    A focused command system designed to reduce scattered
-                    decisions and help you take the next clear step.
-                  </p>
-                </div>
-              ))}
+      <div className="relative">
+        <p className="text-sm font-black uppercase tracking-[0.3em] text-orange-500">
+          ● Premium command systems
+        </p>
+
+        <h2 className="mt-4 max-w-4xl text-4xl font-black tracking-tight sm:text-6xl">
+          Built for the real problems people are tired of managing alone.
+        </h2>
+
+        <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-600">
+          From launching a SaaS product to organising money, food, focus,
+          decisions, and life admin — ClarityStacked gives each problem its own
+          focused system, so users can move from chaos to control faster.
+        </p>
+
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {solutions.map((solution) => (
+            <div
+              key={solution.title}
+              className="group rounded-[30px] border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-slate-900/10"
+            >
+              <div className="mb-5 grid h-12 w-12 place-items-center rounded-2xl bg-orange-50 text-xl font-black text-orange-500">
+                ✓
+              </div>
+
+              <p className="text-2xl font-black text-[#07112f]">
+                {solution.title}
+              </p>
+
+              <p className="mt-4 text-base leading-7 text-slate-600">
+                {solution.body}
+              </p>
             </div>
-          </div>
-        </section>
-      </FadeIn>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+</FadeIn>
 
       <FadeIn>
         <section id="resources" className="mx-auto max-w-7xl px-5 py-16">
