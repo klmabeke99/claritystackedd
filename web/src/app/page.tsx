@@ -251,7 +251,7 @@ function AppPreviewSlide({ app }: { app: (typeof apps)[number] }) {
         <img
         src={app.preview}
        alt={`${app.name} screenshot preview`}
-       className="h-full w-full object-cover transition duration-700 hover:scale-[1.02]"
+       className="h-full w-full object-contain transition duration-700 hover:scale-[1.02]"
        />
 
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#07112f]/10 via-transparent to-white/0" />
@@ -374,7 +374,7 @@ export default function Home() {
         <div className="absolute right-[-140px] top-20 h-[440px] w-[440px] rounded-full bg-orange-200/50 blur-3xl" />
         <div className="absolute left-[-160px] top-56 h-[420px] w-[420px] rounded-full bg-blue-100/80 blur-3xl" />
 
-        <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-5 pb-10 pt-14 lg:grid-cols-[0.8fr_1.2fr] lg:pb-12 lg:pt-20">
+        <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-5 pb-10 pt-14 lg:grid-cols-[0.65fr_1.35fr] lg:pb-12 lg:pt-20">
           <div>
             <p className="text-sm font-black uppercase tracking-[0.32em] text-orange-500">
               ● Command systems for real life
@@ -423,12 +423,13 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative min-w-0">
-            <PremiumCarousel
-              items={apps}
-              label="app preview"
+          <div className="relative min-w-0 lg:-mr-10 xl:-mr-20">
+           <PremiumCarousel
+             items={apps}
+             label="app preview"
               renderItem={(app) => <AppPreviewSlide app={app} />}
-            />
+              />
+
 
             <p className="mt-4 text-center text-sm font-bold text-slate-500">
               Real product previews from the ClarityStacked ecosystem
@@ -673,7 +674,7 @@ export default function Home() {
 
       <FadeIn>
         <section id="resources" className="mx-auto max-w-7xl px-5 py-16">
-          <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
+          <div className="grid gap-8 lg:grid-cols-[0.65fr_1.35fr] lg:items-center">
             <div>
               <p className="text-sm font-black uppercase tracking-[0.3em] text-orange-500">
                 ● Resources
@@ -704,7 +705,7 @@ export default function Home() {
 
       <FadeIn>
         <section className="mx-auto max-w-7xl px-5 py-16">
-          <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
+          <div className="grid gap-10 lg:grid-cols-[0.65fr_1.35fr] lg:items-center">
             <div>
               <p className="text-sm font-black uppercase tracking-[0.3em] text-orange-500">
                 ● Digital resource systems
